@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#821A25">
+<title>Notícias — Sindicato dos Psicólogos do Ceará</title>
+<meta name="description" content="Notícias, campanhas, vídeos e podcast do Sindicato dos Psicólogos do Ceará — PSINDCE.">
+<link rel="icon" href="img/favicon/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sindicato dos Psicólogos do Ceará — PSINDCE">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Notícias — Sindicato dos Psicólogos do Ceará">
+<meta property="og:description" content="Notícias, campanhas, vídeos e podcast do Sindicato dos Psicólogos do Ceará — PSINDCE.">
+<meta property="og:url" content="https://sitemoderno.pages.dev/noticias.html">
+<meta property="og:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PSINDCE — Sindicato dos Psicólogos do Ceará">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Notícias — Sindicato dos Psicólogos do Ceará">
+<meta name="twitter:description" content="Notícias, campanhas, vídeos e podcast do Sindicato dos Psicólogos do Ceará — PSINDCE.">
+<meta name="twitter:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Sindicato dos Psicólogos do Ceará",
+  "alternateName": "PSINDCE",
+  "url": "https://sitemoderno.pages.dev/",
+  "logo": "https://sitemoderno.pages.dev/img/og/og-image.png",
+  "image": "https://sitemoderno.pages.dev/img/og/og-image.png",
+  "description": "O Sindicato dos Psicólogos do Ceará (PSINDCE) é uma entidade civil constituída para a defesa e a representação legal e legítima da categoria profissional dos psicólogos e psicólogas, assalariados e autônomos, do estado do Ceará.",
+  "telephone": "+55-85-3271-0277",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Edilson Brasil Soares, 830 — Sala 6 — Sapiranga",
+    "addressLocality": "Fortaleza",
+    "addressRegion": "CE",
+    "postalCode": "60833-020",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://www.facebook.com/psindce",
+    "https://www.instagram.com/psindce_/",
+    "https://x.com/psindce"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+
+  .js-reveal.reveal-esq.in-view{
+    animation-name:revelar-esq;
+  }
+
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(248,246,243,.93);backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--border);
+    transition:box-shadow .3s ease-out,background-color .3s ease-out;
+    /* o header muda de altura ao encolher; sem isto o navegador reajusta a
+       rolagem para compensar e a barra entra em looping (tremor) */
+    overflow-anchor:none;
+  }
+
+  .logo-mark{
+    flex:none;display:block;width:70px;height:44px;
+    transition:width .3s ease-out,height .3s ease-out;
+    background:url("img/logo.webp") center/contain no-repeat;
+  }
+
+  .hero-foto{
+    position:absolute;inset:0;z-index:-2;
+    width:100%;height:100%;object-fit:cover;object-position:86% center;
+    filter:grayscale(.22) sepia(.10) contrast(.97) brightness(1.03);
+    /* "respiração" contínua da fotografia — zoom + deslocamento sutis */
+    animation:hero-respira 28s ease-in-out infinite;
+  }
+
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(95deg,
+      rgba(248,246,243,.96) 0%,
+      rgba(248,246,243,.91) 32%,
+      rgba(248,246,243,.74) 58%,
+      rgba(248,246,243,.40) 80%,
+      rgba(248,246,243,.24) 100%);
+  }
+
+  .social-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.75rem;margin-top:2.75rem}
+
+  .social-link{
+    display:flex;flex-direction:column;align-items:center;gap:.875rem;width:9rem;
+    color:var(--verde);transition:translate .2s ease-out,color .2s ease-out;
+  }
+
+  .social-link:hover{color:var(--accent);translate:0 -3px}
+
+  .social-icone{
+    width:3.75rem;height:3.75rem;border-radius:50%;
+    background:var(--accent-soft);display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease-out;
+  }
+
+  .social-link:hover .social-icone{background:var(--accent);}
+
+  .social-link:hover .social-icone svg{fill:var(--accent-foreground)}
+
+  .social-icone svg{width:1.5rem;height:1.5rem;fill:var(--accent)}
+
+  .social-link span:last-child{
+    font-family:var(--font-display);font-size:.875rem;font-weight:700;letter-spacing:.02em;
+  }
+
+  @media(max-width:900px){
+    nav{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:var(--background);border-bottom:1px solid var(--border);padding:1rem 1.5rem;
+    }
+    nav.open{display:block}
+    /* itens do menu entram em cascata ao abrir */
+    nav.open li{animation:menu-cascata .34s cubic-bezier(.22,.61,.36,1) both}
+    nav.open li:nth-child(1){animation-delay:.03s}
+    nav.open li:nth-child(2){animation-delay:.09s}
+    nav.open li:nth-child(3){animation-delay:.15s}
+    nav.open li:nth-child(4){animation-delay:.21s}
+    nav.open li:nth-child(5){animation-delay:.27s}
+    nav.open li:nth-child(6){animation-delay:.33s}
+    @keyframes menu-cascata{
+      from{opacity:0;transform:translateY(-8px)}
+      to{opacity:1;transform:none}
+    }
+    .pill-list{flex-direction:column;align-items:flex-start;gap:.25rem}
+    .pill{padding:.75rem 0;min-height:44px}
+    .menu-btn{display:block}
+    .estatuto-grid,.sede-grid,.contato-grid,.cards,.footer-grid{grid-template-columns:1fr}
+    .estatuto-nota{position:static}
+    section{padding:4rem 0}
+    .hero{padding:5.5rem 0 4rem}
+    .hero-foto{object-position:72% center}
+    .mapa iframe{height:20rem}
+  }
+
+  @media(max-width:640px){
+    .tel-topo{display:none}
+    .logo-mark{width:58px;height:36px}
+    .marca-txt b{font-size:.8125rem}
+    .marca-txt i{font-size:.6875rem}
+
+    .wrap,.wrap-wide{padding:0 1.25rem}
+    .hero-conteudo{max-width:none}
+    .hero::before{background:linear-gradient(178deg,rgba(248,246,243,.95) 0%,rgba(248,246,243,.87) 55%,rgba(248,246,243,.94) 100%)}
+    .artigo{grid-template-columns:1fr;gap:.375rem}
+    .artigo-num{text-align:left;font-size:1.5rem}
+    .btn{width:100%}
+    .card-body{padding:1.5rem}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{
+      transition-duration:.01ms!important;
+      animation-duration:.01ms!important;
+      animation-iteration-count:1!important;
+    }
+    /* nada de movimento: tudo já visível, sem deslocamento */
+    .js-reveal,.hero-conteudo>*{opacity:1!important;transform:none!important;animation:none!important}
+    .rotulo.js-reveal::before,.rotulo.js-reveal::after{transform:none!important}
+    .hero-foto{animation:none!important;transform:scale(1.04)}
+    body::after{animation:none!important;opacity:.64}
+    .btn-whatsapp::after{display:none}
+  }
+
+  .form-aviso{
+    font-size:.8125rem;line-height:1.5;color:var(--muted-foreground);
+    max-width:100%;margin:0 0 1.25rem;text-align:left;
+  }
+
+  .form-aviso a{font-weight:700;text-decoration:underline}
+</style>
+<noscript>
+  <style>
+    /* sem JS não há observador de rolagem: tudo permanece visível */
+    .js-reveal{opacity:1;transform:none}
+    .rotulo.js-reveal::before,.rotulo.js-reveal::after{transform:none}
+    .form-status{opacity:1;transform:none}
+  </style>
+</noscript>
+<style>
+  /* ============================================================
+     ESTRUTURA DE PORTAL DE NOTÍCIAS
+     Layout inspirado em portais editoriais; paleta, tipografia e
+     componentes são os mesmos do restante do site PSINDCE.
+     ============================================================ */
+
+  /* --- BARRA "AGORA" (manchetes em rodízio) --- */
+  .agora{
+    background:var(--verde);color:#fff;
+    border-bottom:3px solid var(--accent);
+    overflow:hidden;
+  }
+  .agora-inner{
+    display:flex;align-items:center;gap:1.25rem;
+    max-width:var(--max-wide);margin:0 auto;padding:0 1.5rem;
+  }
+  .agora-rotulo{
+    flex:none;display:flex;align-items:center;gap:.5rem;
+    background:var(--accent);color:#fff;
+    font-family:var(--font-display);font-size:.6875rem;font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;
+    padding:.875rem 1.125rem;margin-left:-1.5rem;
+  }
+  .agora-rotulo::before{
+    content:"";width:7px;height:7px;border-radius:50%;background:#fff;
+    animation:pulsa 1.6s ease-in-out infinite;
+  }
+  @keyframes pulsa{0%,100%{opacity:1}50%{opacity:.25}}
+  .agora-pista{flex:1;overflow:hidden;position:relative;height:2.875rem}
+  .agora-fita{
+    display:flex;align-items:center;gap:3rem;height:100%;
+    white-space:nowrap;width:max-content;
+    animation:corre 38s linear infinite;
+  }
+  .agora-pista:hover .agora-fita{animation-play-state:paused}
+  @keyframes corre{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .agora-fita a{
+    font-size:.9375rem;color:rgba(255,255,255,.92);
+    display:inline-flex;align-items:center;gap:.625rem;
+  }
+  .agora-fita a::before{
+    content:"";width:5px;height:5px;border-radius:50%;
+    background:var(--accent);flex:none;
+  }
+  .agora-fita a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+  /* --- TOPO DE PÁGINA INTERNA --- */
+  .pagina-topo{
+    padding:3.5rem 0 2.5rem;
+    background:linear-gradient(180deg,var(--muted) 0%,var(--background) 100%);
+    border-bottom:1px solid var(--border);
+  }
+  .pagina-topo h1{margin-bottom:.875rem}
+  .pagina-topo h1 em{font-style:normal;color:var(--accent)}
+  .pagina-topo .lead{max-width:44rem}
+
+  /* --- ETIQUETA DE EDITORIA --- */
+  .editoria{
+    display:inline-block;
+    background:var(--accent);color:#fff;
+    font-family:var(--font-display);font-size:.625rem;font-weight:800;
+    letter-spacing:.14em;text-transform:uppercase;
+    padding:.3125rem .625rem;border-radius:4px;
+  }
+  .editoria.verde{background:var(--verde-medio)}
+  .data{
+    font-family:var(--font-display);font-size:.6875rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted-foreground);
+  }
+
+  /* --- MOSAICO DE DESTAQUES --- */
+  .mosaico{
+    display:grid;grid-template-columns:1.6fr 1fr;
+    grid-template-rows:repeat(2,1fr);gap:1.25rem;
+    margin-top:2.5rem;
+  }
+  .mosaico>a:first-child{grid-row:span 2}
+  .destaque{
+    position:relative;display:block;overflow:hidden;
+    border-radius:14px;min-height:14rem;
+    background:var(--verde);color:#fff;
+    box-shadow:var(--shadow-md);
+    transition:translate .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s ease-out;
+  }
+  .mosaico>a:first-child{min-height:29rem}
+  .destaque:hover{translate:0 -4px;box-shadow:var(--shadow-lg)}
+  .destaque img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;transition:transform .5s cubic-bezier(.22,.61,.36,1);
+  }
+  .destaque:hover img{transform:scale(1.05)}
+  .destaque::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(0deg,
+      rgba(15,58,33,.94) 0%,
+      rgba(15,58,33,.72) 34%,
+      rgba(15,58,33,.18) 66%,
+      rgba(15,58,33,.05) 100%);
+  }
+  .destaque-txt{
+    position:relative;z-index:1;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    height:100%;min-height:inherit;padding:1.5rem;gap:.625rem;
+  }
+  .destaque-txt .data{color:rgba(255,255,255,.78)}
+  .destaque h3{color:#fff;font-size:1.125rem;line-height:1.3}
+  .mosaico>a:first-child .destaque-txt{padding:2rem}
+  .mosaico>a:first-child h3{font-size:clamp(1.375rem,2.6vw,1.875rem);line-height:1.2}
+  .destaque-tags{display:flex;gap:.5rem;flex-wrap:wrap}
+
+  /* --- DESTAQUE EM PAINEL: arte inteira em cima, texto embaixo ------------
+     O retângulo da foto segue a proporção da própria arte, em vez de um
+     recorte fixo — assim a peça preenche o card de ponta a ponta, sem
+     sobra de off-white nas laterais nem corte no logo ou na chamada. Cada
+     card informa a sua em --foto (ex.: style="--foto:1672/941"); sem isso
+     vale a peça quadrada de campanha. O texto ocupa uma faixa própria no
+     verde, sem véu por cima.                                              */
+  .destaque--painel{display:flex;flex-direction:column;background:var(--verde)}
+  .destaque--painel::after{display:none}
+  .destaque-foto{
+    flex:0 0 auto;aspect-ratio:var(--foto, 1080/1074);
+    position:relative;overflow:hidden;
+    background:#F8F6F3;
+  }
+  .destaque--painel .destaque-foto img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center;
+  }
+  .destaque--painel .destaque-txt{
+    flex:0 0 auto;height:auto;min-height:0;justify-content:flex-start;
+  }
+  .mosaico>a.destaque--painel .destaque-txt{padding:1.375rem 2rem 1.625rem}
+  .mosaico>a.destaque--painel h3{font-size:clamp(1.1875rem,2vw,1.4375rem)}
+  .destaque-chamada{
+    color:rgba(255,255,255,.88);font-size:.9375rem;line-height:1.55;max-width:62ch;
+  }
+  .destaque-chamada b{color:#fff;font-weight:700}
+
+  /* --- GRADE PRINCIPAL: conteúdo + coluna lateral --- */
+  .grade-portal{
+    display:grid;grid-template-columns:minmax(0,1fr) 20.5rem;
+    gap:3rem;align-items:start;
+  }
+  .coluna-lateral{position:sticky;top:6.5rem;display:grid;gap:1.5rem}
+
+  /* --- CABEÇALHO DE BLOCO EDITORIAL --- */
+  .bloco{margin-bottom:3.5rem}
+  .bloco:last-child{margin-bottom:0}
+  .bloco-topo{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:1rem;flex-wrap:wrap;
+    border-bottom:3px solid var(--verde);padding-bottom:.75rem;margin-bottom:1.75rem;
+  }
+  .bloco-topo h2{
+    font-size:1.375rem;position:relative;bottom:-3px;
+    border-bottom:3px solid var(--accent);padding-bottom:.75rem;
+  }
+  .bloco-topo a{
+    font-family:var(--font-display);font-size:.75rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+  }
+  .bloco-topo a:hover{text-decoration:underline;text-underline-offset:3px}
+
+  /* --- MATÉRIA PRINCIPAL DO BLOCO --- */
+  .materia{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:start}
+  .materia-foto{
+    border-radius:12px;overflow:hidden;background:var(--muted);
+    aspect-ratio:4/3;display:block;
+  }
+  .materia-foto img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+  .materia-foto:hover img{transform:scale(1.04)}
+  .materia-corpo{display:flex;flex-direction:column;gap:.75rem}
+  .materia-corpo h3{font-size:1.25rem;line-height:1.3}
+  .materia-corpo h3 a{color:var(--verde)}
+  .materia-corpo h3 a:hover{color:var(--accent)}
+  .materia-corpo p{font-size:.9375rem;color:var(--muted-foreground)}
+  .assinatura{font-size:.8125rem;color:var(--muted-foreground)}
+  .assinatura strong{color:var(--verde)}
+
+  /* --- LISTA DE CHAMADAS --- */
+  .chamadas{display:grid;gap:1.125rem;margin-top:1.75rem;
+    border-top:1px solid var(--border);padding-top:1.75rem}
+  .chamada-item{
+    display:grid;grid-template-columns:6.5rem 1fr;gap:1.125rem;align-items:center;
+  }
+  .chamada-item .miniatura{
+    border-radius:8px;overflow:hidden;background:var(--muted);aspect-ratio:1;
+  }
+  .chamada-item .miniatura img{width:100%;height:100%;object-fit:cover;display:block}
+  .chamada-item a{color:inherit}
+  .chamada-item h4{
+    font-family:var(--font-display);font-size:.9375rem;font-weight:700;
+    line-height:1.35;color:var(--verde);margin:.375rem 0 .25rem;
+  }
+  .chamada-item a:hover h4{color:var(--accent)}
+
+  /* --- VÍDEOS (fachada leve: só carrega o iframe ao clicar) --- */
+  .videos{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+  .videos .video-item:first-child{grid-column:1/-1}
+  .video-quadro{
+    position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;
+    background:var(--verde);cursor:pointer;display:block;width:100%;
+    border:0;padding:0;box-shadow:var(--shadow-sm);
+  }
+  .video-quadro img,.video-quadro iframe{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;border:0;display:block;
+  }
+  .video-quadro::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(0deg,rgba(15,58,33,.45),rgba(15,58,33,.1));
+    transition:opacity .25s ease-out;
+  }
+  .video-quadro.tocando::after,.video-quadro.tocando .play{display:none}
+  .video-quadro:hover::after{opacity:.7}
+  .play{
+    position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:2;
+    width:4.25rem;height:4.25rem;border-radius:50%;
+    background:var(--accent);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 22px rgba(0,0,0,.3);
+    transition:transform .25s cubic-bezier(.22,.61,.36,1),background .25s ease-out;
+  }
+  .video-quadro:hover .play{transform:scale(1.1);background:var(--accent-hover)}
+  .play svg{width:1.5rem;height:1.5rem;fill:#fff;margin-left:3px}
+  .video-item h4{
+    font-family:var(--font-display);font-size:1rem;font-weight:700;
+    color:var(--verde);margin-top:.875rem;line-height:1.35;
+  }
+  .video-item p{font-size:.875rem;color:var(--muted-foreground);margin-top:.25rem}
+
+  /* --- ÁUDIO E PODCAST --- */
+  .audios{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+  .audio-card{
+    background:var(--card);border:1px solid var(--border);
+    border-left:4px solid var(--accent);border-radius:12px;
+    padding:1.5rem;box-shadow:var(--shadow-sm);
+  }
+  .audio-card h4{
+    font-family:var(--font-display);font-size:1rem;font-weight:700;
+    color:var(--verde);line-height:1.35;margin:.625rem 0 .5rem;
+  }
+  .audio-card p{font-size:.875rem;color:var(--muted-foreground);margin-bottom:1.125rem}
+  .audio-card iframe{width:100%;border:0;border-radius:12px;display:block}
+  .audio-card audio{width:100%;margin-top:.25rem;border-radius:999px}
+  .audio-nativo{
+    background:var(--card);border:1px solid var(--border);
+    border-left:4px solid var(--verde-medio);border-radius:12px;
+    padding:1.5rem;box-shadow:var(--shadow-sm);
+  }
+
+  /* --- REDES SOCIAIS --- */
+  .redes-portal{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+  .rede-titulo{
+    display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;
+  }
+  .rede-titulo svg{width:1.375rem;height:1.375rem;fill:var(--accent);flex:none}
+  .rede-titulo h3{font-size:1rem}
+  .rede-titulo a{
+    margin-left:auto;font-family:var(--font-display);font-size:.75rem;
+    font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+  }
+  .insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.625rem}
+  .insta-item{
+    position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;
+    background:var(--muted);display:block;
+  }
+  .insta-item img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .4s cubic-bezier(.22,.61,.36,1)}
+  .insta-item:hover img{transform:scale(1.07)}
+  .insta-item::after{
+    content:"";position:absolute;inset:0;background:var(--accent);
+    opacity:0;transition:opacity .25s ease-out;
+  }
+  .insta-item:hover::after{opacity:.22}
+  .fb-caixa{
+    border:1px solid var(--border);border-radius:12px;overflow:hidden;
+    background:var(--card);box-shadow:var(--shadow-sm);min-height:20rem;
+  }
+  .fb-caixa iframe{width:100%;height:26rem;border:0;display:block}
+
+  /* --- BLOCOS DA COLUNA LATERAL --- */
+  .aside-bloco{
+    background:var(--card);border:1px solid var(--border);
+    border-top:4px solid var(--accent);border-radius:12px;
+    padding:1.5rem;box-shadow:var(--shadow-sm);
+  }
+  .aside-bloco.verde{border-top-color:var(--verde-medio)}
+  .aside-bloco h3{
+    font-size:.8125rem;font-weight:800;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:1.125rem;
+  }
+  .aside-bloco.verde h3{color:var(--verde)}
+  .aside-bloco p{font-size:.875rem;color:var(--muted-foreground)}
+  .aside-bloco .btn{width:100%;margin-top:1.125rem}
+
+  .ultimas{display:grid;gap:1rem;counter-reset:u}
+  .ultimas a{
+    display:grid;grid-template-columns:1.75rem 1fr;gap:.75rem;align-items:start;
+    padding-bottom:1rem;border-bottom:1px solid var(--border);
+  }
+  .ultimas a:last-child{border-bottom:0;padding-bottom:0}
+  .ultimas a::before{
+    counter-increment:u;content:counter(u,decimal-leading-zero);
+    font-family:var(--font-display);font-size:1.125rem;font-weight:800;
+    color:var(--accent);opacity:.45;line-height:1.2;
+  }
+  .ultimas span{
+    font-family:var(--font-display);font-size:.875rem;font-weight:700;
+    line-height:1.35;color:var(--verde);
+  }
+  .ultimas a:hover span{color:var(--accent)}
+
+  .agenda-item{
+    display:grid;grid-template-columns:3.25rem 1fr;gap:.875rem;align-items:start;
+    padding:.875rem 0;border-bottom:1px solid var(--border);
+  }
+  .agenda-item:last-child{border-bottom:0;padding-bottom:0}
+  .agenda-dia{
+    background:var(--accent-soft);border-radius:8px;text-align:center;
+    padding:.5rem .25rem;font-family:var(--font-display);line-height:1.1;
+  }
+  .agenda-dia b{display:block;font-size:1.25rem;font-weight:800;color:var(--accent)}
+  .agenda-dia i{
+    display:block;font-style:normal;font-size:.625rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin-top:.125rem;
+  }
+  .agenda-item h4{
+    font-family:var(--font-display);font-size:.875rem;font-weight:700;
+    line-height:1.35;color:var(--verde);margin-bottom:.1875rem;
+  }
+  .agenda-item p{font-size:.8125rem}
+
+  .aside-redes{display:flex;gap:.625rem;flex-wrap:wrap}
+  .aside-redes a{
+    width:2.75rem;height:2.75rem;border-radius:50%;
+    background:var(--accent-soft);display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease-out;
+  }
+  .aside-redes a:hover{background:var(--accent)}
+  .aside-redes svg{width:1.125rem;height:1.125rem;fill:var(--accent)}
+  .aside-redes a:hover svg{fill:#fff}
+
+  /* --- CHAMADA FINAL --- */
+  .encerra{
+    background:var(--card);border:1px solid var(--border);
+    border-top:4px solid var(--verde-medio);border-radius:14px;
+    padding:2.5rem;box-shadow:var(--shadow-sm);
+    max-width:44rem;margin:0 auto;text-align:center;
+  }
+  .encerra h2{margin-bottom:.875rem}
+  .encerra p{color:var(--muted-foreground);margin-bottom:1.75rem}
+
+  /* --- ESPAÇOS AINDA NÃO PREENCHIDOS (some quando o conteúdo entra) --- */
+  .video-quadro.vazio{cursor:default;
+    background:repeating-linear-gradient(135deg,var(--verde) 0 12px,#123f25 12px 24px)}
+  .video-quadro.vazio:hover .play{transform:translate(0,0) scale(1)}
+  .embed-vazio{
+    min-height:152px;padding:1.25rem;border-radius:12px;
+    border:2px dashed var(--border-hover);
+    background:var(--muted);color:var(--muted-foreground);
+  }
+
+  /* --- RESPONSIVO --- */
+  @media (max-width:1024px){
+    .grade-portal{grid-template-columns:1fr;gap:3.5rem}
+    .coluna-lateral{position:static;grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:900px){
+    .agora-rotulo{padding:.75rem .875rem;font-size:.625rem}
+    .agora-pista{height:2.5rem}
+    .agora-fita{animation-duration:26s}
+    .pagina-topo{padding:2.5rem 0 2rem}
+    .mosaico{grid-template-columns:1fr;grid-template-rows:none}
+    .mosaico>a:first-child{grid-row:auto;min-height:18rem}
+    .mosaico>a.destaque--painel{min-height:0}
+    .materia{grid-template-columns:1fr}
+    .videos,.audios,.redes-portal{grid-template-columns:1fr}
+    .coluna-lateral{grid-template-columns:1fr}
+    .bloco-topo h2{font-size:1.1875rem}
+  }
+  @media (max-width:520px){
+    .chamada-item{grid-template-columns:4.75rem 1fr;gap:.875rem}
+    .insta-grid{gap:.5rem}
+    .encerra{padding:1.75rem}
+  }
+
+  /* --- MOVIMENTO REDUZIDO --- */
+  @media (prefers-reduced-motion:reduce){
+    .agora-fita{animation:none}
+    .agora-rotulo::before{animation:none}
+    .destaque img,.materia-foto img,.insta-item img{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="marca" href="#topo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="marca-txt"><b>Sindicato dos Psicólogos</b><i>do Ceará</i></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav">
+      <ul class="pill-list">
+        <li><a class="pill" href="index.html">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Página inicial</span>
+            <span class="pill-label-hover" aria-hidden="true">Página inicial</span>
+          </span>
+        </a></li>
+        <li><a class="pill" href="sobre.html">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Sobre</span>
+            <span class="pill-label-hover" aria-hidden="true">Sobre</span>
+          </span>
+        </a></li>
+        <li><a class="pill is-active" href="noticias.html" aria-current="page">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Notícias</span>
+            <span class="pill-label-hover" aria-hidden="true">Notícias</span>
+          </span>
+        </a></li>
+        <li><a class="pill" href="sindicalize-se.html">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Sindicalize-se</span>
+            <span class="pill-label-hover" aria-hidden="true">Sindicalize-se</span>
+          </span>
+        </a></li>
+      </ul>
+    </nav>
+    <a class="tel-topo" href="tel:+558532710277">
+      <span class="hover-circle" aria-hidden="true"></span>
+      <span class="label-stack">
+        <span class="pill-label">(85) 3271-0277</span>
+        <span class="pill-label-hover" aria-hidden="true">(85) 3271-0277</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<!-- ============ BARRA "AGORA" ============ -->
+<div class="agora">
+  <div class="agora-inner">
+    <span class="agora-rotulo">Agora</span>
+    <div class="agora-pista">
+      <!-- a fita é duplicada no HTML para o rodízio ficar contínuo -->
+      <div class="agora-fita">
+        <a href="#destaque">Jornada de até 30h é aprovada na Câmara dos Deputados</a>
+        <a href="#destaque">Renovação e filiação do PSINDCE já está aberta</a>
+        <a href="#atividades">PL 3086/2024 do piso salarial avança no Senado Federal</a>
+        <a href="#campanhas">Eleições PSINDCE 2024: edital publicado</a>
+        <a href="#podcast">Podcast Psicologia em Pauta — saúde mental de quem cuida</a>
+        <a href="#destaque">Jornada de até 30h é aprovada na Câmara dos Deputados</a>
+        <a href="#destaque">Renovação e filiação do PSINDCE já está aberta</a>
+        <a href="#atividades">PL 3086/2024 do piso salarial avança no Senado Federal</a>
+        <a href="#campanhas">Eleições PSINDCE 2024: edital publicado</a>
+        <a href="#podcast">Podcast Psicologia em Pauta — saúde mental de quem cuida</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ TOPO DA PÁGINA ============ -->
+<section class="pagina-topo" id="topo">
+  <div class="wrap-wide">
+    <div class="rotulo esq"><span>Comunicação</span></div>
+    <h1>Notícias e <em>campanhas</em></h1>
+    <p class="lead">Pautas, mobilizações, vídeos e conteúdos em áudio produzidos pelo Sindicato
+    dos Psicólogos do Ceará.</p>
+  </div>
+</section>
+
+<!-- ============ MOSAICO DE DESTAQUES ============ -->
+<section id="destaque" style="padding-top:2.5rem;padding-bottom:3.5rem">
+  <div class="wrap-wide">
+    <div class="rotulo js-reveal"><span>Em destaque</span></div>
+
+    <div class="mosaico">
+      <a class="destaque destaque--painel js-reveal"
+         href="https://www.sympla.com.br/evento-online/renovacao-e-filiacao-do-psindce/3470212"
+         target="_blank" rel="noopener">
+        <div class="destaque-foto">
+          <img loading="lazy" width="1080" height="1074"
+               src="img/noticias/destaque1/renovacao-filiacao-psindce.webp"
+               alt="Renovação e filiação do PSINDCE — fortaleça o Sindicato, fortaleça a Psicologia; renovar e se filiar é investir na categoria e na nossa luta coletiva">
+        </div>
+        <div class="destaque-txt">
+          <div class="destaque-tags">
+            <span class="editoria">Filiação</span>
+            <span class="data" style="align-self:center">2026</span>
+          </div>
+          <h3>Renovação e filiação do PSINDCE</h3>
+          <p class="destaque-chamada">
+          Fortalecer o PSINDCE é fortalecer a luta em defesa da Psicologia e dos direitos
+          da categoria. Ao renovar sua filiação ou se tornar sindicalizado(a), você contribui
+          para a construção de um sindicato mais forte, representativo e preparado para
+          enfrentar os desafios da profissão em nosso estado.</p>
+          <p class="destaque-chamada">
+          A participação de cada psicóloga e psicólogo é fundamental para ampliar as conquistas
+          e fortalecer a organização coletiva. <b>Faça sua renovação ou filie-se ao PSINDCE</b>
+          e siga conosco na defesa da valorização profissional e dos direitos da categoria.</p>
+        </div>
+      </a>
+
+      <a class="destaque destaque--painel js-reveal" style="--foto:1672/941"
+         href="https://www.instagram.com/reel/DYQVZrktj1u/" target="_blank" rel="noopener">
+        <div class="destaque-foto">
+          <img loading="lazy" width="1672" height="941"
+               src="img/noticias/destaque2/jornada-30-horas-camara.webp"
+               alt="Psicologia 30 horas, a luta continua — vitória no Congresso: PL 1214/2019 é aprovado na Câmara">
+        </div>
+        <div class="destaque-txt">
+          <div class="destaque-tags">
+            <span class="editoria">Piso e jornada</span>
+            <span class="data" style="align-self:center">Ago 2026</span>
+          </div>
+          <h3>Jornada de até 30h é aprovada na Câmara dos Deputados</h3>
+          <p class="destaque-chamada">
+          Avanço histórico para a Psicologia: resultado da atuação do Sistema Conselhos
+          de Psicologia e da mobilização da categoria. O projeto segue agora para o
+          Senado Federal — acompanhe e fortaleça essa conquista.</p>
+        </div>
+      </a>
+
+      <a class="destaque js-reveal" href="#campanhas">
+        <img loading="lazy" src="https://psindce.org.br/ws/media-library/77d48adf8f3d43b2941378f2105fc221/edital-publicado.jpg" alt="">
+        <div class="destaque-txt">
+          <div class="destaque-tags"><span class="editoria verde">Eleições</span></div>
+          <h3>Eleições PSINDCE 2024: edital publicado</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GRADE PRINCIPAL ============ -->
+<section class="muted" style="padding-top:4rem">
+  <div class="wrap-wide">
+    <div class="grade-portal">
+
+      <!-- ---------- COLUNA DE CONTEÚDO ---------- -->
+      <div>
+
+        <!-- ===== ATIVIDADES ===== -->
+        <div class="bloco js-reveal" id="atividades">
+          <div class="bloco-topo">
+            <h2>Atividades e mobilizações</h2>
+            <a href="#atividades">Ver todas</a>
+          </div>
+
+          <article class="materia">
+            <a class="materia-foto" href="#atividades">
+              <img loading="lazy" src="https://psindce.org.br/ws/media-library/e137b44a4892447298d01e3ce9eb00f2/convite-psindce.jpg" alt="Convite para assembleia do PSINDCE">
+            </a>
+            <div class="materia-corpo">
+              <div class="destaque-tags">
+                <span class="editoria">Mobilização</span>
+              </div>
+              <h3><a href="#atividades">Lutar é nosso objetivo: participe das assembleias da categoria</a></h3>
+              <p>A força do sindicato vem da participação dos(as) psicólogos(as). Acompanhe o
+              calendário de assembleias, plenárias e atos e ajude a construir as pautas que
+              chegam às mesas de negociação.</p>
+              <p class="assinatura"><strong>Diretoria Colegiada</strong> · Comunicação PSINDCE</p>
+            </div>
+          </article>
+
+          <div class="chamadas">
+            <article class="chamada-item">
+              <a class="miniatura" href="#atividades">
+                <img loading="lazy" src="https://psindce.org.br/ws/media-library/b8db99f05a804a558a9a5e9d76ad1af5/esperancar.jpg" alt="">
+              </a>
+              <a href="#atividades">
+                <span class="editoria verde">Participação</span>
+                <h4>Os representantes sozinhos não fazem a luta</h4>
+                <span class="data">Diretoria Colegiada</span>
+              </a>
+            </article>
+
+            <article class="chamada-item">
+              <a class="miniatura" href="#atividades">
+                <img loading="lazy" src="https://psindce.org.br/ws/media-library/53f54f8592f0463696e8b36a1d00f571/sug-132022---piso-e-jornada.png" alt="">
+              </a>
+              <a href="#atividades">
+                <span class="editoria">Piso e jornada</span>
+                <h4>PL 3086/2024 avança no Senado Federal</h4>
+                <span class="data">Comissão de Direitos Humanos</span>
+              </a>
+            </article>
+
+            <article class="chamada-item">
+              <a class="miniatura" href="#campanhas">
+                <img loading="lazy" src="https://psindce.org.br/ws/media-library/a29019b4e0cc4ebb8e47a7abeb39a847/campanha-filiacao-2.jpg" alt="">
+              </a>
+              <a href="#campanhas">
+                <span class="editoria verde">Pautas</span>
+                <h4>Valorização da profissão e contratação digna: nossas bandeiras</h4>
+                <span class="data">Campanha 2024</span>
+              </a>
+            </article>
+          </div>
+        </div>
+
+        <!-- ===== CAMPANHAS ===== -->
+        <div class="bloco js-reveal" id="campanhas">
+          <div class="bloco-topo">
+            <h2>Campanhas e processos</h2>
+            <a href="sindicalize-se.html">Sindicalize-se</a>
+          </div>
+
+          <article class="materia">
+            <a class="materia-foto" href="https://www.sympla.com.br/psindce-20241-resistencia__2417666" target="_blank" rel="noopener">
+              <img loading="lazy" src="https://psindce.org.br/ws/media-library/a39473a8f85248dcb4094c92ddddab89/filiacao-2024-b.jpg" alt="Campanha associativa 2024">
+            </a>
+            <div class="materia-corpo">
+              <div class="destaque-tags"><span class="editoria">Filiação</span></div>
+              <h3><a href="https://www.sympla.com.br/psindce-20241-resistencia__2417666" target="_blank" rel="noopener">Campanha associativa 2024</a></h3>
+              <p>A filiação pode ser feita pela plataforma Sympla. Fora dela, acione o
+              <strong>Fale conosco</strong> e solicite o formulário de cadastro — depois é só
+              enviá-lo assinado para
+              <a href="mailto:psindce.eventos@gmail.com">psindce.eventos@gmail.com</a>.</p>
+              <p class="assinatura"><strong>Secretaria</strong> · PSINDCE</p>
+            </div>
+          </article>
+
+          <div class="chamadas">
+            <article class="chamada-item">
+              <a class="miniatura" href="mailto:eleicoespsindce2024@gmail.com">
+                <img loading="lazy" src="https://psindce.org.br/ws/media-library/77d48adf8f3d43b2941378f2105fc221/edital-publicado.jpg" alt="">
+              </a>
+              <a href="mailto:eleicoespsindce2024@gmail.com">
+                <span class="editoria">Eleições</span>
+                <h4>Eleições PSINDCE 2024: solicite o estatuto e a regulamentação eleitoral</h4>
+                <span class="data">eleicoespsindce2024@gmail.com</span>
+              </a>
+            </article>
+
+            <article class="chamada-item">
+              <a class="miniatura" href="#campanhas">
+                <img loading="lazy" src="https://psindce.org.br/ws/media-library/a29019b4e0cc4ebb8e47a7abeb39a847/campanha-filiacao-2.jpg" alt="">
+              </a>
+              <a href="#campanhas">
+                <span class="editoria verde">Pautas</span>
+                <h4>Jornada de 30h, piso salarial e trabalho digno</h4>
+                <span class="data">Campanha permanente</span>
+              </a>
+            </article>
+          </div>
+        </div>
+
+        <!-- ===== VÍDEOS ===== -->
+        <div class="bloco js-reveal" id="videos">
+          <div class="bloco-topo">
+            <h2>Vídeos</h2>
+            <a href="#videos">Canal no YouTube</a>
+          </div>
+
+          <div class="videos">
+            <!--
+              COMO PUBLICAR UM VÍDEO
+              1. Copie o ID do vídeo do YouTube (o trecho depois de "v=" na URL).
+              2. Cole em data-video="..." abaixo.
+              A miniatura carrega sozinha e o player só é montado quando a pessoa clica —
+              isso mantém a página leve.
+            -->
+            <article class="video-item">
+              <button class="video-quadro" data-video="" aria-label="Reproduzir vídeo">
+                <span class="play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </button>
+              <h4>O que muda com a jornada de 30 horas</h4>
+              <p>Explicação em 4 minutos sobre o PL 3086/2024 e seus efeitos na rotina de trabalho.</p>
+            </article>
+
+            <article class="video-item">
+              <button class="video-quadro" data-video="" aria-label="Reproduzir vídeo">
+                <span class="play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </button>
+              <h4>Assembleia geral — registro</h4>
+              <p>Momentos da última assembleia da categoria.</p>
+            </article>
+
+            <article class="video-item">
+              <button class="video-quadro" data-video="" aria-label="Reproduzir vídeo">
+                <span class="play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </button>
+              <h4>Por que se sindicalizar?</h4>
+              <p>Direitos, representação e negociação coletiva em linguagem direta.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- ===== ÁUDIO E PODCAST ===== -->
+        <div class="bloco js-reveal" id="podcast">
+          <div class="bloco-topo">
+            <h2>Áudio e podcast</h2>
+            <a href="#podcast">Todos os episódios</a>
+          </div>
+
+          <div class="audios">
+            <!--
+              PODCAST NO SPOTIFY
+              Abra o episódio no Spotify → Compartilhar → Incorporar episódio.
+              Cole a URL gerada (open.spotify.com/embed/episode/ID) no src do iframe.
+            -->
+            <div class="audio-card">
+              <span class="editoria">Episódio 01</span>
+              <h4>Saúde mental de quem cuida da saúde mental</h4>
+              <p>Conversa sobre adoecimento profissional, carga de trabalho e rede de apoio.</p>
+              <iframe title="Episódio 01 do podcast do PSINDCE no Spotify"
+                      src="about:blank"
+                      data-src="https://open.spotify.com/embed/episode/COLE_O_ID_AQUI?utm_source=generator"
+                      height="152" loading="lazy"
+                      allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+
+            <div class="audio-card">
+              <span class="editoria">Episódio 02</span>
+              <h4>Piso salarial: o que já foi conquistado</h4>
+              <p>Linha do tempo da tramitação e o que ainda depende de mobilização.</p>
+              <iframe title="Episódio 02 do podcast do PSINDCE no Spotify"
+                      src="about:blank"
+                      data-src="https://open.spotify.com/embed/episode/COLE_O_ID_AQUI?utm_source=generator"
+                      height="152" loading="lazy"
+                      allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+
+            <!--
+              ÁUDIO PRÓPRIO (boletim, nota, gravação de assembleia)
+              Suba o arquivo .mp3 na pasta audio/ e ajuste o src abaixo.
+            -->
+            <div class="audio-nativo" style="grid-column:1/-1">
+              <span class="editoria verde">Boletim em áudio</span>
+              <h4 style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--verde);margin:.625rem 0 .5rem">
+                Informativo da semana — Diretoria Colegiada</h4>
+              <p style="font-size:.875rem;color:var(--muted-foreground);margin-bottom:1rem">
+                Resumo em 3 minutos das pautas em andamento. Também disponível em texto no
+                <a href="https://wa.me/5585991207733?text=Ol%C3%A1%2C%20gostaria%20de%20receber%20o%20informativo%20em%20texto." target="_blank" rel="noopener">Fale conosco</a>.</p>
+              <audio controls preload="none" src="audio/boletim.mp3">
+                Seu navegador não reproduz áudio. <a href="audio/boletim.mp3">Baixe o arquivo</a>.
+              </audio>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== REDES SOCIAIS ===== -->
+        <div class="bloco js-reveal" id="redes">
+          <div class="bloco-topo">
+            <h2>Nas redes</h2>
+            <a href="index.html#redes-sociais">Todos os perfis</a>
+          </div>
+
+          <div class="redes-portal">
+
+            <!-- Instagram -->
+            <div>
+              <div class="rede-titulo">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
+                <h3>@psindce_</h3>
+                <a href="https://instagram.com/psindce_" target="_blank" rel="noopener">Seguir</a>
+              </div>
+
+              <!--
+                GALERIA DO INSTAGRAM
+                Cada post vive em um arquivo próprio dentro de img/grade/ (imagem + link
+                do post). Para publicar uma nova postagem na grade:
+                  1) suba a imagem e o arquivo post_XXXX.html em img/grade/;
+                  2) acrescente o nome do arquivo em data-posts abaixo, na ordem desejada.
+                O script no fim da página lê esses arquivos e preenche a grade sozinho.
+                Os seis cards estáticos abaixo são o conteúdo de partida — servem de
+                fallback caso a leitura dos arquivos falhe (ex.: página aberta via file://).
+              -->
+              <div class="insta-grid" id="instaGrade"
+                   data-grade-base="img/grade/"
+                   data-posts="post_DbA4PETO3mU.html,post_DaUEz7auOeH.html,post_DaAeAyouG2Q.html,post_DY7gzgYub0y.html,post_DW7JvAmjnrp.html,post_DYCnG3YlbF2.html">
+                <a class="insta-item" href="https://www.instagram.com/p/DbA4PETO3mU/" target="_blank" rel="noopener">
+                  <img loading="lazy" src="img/grade/post1.jpg" alt="Publicação do @psindce_ no Instagram">
+                </a>
+                <a class="insta-item" href="https://www.instagram.com/p/DaUEz7auOeH/" target="_blank" rel="noopener">
+                  <img loading="lazy" src="img/grade/post2.jpg" alt="Publicação do @psindce_ no Instagram">
+                </a>
+                <a class="insta-item" href="https://www.instagram.com/p/DaAeAyouG2Q/" target="_blank" rel="noopener">
+                  <img loading="lazy" src="img/grade/post3.jpg" alt="Publicação do @psindce_ no Instagram">
+                </a>
+                <a class="insta-item" href="https://www.instagram.com/p/DY7gzgYub0y/" target="_blank" rel="noopener">
+                  <img loading="lazy" src="img/grade/post4.jpg" alt="Publicação do @psindce_ no Instagram">
+                </a>
+                <a class="insta-item" href="https://www.instagram.com/p/DW7JvAmjnrp/" target="_blank" rel="noopener">
+                  <img loading="lazy" src="img/grade/post5.jpg" alt="Publicação do @psindce_ no Instagram">
+                </a>
+                <a class="insta-item" href="https://www.instagram.com/p/DYCnG3YlbF2/" target="_blank" rel="noopener">
+                  <img loading="lazy" src="img/grade/post6.jpg" alt="Publicação do @psindce_ no Instagram">
+                </a>
+              </div>
+            </div>
+
+            <!-- Facebook -->
+            <div>
+              <div class="rede-titulo">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+                <h3>facebook.com/psindce</h3>
+                <a href="https://facebook.com.br/psindce" target="_blank" rel="noopener">Curtir</a>
+              </div>
+
+              <!--
+                FEED DO FACEBOOK — plugin oficial de Página, funciona sem JS.
+                Se o nome da página mudar, ajuste o parâmetro href= abaixo.
+                O plugin do Facebook renderiza o conteúdo internamente na
+                largura pedida via URL — ele não se redimensiona sozinho
+                dentro do iframe. Por isso o src é montado em JS (fim da
+                página), medindo a largura real de .fb-caixa, em vez de vir
+                fixo em 500px aqui no HTML.
+              -->
+              <div class="fb-caixa" id="fbCaixa" data-fb-href="https://www.facebook.com/psindce">
+                <iframe title="Publicações do PSINDCE no Facebook"
+                        scrolling="no" loading="lazy"
+                        allow="clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ---------- COLUNA LATERAL ---------- -->
+      <aside class="coluna-lateral">
+
+        <div class="aside-bloco js-reveal">
+          <h3>Últimas publicações</h3>
+          <div class="ultimas">
+            <a href="#destaque"><span>Jornada de até 30h é aprovada na Câmara dos Deputados</span></a>
+            <a href="#destaque"><span>Renovação e filiação do PSINDCE</span></a>
+            <a href="#atividades"><span>PL 3086/2024 avança no Senado Federal</span></a>
+            <a href="#campanhas"><span>Eleições PSINDCE 2024: edital publicado</span></a>
+            <a href="#podcast"><span>Podcast: saúde mental de quem cuida</span></a>
+          </div>
+        </div>
+
+        <div class="aside-bloco verde js-reveal">
+          <h3>Agenda</h3>
+          <div class="agenda-item">
+            <div class="agenda-dia"><b>12</b><i>set</i></div>
+            <div>
+              <h4>Assembleia geral da categoria</h4>
+              <p>Sede provisória — 18h</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-dia"><b>26</b><i>set</i></div>
+            <div>
+              <h4>Roda de conversa: saúde do trabalhador</h4>
+              <p>Formato on-line — 19h</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-dia"><b>08</b><i>out</i></div>
+            <div>
+              <h4>Plenária de pautas 2025</h4>
+              <p>Local a confirmar</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="aside-bloco js-reveal">
+          <h3>Ouça o podcast</h3>
+          <p>Episódios curtos sobre direitos, saúde do trabalhador e conjuntura da categoria.</p>
+          <a class="btn btn-primary" href="#podcast">Ir para os episódios</a>
+        </div>
+
+        <div class="aside-bloco verde js-reveal">
+          <h3>Fale com o sindicato</h3>
+          <p>Dúvidas, documentos, denúncias e apoio à categoria.</p>
+          <a class="btn btn-outline" href="https://wa.me/5585991207733?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20PSINDCE." target="_blank" rel="noopener">Fale conosco</a>
+          <div class="aside-redes" style="margin-top:1.25rem">
+            <a href="https://instagram.com/psindce_" target="_blank" rel="noopener" aria-label="Instagram do PSINDCE">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
+            </a>
+            <a href="https://facebook.com.br/psindce" target="_blank" rel="noopener" aria-label="Facebook do PSINDCE">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+            </a>
+            <a href="tel:+558532710277" aria-label="Telefone do PSINDCE">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAMADA FINAL ============ -->
+<section>
+  <div class="wrap-wide">
+    <div class="encerra js-reveal">
+      <h2>Quer receber as novidades?</h2>
+      <p>Fale com a secretaria para tirar dúvidas, solicitar documentos ou acompanhar
+      as próximas assembleias.</p>
+      <div class="btns" style="justify-content:center">
+        <a class="btn btn-primary" href="https://wa.me/5585991207733?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20PSINDCE." target="_blank" rel="noopener">Fale conosco</a>
+        <a class="btn btn-outline" href="sindicalize-se.html">Sindicalize-se</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-marca">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="marca-txt"><b>Sindicato dos Psicólogos</b><i>do Ceará</i></span>
+        </div>
+        <p>Entidade civil de representação sindical de base estadual, sem fins lucrativos e autônoma, constituída para a defesa e a representação legal da categoria profissional dos psicólogos e psicólogas, assalariados e autônomos, do estado do Ceará.</p>
+      </div>
+
+      <div>
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="index.html">Página inicial</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="index.html#onde">Onde estamos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+          <li><a href="index.html#historia">História</a></li>
+          <li><a href="sindicalize-se.html">Sindicalize-se</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contato</h3>
+        <p>Av. Edilson Brasil Soares, 830 — Sala 06 — Sapiranga</p>
+        <p><a href="tel:+558532710277">(85) 3271-0277</a></p>
+        <p><a href="mailto:psindce@gmail.com">psindce@gmail.com</a></p>
+        <ul style="margin-top:1rem">
+          <li><a href="https://facebook.com.br/psindce" target="_blank" rel="noopener">facebook.com.br/psindce</a></li>
+          <li><a href="https://instagram.com/psindce_" target="_blank" rel="noopener">instagram.com/psindce_</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">psindce.org.br</div>
+</footer>
+<!-- VOLTAR AO TOPO -->
+<button type="button" class="btn-topo" id="btnTopo" aria-label="Voltar ao topo da página">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  <span class="btn-topo-txt">Voltar ao topo</span>
+</button>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="js/site.js"></script>
+<script>
+  /* --- IMAGEM AUSENTE: cai numa placa da marca em vez de ícone quebrado ---
+     Mesmo recurso já usado na página inicial. Vale para as artes servidas do
+     endereço antigo e para a arte de campanha ainda não publicada no repo.  */
+  (function(){
+    var PLACA = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">' +
+      '<rect width="800" height="600" fill="#0F3A21"/>' +
+      '<text x="400" y="315" text-anchor="middle" fill="#F8F6F3" fill-opacity=".38" ' +
+      'font-family="Georgia,serif" font-size="76" font-weight="700" ' +
+      'letter-spacing="6">PSINDCE</text></svg>');
+
+    Array.prototype.forEach.call(document.images, function(img){
+      function falhou(){
+        img.removeEventListener('error', falhou);
+        img.src = PLACA;
+      }
+      img.addEventListener('error', falhou);
+      if (img.complete && img.naturalWidth === 0) falhou();
+    });
+  })();
+
+  (function(){
+    PSINDCE.iniciarRevelacao([
+      ['.mosaico',  '.destaque',      0.10],
+      ['.chamadas', '.chamada-item',  0.08],
+      ['.videos',   '.video-item',    0.10],
+      ['.audios',   '.audio-card',    0.10]
+    ]);
+
+    /* --- VÍDEOS: fachada leve --------------------------------------------
+       Enquanto o botão tem data-video preenchido, mostra a miniatura do
+       YouTube; o iframe (pesado) só entra depois do clique. Sem ID, exibe
+       um bloco em verde da marca no lugar da miniatura.                     */
+    Array.prototype.forEach.call(document.querySelectorAll('.video-quadro'), function(quadro){
+      var id = (quadro.getAttribute('data-video') || '').trim();
+
+      if (id) {
+        var capa = document.createElement('img');
+        capa.loading = 'lazy';
+        capa.alt = '';
+        capa.src = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
+        quadro.insertBefore(capa, quadro.firstChild);
+      } else {
+        quadro.classList.add('vazio');
+      }
+
+      quadro.addEventListener('click', function(){
+        if (!id || quadro.classList.contains('tocando')) return;
+        var frame = document.createElement('iframe');
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        frame.title = 'Vídeo do PSINDCE';
+        frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
+        frame.allowFullscreen = true;
+        quadro.appendChild(frame);
+        quadro.classList.add('tocando');
+      });
+    });
+
+    /* --- PODCAST: só carrega o embed do Spotify quando o ID estiver posto
+       e o bloco chegar perto da tela.                                       */
+    var todos = [].slice.call(document.querySelectorAll('iframe[data-src]'));
+
+    // sem ID definido, o iframe vazio vira um bloco reservado no lugar
+    todos.filter(function(f){ return f.getAttribute('data-src').indexOf('COLE_O_ID_AQUI') !== -1; })
+      .forEach(function(f){
+        var caixa = document.createElement('div');
+        caixa.className = 'embed-vazio';
+        f.parentNode.replaceChild(caixa, f);
+      });
+
+    var embeds = todos.filter(function(f){
+      return f.parentNode && f.getAttribute('data-src').indexOf('COLE_O_ID_AQUI') === -1;
+    });
+
+    if (embeds.length) {
+      if (!('IntersectionObserver' in window)) {
+        embeds.forEach(function(f){ f.src = f.getAttribute('data-src'); });
+      } else {
+        var obsEmbed = new IntersectionObserver(function(entradas){
+          entradas.forEach(function(e){
+            if (e.isIntersecting) {
+              e.target.src = e.target.getAttribute('data-src');
+              obsEmbed.unobserve(e.target);
+            }
+          });
+        }, {rootMargin:'300px'});
+        embeds.forEach(function(f){ obsEmbed.observe(f); });
+      }
+    }
+  })();
+
+  /* ============================================================
+     GRADE DO INSTAGRAM — lê os posts de img/grade/
+     Cada arquivo img/grade/post_XXXX.html traz a imagem do post e o
+     link para o Instagram. Aqui esses arquivos são buscados, a imagem
+     e o link são extraídos e a grade da aba NOTÍCIAS é montada com eles.
+     Se a busca falhar, os cards estáticos do HTML continuam valendo.
+     ============================================================ */
+  (function(){
+    var grade = document.getElementById('instaGrade');
+    if (!grade || !window.fetch || !window.DOMParser) return;
+
+    var base     = grade.getAttribute('data-grade-base') || 'img/grade/';
+    var arquivos = (grade.getAttribute('data-posts') || '')
+                     .split(',')
+                     .map(function(n){ return n.trim(); })
+                     .filter(Boolean);
+    if (!arquivos.length) return;
+
+    var LIMITE  = 6;                       // a grade mostra 6 posts
+    var parser  = new DOMParser();
+    var origem  = window.location.origin;
+
+    // só aceita permalinks do Instagram como destino do card
+    function linkValido(url){
+      return /^https:\/\/(www\.)?instagram\.com\//i.test(url);
+    }
+    // só aceita imagens do próprio site (a CSP da página exige img-src 'self')
+    function imagemValida(url){
+      return origem === 'null' || url.indexOf(origem + '/') === 0;
+    }
+
+    function lerPost(arquivo){
+      var enderecoPost = new URL(base + arquivo, window.location.href);
+      return fetch(enderecoPost.href, {credentials:'same-origin'})
+        .then(function(r){ return r.ok ? r.text() : Promise.reject(); })
+        .then(function(html){
+          var doc = parser.parseFromString(html, 'text/html');
+          var img = doc.querySelector('.card img') || doc.querySelector('img');
+          var a   = doc.querySelector('.card-footer a[href]') || doc.querySelector('a[href]');
+          if (!img || !a) return null;
+
+          var imagem = new URL(img.getAttribute('src') || '', enderecoPost).href;
+          var link   = a.getAttribute('href') || '';
+          if (!imagemValida(imagem) || !linkValido(link)) return null;
+
+          var alt = (img.getAttribute('alt') || '').trim();
+          return {
+            imagem: imagem,
+            link:   link,
+            alt:    (alt && alt.toLowerCase() !== 'post psindce')
+                      ? alt
+                      : 'Publicação do @psindce_ no Instagram'
+          };
+        })
+        .catch(function(){ return null; });
+    }
+
+    Promise.all(arquivos.slice(0, LIMITE).map(lerPost)).then(function(posts){
+      var validos = posts.filter(Boolean);
+      if (!validos.length) return;         // mantém os cards estáticos
+
+      var fragmento = document.createDocumentFragment();
+      validos.forEach(function(post){
+        var a = document.createElement('a');
+        a.className = 'insta-item';
+        a.href = post.link;
+        a.target = '_blank';
+        a.rel = 'noopener';
+
+        var img = document.createElement('img');
+        img.loading = 'lazy';
+        img.src = post.imagem;
+        img.alt = post.alt;
+
+        a.appendChild(img);
+        fragmento.appendChild(a);
+      });
+
+      grade.textContent = '';
+      grade.appendChild(fragmento);
+    });
+  })();
+
+  /* ============================================================
+     CAIXA DO FACEBOOK — ajusta a largura do plugin ao container
+     O plugin de Página do Facebook renderiza seu conteúdo internamente
+     na largura pedida pelo parâmetro width= da URL; ele não se adapta
+     sozinho ao tamanho do iframe (adapt_container_width só funciona no
+     embed via SDK, não neste iframe direto). Sem isso, o conteúdo é
+     desenhado para 500px e fica cortado quando a coluna é mais estreita.
+     Aqui a largura real de .fb-caixa é medida e usada para montar a src.
+     ============================================================ */
+  (function(){
+    var caixa   = document.getElementById('fbCaixa');
+    var iframe  = caixa && caixa.querySelector('iframe');
+    if (!caixa || !iframe) return;
+
+    var href = encodeURIComponent(caixa.getAttribute('data-fb-href') || 'https://www.facebook.com/psindce');
+    var LARGURA_MIN = 180;   // mínimo aceito pelo plugin do Facebook
+    var LARGURA_MAX = 500;   // acima disso o plugin não ganha mais detalhe
+    var larguraAtual = null;
+
+    function montarSrc(largura){
+      return 'https://www.facebook.com/plugins/page.php?href=' + href +
+             '&tabs=timeline&width=' + largura + '&height=420' +
+             '&small_header=true&hide_cover=false&show_facepile=false';
+    }
+
+    function ajustar(){
+      var largura = Math.round(caixa.clientWidth);
+      if (!largura) return;
+      largura = Math.max(LARGURA_MIN, Math.min(LARGURA_MAX, largura));
+      // evita recarregar o iframe por variações mínimas (ex.: barra de rolagem)
+      if (larguraAtual !== null && Math.abs(largura - larguraAtual) < 12) return;
+      larguraAtual = largura;
+      iframe.src = montarSrc(largura);
+    }
+
+    ajustar();
+
+    var reajustar;
+    window.addEventListener('resize', function(){
+      clearTimeout(reajustar);
+      reajustar = setTimeout(ajustar, 250);
+    });
+  })();
+</script>
+</body>
+</html>

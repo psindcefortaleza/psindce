@@ -180,74 +180,6 @@
     font-family:var(--font-display);font-size:.875rem;font-weight:700;letter-spacing:.02em;
   }
 
-  #historia h2 em{font-style:normal;color:var(--accent)}
-
-  .linha-tempo{
-    position:relative;padding:3.25rem 0 0;max-width:46rem;margin:0 auto;
-  }
-
-  .linha-tempo::before{
-    content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;
-    background:linear-gradient(var(--border),var(--border) 96%,transparent);
-    transform:translateX(-50%);z-index:0;
-    transform-origin:top center;transition:scale 1.6s ease-out;
-  }
-
-  .linha-tempo.js-linha::before{scale:1 0}
-
-  .linha-tempo.js-linha.in-view::before{scale:1 1}
-
-  .linha-tempo.js-reveal{opacity:1;transform:none}
-
-  .linha-tempo.js-reveal.in-view{animation:none}
-
-  .marco{
-    position:relative;z-index:1;text-align:center;margin:3.5rem 0 2.25rem;
-  }
-
-  .marco span{
-    display:inline-block;background:var(--background);padding:.375rem 1.5rem;
-    font-family:var(--font-display);font-size:.75rem;font-weight:800;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
-    border:2px solid var(--accent);border-radius:999px;
-  }
-
-  .marco:first-child{margin-top:0}
-
-  .balao{
-    position:relative;z-index:1;max-width:88%;width:fit-content;
-    background:var(--card);border:1px solid var(--border);
-    border-radius:20px;padding:1.5rem 1.75rem;margin:1.5rem 0;
-    box-shadow:var(--shadow-sm);
-    transition:translate .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s ease-out,border-color .28s ease-out;
-  }
-
-  .balao:hover{box-shadow:var(--shadow-lg);border-color:var(--border-hover);translate:0 -4px}
-
-  .balao p{color:var(--foreground);font-size:.9688rem;line-height:1.75}
-
-  .balao--esq{
-    margin-right:auto;border-left:4px solid var(--accent);
-    border-top-left-radius:6px;
-  }
-
-  .balao--dir{
-    margin-left:auto;border-right:4px solid var(--verde-medio);
-    border-top-right-radius:6px;text-align:right;
-  }
-
-  .balao--dir p{text-align:left}
-
-  @media(max-width:720px){
-    .linha-tempo::before{left:1.25rem}
-    .balao,.balao--esq,.balao--dir{
-      max-width:calc(100% - 2.75rem);margin-left:2.75rem!important;margin-right:0!important;
-      text-align:left;
-    }
-    .balao--dir p{text-align:left}
-    .marco{text-align:left;padding-left:2.75rem}
-  }
-
   @media(max-width:900px){
     nav{
       display:none;position:absolute;top:100%;left:0;right:0;
@@ -425,7 +357,7 @@
     <p class="js-reveal" style="margin-top:1.125rem">Do diálogo com empregadores às políticas públicas para a categoria, atuamos onde a nossa presença faz diferença real no dia a dia de quem exerce a profissão.</p>
     <p class="js-reveal" style="margin-top:1.125rem"><strong>Sua profissão tem quem lute por ela.</strong></p>
 
-    <p class="js-reveal" style="margin-top:1.125rem"><a href="sobre.html">Conheça nossa história completa →</a></p>
+    <p class="js-reveal" style="margin-top:1.125rem"><a href="sobre.html#historia">Conheça nossa história completa →</a></p>
 
     <div class="caixa js-reveal">
       <h3>Juntos Somos Mais Fortes!</h3>
@@ -471,87 +403,6 @@
           <a class="btn btn-outline" href="https://wa.me/5585991207733?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20o%20Estatuto%20e%20os%20formul%C3%A1rios%20do%20PSINDCE." target="_blank" rel="noopener">Fale conosco</a>
         </div>
       </aside>
-    </div>
-  </div>
-</section>
-
-<!-- HISTÓRIA -->
-<section id="historia">
-  <div class="wrap">
-    <div class="rotulo js-reveal"><span>Nossa trajetória</span></div>
-    <h2 class="center">História do <em>PSINDCE</em></h2>
-    <p class="lead center" style="margin:1rem auto 0">Da mobilização que começou em 1993 até os dias atuais: conheça a trajetória do Sindicato dos Psicólogos do Ceará, contada em ordem cronológica.</p>
-
-    <div class="linha-tempo js-linha js-reveal">
-
-      <div class="marco js-reveal"><span>Como tudo começou...</span></div>
-
-      <div class="balao balao--esq js-reveal reveal-esq">
-        <p>Tudo começou quando, em 1993, a Federação Nacional dos Psicólogos (FENAPSI) encaminhou uma atividade de mobilização em diversos estados aonde não existiam sindicatos de psicólogos, buscando levar representantes para a Plenária Nacional que acontecia naquele ano em São Paulo. Nesta época, existiam os sindicatos de Alagoas, Espírito Santo, Minas Gerais, São Paulo, Rio de Janeiro, Rio Grande do Sul e Santa Catarina.</p>
-      </div>
-
-      <div class="balao balao--dir js-reveal reveal-dir">
-        <p>Então, a psicóloga Meire Viana foi convidada à contribuir neste evento, representando o Ceará. Ao retornar, trouxe na bagagem a missão de iniciar um processo de mobilização dos psicólogos e psicólogas no Ceará rumo ao debate sobre a organização sindical.</p>
-      </div>
-
-      <div class="balao balao--esq js-reveal reveal-esq">
-        <p>Do ponto de vista político sindical, o principal debate ocorria sobre a viabilidade de migração da organização sindical através de Ramos de Atividade, e assim tornava-se importante difundir a reflexão por todos os cantos do Brasil, com vistas a tomada de decisões bem embasadas. Através do movimento político no Sistema Conselhos, em 1992 havia sido definido o Ramo da Saúde para o enquadramento da Psicologia.</p>
-      </div>
-
-      <div class="balao balao--dir js-reveal reveal-dir">
-        <p>Efetuando um resgate histórico, o grupo que se formou como Comissão Pró-Sindicato (Meire Viana, Maria Osmar Costa, Fátima Vidal e João Vicente), localizaram dados sobre a existência por algum período de uma Associação de Psicólogos do Estado do Ceará. Esta associação não mais estava atuante àquela ocasião, mas foram identificados alguns colegas que fizeram parte da mesma, como a psicóloga Terezinha Elias, que passou então a compor conosco como apoio rumo à fundação do Sindicato no Ceará.</p>
-      </div>
-
-      <div class="balao balao--esq js-reveal reveal-esq">
-        <p>Em 1995, aconteceu em São Paulo o IV Congresso Nacional da FENAPSI, estando o Ceará presente com duas representantes (Meire Viana e Fátima Vidal). Havia uma demanda da delegação do Nordeste para que a composição da direção executiva da FENAPSI contemplasse uma vaga para um representante desta região. Foi então indicado o nome da psicóloga Meire Viana e também o da psicóloga Fátima Vidal para uma das vagas da Diretoria Nordeste.</p>
-      </div>
-
-      <div class="balao balao--dir js-reveal reveal-dir">
-        <p>Ampliando o debate sobre a organização sindical nos estados, liderada pela FENAPSI, avaliou-se a importância de inicialmente se consolidar a organização sindical da categoria dos Psicólogos, para num segundo momento avaliar como encaminhar o movimento através dos Ramos de Atividade.</p>
-      </div>
-
-      <div class="marco js-reveal"><span>Fundação do PSINDCE</span></div>
-
-      <div class="balao balao--esq js-reveal reveal-esq">
-        <p>Assim, com o apoio da FENAPSI do ponto de vista político-estrutural e do CRP-11-2º Plenário, apoiando do ponto de vista da divulgação das ações sindicais, em 4 de dezembro de 1995, em Assembléia Estadual, foi fundado o PSINDCE - Sindicato dos Psicólogos do Estado do Ceará, com uma gestão provisória composta por: Meire Viana, Fátima Vidal, Maria Osmar Costa (Amada), João Vicente Menescal, Lirian Mascarenhas, Eduardo Almeida, Gislene Macedo, Maria das Dores Lima e Marinina Gruska. Logo na sua fundação, o PSINDCE definiu sua filiação à FENAPSI.</p>
-      </div>
-
-      <div class="balao balao--dir js-reveal reveal-dir">
-        <p>O ano de 1996 foi de estruturação e nesta ocasião foi editado o primeiro Boletim PSINDCE, trazendo informações, orientações sindicais e também abrindo o debate sobre assuntos importantes para a categoria, entre eles o piso salarial.</p>
-      </div>
-
-      <div class="balao balao--esq js-reveal reveal-esq">
-        <p>Em 1997, aconteceu o primeiro processo eleitoral do PSINDCE, sendo eleita a Gestão "ENCONTROS" contendo membros para todos os cargos e promovendo também a filiação do PSINDCE à Central Única dos Trabalhadores (CUT).</p>
-      </div>
-
-      <div class="marco js-reveal"><span>...enquanto isso, o PSINDCE esteve em várias sedes...</span></div>
-
-      <div class="balao balao--dir js-reveal reveal-dir">
-        <p>A primeira sede do PSINDCE foi na Av. Santos Dumont, contando com o apoio da FENAPSI na manutenção e do CRP11 (IIº Plenário) com apoio material. Ao longo da história o PSINDCE passou por diversos outros endereços, mas em alguns períodos em que a questão financeira se fez imperiosa, foi importante manter o endereço oficial em Coworking(s) inclusive recentemente, como ocorreu após a reforma trabalhista de 2017.</p>
-      </div>
-
-      <div class="marco js-reveal"><span>... e a história continua...</span></div>
-
-      <div class="balao balao--esq js-reveal reveal-esq">
-        <p>Passados vários anos desde sua fundação, as gestões do PSINDCE se sucederam entre conquistas e dificuldades, mas sempre procurando abranger um maior número de profissionais. É importante que se diga que nem sempre foi fácil manter o sindicato em pé, mas, graças à perseverança de alguns, hoje vivemos um momento de maior participação e crescimento.</p>
-      </div>
-
-      <div class="balao balao--dir js-reveal reveal-dir">
-        <p>A gestão atual vem se encontrando para abrir novos canais de comunicação e ampliar os debates com a sociedade acerca da importância da(o) psicóloga(o). Acreditamos que, mesmo não sendo uma tarefa fácil, não custa nada tentar.</p>
-      </div>
-
-      <div class="balao balao--esq js-reveal reveal-esq">
-        <p>Para fortalecer e melhorar nossa luta, foi realizado um planejamento estratégico no final de 2012, coordenado pelo diretor Rodrigo Meireles. Com esse planejamento, foi possível rever e redefinir nossas metas, além de repensar nossas estratégias de ação, analisando as dificuldades e reforçando as virtudes. Assim, o PSINDCE entrou em 2013 renovado, com disposição nova, a ponto de participar melhor dos debates e manifestações políticas, junto com a nossa categoria e em sintonia com outras entidades sindicais.</p>
-      </div>
-
-      <div class="balao balao--dir js-reveal reveal-dir">
-        <p>Iniciamos uma inédita política de convênios, com o lançamento do Cartão do Associado PSINDCE, e também foi possível inaugurar uma fase de comunicação mais intensa, com um novo site e novos canais de comunicação. Além disso, conseguimos voltar a ter uma sede no Centro da cidade de Fortaleza para dar mais acesso a todas(os) as(os) que precisam do sindicato.</p>
-      </div>
-
-      <div class="balao balao--esq js-reveal reveal-esq">
-        <p>No último ano, acompanhamos momentos de grande tensão entre os trabalhadores da Prefeitura Municipal de Fortaleza por conta da mudança de gestão. O PSINDCE esteve a frente de várias discussões e manifestações, procurando mediar os problemas gerados entre as gestões municipais e os trabalhadores. Os processos ainda continuam e agora queremos ampliar nosso diálogo em outros lugares, principalmente no interior do estado. Esta ampliação permanece ainda um desafio, mas contamos com o apoio de todas(os) as(os) profissionais para que isso aconteça.</p>
-      </div>
-
     </div>
   </div>
 </section>
@@ -711,7 +562,7 @@
         <ul>
           <li><a href="#topo">Página inicial</a></li>
           <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="#historia">História</a></li>
+          <li><a href="sobre.html#historia">História</a></li>
           <li><a href="#onde">Onde estamos</a></li>
           <li><a href="#contato">Contato</a></li>
           <li><a href="noticias.html">Notícias</a></li>

@@ -180,6 +180,29 @@
     font-family:var(--font-display);font-size:.875rem;font-weight:700;letter-spacing:.02em;
   }
 
+  /* --- O QUE DEFENDEMOS --------------------------------------------------
+     Foto em retrato à esquerda, texto da seção à direita; abaixo de 900px
+     as duas colunas empilham e a foto vira um recorte panorâmico.        */
+  .missao-grid{
+    display:grid;grid-template-columns:.78fr 1fr;
+    gap:clamp(2rem,4.5vw,3.5rem);align-items:center;
+  }
+
+  .missao-foto{
+    border-radius:16px;overflow:hidden;line-height:0;
+    border:1px solid var(--border);box-shadow:var(--shadow-lg);
+  }
+
+  .missao-foto img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+
+  /* texto corrido justificado — com hifenização, para o pt-BR não abrir
+     rios de espaço entre as palavras nas colunas mais estreitas */
+  .defendemos p{
+    text-align:justify;-webkit-hyphens:auto;hyphens:auto;
+  }
+
+  .missao-texto p{max-width:52ch}
+
   /* --- QUIZ DE PERFIL ---------------------------------------------------
      Três perguntas encadeadas; o resultado é montado pelo script no fim
      da página. Sem JS a seção inteira fica oculta (ver <noscript>).      */
@@ -315,7 +338,8 @@
     .pill-list{flex-direction:column;align-items:flex-start;gap:.25rem}
     .pill{padding:.75rem 0;min-height:44px}
     .menu-btn{display:block}
-    .estatuto-grid,.sede-grid,.contato-grid,.cards,.footer-grid{grid-template-columns:1fr}
+    .estatuto-grid,.sede-grid,.contato-grid,.cards,.footer-grid,.missao-grid{grid-template-columns:1fr}
+    .missao-foto img{aspect-ratio:4/3;object-position:center 38%}
     .estatuto-nota{position:static}
     section{padding:4rem 0}
     .hero{padding:5.5rem 0 4rem}
@@ -467,15 +491,24 @@
 
 
 <!-- MISSÃO -->
-<section class="muted">
+<section class="muted defendemos">
   <div class="wrap">
-    <div class="rotulo esq js-reveal"><span>O que defendemos</span></div>
-    <h2 class="js-reveal" style="margin-bottom:1.5rem">Psicologia com Voz e Representação</h2>
-    <p class="js-reveal">Todo profissional de Psicologia merece ser ouvido, valorizado e representado. É por isso que o PSINDCE existe: para transformar demandas individuais em força coletiva.</p>
-    <p class="js-reveal" style="margin-top:1.125rem">Do diálogo com empregadores às políticas públicas para a categoria, atuamos onde a nossa presença faz diferença real no dia a dia de quem exerce a profissão.</p>
-    <p class="js-reveal" style="margin-top:1.125rem"><strong>Sua profissão tem quem lute por ela.</strong></p>
+    <div class="missao-grid">
+      <figure class="missao-foto js-reveal reveal-esq">
+        <img src="img/defendemos/defendemos.webp" width="960" height="1280" loading="lazy" decoding="async"
+             alt="Profissionais de psicologia reunidos em roda, ouvindo uma colega que apresenta um documento.">
+      </figure>
 
-    <p class="js-reveal" style="margin-top:1.125rem"><a href="sobre.html#historia">Conheça nossa história completa →</a></p>
+      <div class="missao-texto">
+        <div class="rotulo esq js-reveal"><span>O que defendemos</span></div>
+        <h2 class="js-reveal" style="margin-bottom:1.5rem">Psicologia com Voz e Representação</h2>
+        <p class="js-reveal">Todo profissional de Psicologia merece ser ouvido, valorizado e representado. É por isso que o PSINDCE existe: para transformar demandas individuais em força coletiva.</p>
+        <p class="js-reveal" style="margin-top:1.125rem">Do diálogo com empregadores às políticas públicas para a categoria, atuamos onde a nossa presença faz diferença real no dia a dia de quem exerce a profissão.</p>
+        <p class="js-reveal" style="margin-top:1.125rem"><strong>Sua profissão tem quem lute por ela.</strong></p>
+
+        <p class="js-reveal" style="margin-top:1.125rem"><a href="sobre.html#historia">Conheça nossa história completa →</a></p>
+      </div>
+    </div>
 
     <div class="caixa js-reveal">
       <h3>Juntos Somos Mais Fortes!</h3>

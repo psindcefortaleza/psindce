@@ -460,6 +460,15 @@
   }
   .chamada-item a:hover h4{color:var(--accent)}
 
+  /* --- ARTE PADRÃO "NOVIDADES EM BREVE" ---
+     Matérias que ainda não têm foto própria usam a arte
+     img/noticias/novidades-em-breve.webp com a classe .sem-foto.
+     A classe marca o que falta trocar (é só procurar por "sem-foto" no arquivo),
+     pinta o fundo no creme da peça enquanto a imagem carrega e escurece um pouco
+     a arte, para ela não competir com as fotos reais das outras matérias.
+     Quanto menor o brightness, mais escura a arte fica. */
+  .sem-foto{background:#f5ede7;filter:brightness(.82)}
+
   /* --- VÍDEOS (fachada leve: só carrega o iframe ao clicar) --- */
   .videos{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
   .videos .video-item:first-child{grid-column:1/-1}
@@ -920,7 +929,9 @@
 
           <article class="materia">
             <a class="materia-foto" href="#atividades">
-              <img loading="lazy" src="https://psindce.org.br/ws/media-library/e137b44a4892447298d01e3ce9eb00f2/convite-psindce.jpg" alt="Convite para assembleia do PSINDCE">
+              <img class="sem-foto" loading="lazy" width="1672" height="941"
+                   src="img/noticias/novidades-em-breve.webp"
+                   alt="Arte do PSINDCE com a mensagem: novidades em breve">
             </a>
             <div class="materia-corpo">
               <div class="destaque-tags">
@@ -937,7 +948,8 @@
           <div class="chamadas">
             <article class="chamada-item">
               <a class="miniatura" href="#atividades">
-                <img loading="lazy" src="https://psindce.org.br/ws/media-library/b8db99f05a804a558a9a5e9d76ad1af5/esperancar.jpg" alt="">
+                <img class="sem-foto" loading="lazy" width="1672" height="941"
+                     src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
               <a href="#atividades">
                 <span class="editoria verde">Participação</span>
@@ -948,7 +960,8 @@
 
             <article class="chamada-item">
               <a class="miniatura" href="#atividades">
-                <img loading="lazy" src="https://psindce.org.br/ws/media-library/53f54f8592f0463696e8b36a1d00f571/sug-132022---piso-e-jornada.png" alt="">
+                <img class="sem-foto" loading="lazy" width="1672" height="941"
+                     src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
               <a href="#atividades">
                 <span class="editoria">Piso e jornada</span>
@@ -959,7 +972,8 @@
 
             <article class="chamada-item">
               <a class="miniatura" href="#campanhas">
-                <img loading="lazy" src="https://psindce.org.br/ws/media-library/a29019b4e0cc4ebb8e47a7abeb39a847/campanha-filiacao-2.jpg" alt="">
+                <img class="sem-foto" loading="lazy" width="1672" height="941"
+                     src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
               <a href="#campanhas">
                 <span class="editoria verde">Pautas</span>
@@ -979,7 +993,9 @@
 
           <article class="materia">
             <a class="materia-foto" href="https://www.sympla.com.br/psindce-20241-resistencia__2417666" target="_blank" rel="noopener">
-              <img loading="lazy" src="https://psindce.org.br/ws/media-library/a39473a8f85248dcb4094c92ddddab89/filiacao-2024-b.jpg" alt="Campanha associativa 2024">
+              <img class="sem-foto" loading="lazy" width="1672" height="941"
+                   src="img/noticias/novidades-em-breve.webp"
+                   alt="Arte do PSINDCE com a mensagem: novidades em breve">
             </a>
             <div class="materia-corpo">
               <div class="destaque-tags"><span class="editoria">Filiação</span></div>
@@ -995,7 +1011,8 @@
           <div class="chamadas">
             <article class="chamada-item">
               <a class="miniatura" href="mailto:eleicoespsindce2024@gmail.com">
-                <img loading="lazy" src="https://psindce.org.br/ws/media-library/77d48adf8f3d43b2941378f2105fc221/edital-publicado.jpg" alt="">
+                <img class="sem-foto" loading="lazy" width="1672" height="941"
+                     src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
               <a href="mailto:eleicoespsindce2024@gmail.com">
                 <span class="editoria">Eleições</span>
@@ -1006,7 +1023,8 @@
 
             <article class="chamada-item">
               <a class="miniatura" href="#campanhas">
-                <img loading="lazy" src="https://psindce.org.br/ws/media-library/a29019b4e0cc4ebb8e47a7abeb39a847/campanha-filiacao-2.jpg" alt="">
+                <img class="sem-foto" loading="lazy" width="1672" height="941"
+                     src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
               <a href="#campanhas">
                 <span class="editoria verde">Pautas</span>

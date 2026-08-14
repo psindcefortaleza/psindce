@@ -267,12 +267,22 @@
   }
 
   /* --- MOSAICO DE DESTAQUES --- */
+  /* Grade de cards iguais: todas as colunas têm a mesma largura e todos os
+     cards de uma mesma linha esticam para a mesma altura (align-items:stretch,
+     o padrão do grid). Nenhum card tem tratamento especial — para publicar um
+     novo destaque basta copiar um <article> no HTML: a grade acomoda 3 por
+     linha e quebra sozinha para 2 e depois 1 coluna nas telas menores.     */
   .mosaico{
-    display:grid;grid-template-columns:1.6fr 1fr;
-    grid-template-rows:repeat(2,1fr);gap:1.25rem;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(21rem,1fr));
+    /* align-items:start: cada card fica com a própria altura. Fechados eles
+       têm a mesma medida (título, resumo e botão ocupam as mesmas linhas em
+       todos), e quando um abre em "continuar leitura" só ele cresce — os
+       vizinhos não esticam junto nem ficam com verde sobrando.            */
+    align-items:start;
+    gap:1.25rem;
     margin-top:2.5rem;
   }
-  .mosaico>a:first-child{grid-row:span 2}
   .destaque{
     position:relative;display:block;overflow:hidden;
     border-radius:14px;min-height:14rem;
@@ -280,7 +290,6 @@
     box-shadow:var(--shadow-md);
     transition:translate .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s ease-out;
   }
-  .mosaico>a:first-child{min-height:29rem}
   .destaque:hover{translate:0 -4px;box-shadow:var(--shadow-lg)}
   .destaque img{
     position:absolute;inset:0;width:100%;height:100%;
@@ -302,37 +311,95 @@
   }
   .destaque-txt .data{color:rgba(255,255,255,.78)}
   .destaque h3{color:#fff;font-size:1.125rem;line-height:1.3}
-  .mosaico>a:first-child .destaque-txt{padding:2rem}
-  .mosaico>a:first-child h3{font-size:clamp(1.375rem,2.6vw,1.875rem);line-height:1.2}
   .destaque-tags{display:flex;gap:.5rem;flex-wrap:wrap}
 
   /* --- DESTAQUE EM PAINEL: arte inteira em cima, texto embaixo ------------
-     O retângulo da foto segue a proporção da própria arte, em vez de um
-     recorte fixo — assim a peça preenche o card de ponta a ponta, sem
-     sobra de off-white nas laterais nem corte no logo ou na chamada. Cada
-     card informa a sua em --foto (ex.: style="--foto:1672/941"); sem isso
-     vale a peça quadrada de campanha. O texto ocupa uma faixa própria no
-     verde, sem véu por cima.                                              */
+     Todos os cards usam a MESMA faixa de arte (4/3): a linha do texto começa
+     na mesma altura em todos e a grade fica regular. A arte preenche a faixa
+     de ponta a ponta (object-fit:cover), sem barra nem moldura — por isso as
+     peças ficam salvas em 4/3 na pasta img/noticias/destaqueN (arquivos
+     -4x3.webp). Peça nova: exportar em 4:3 (ex.: 1200×900) e a faixa a
+     recebe inteira, sem corte no logo ou na chamada.
+     O texto ocupa uma faixa própria no verde, sem véu por cima.           */
   .destaque--painel{display:flex;flex-direction:column;background:var(--verde)}
   .destaque--painel::after{display:none}
   .destaque-foto{
-    flex:0 0 auto;aspect-ratio:var(--foto, 1080/1074);
+    flex:0 0 auto;aspect-ratio:var(--foto, 4/3);
     position:relative;overflow:hidden;
-    background:#F8F6F3;
+    background:var(--fundo,#F8F6F3);
   }
   .destaque--painel .destaque-foto img{
     position:absolute;inset:0;width:100%;height:100%;
     object-fit:cover;object-position:center;
   }
   .destaque--painel .destaque-txt{
-    flex:0 0 auto;height:auto;min-height:0;justify-content:flex-start;
+    flex:1 1 auto;height:auto;min-height:0;justify-content:flex-start;
   }
-  .mosaico>a.destaque--painel .destaque-txt{padding:1.375rem 2rem 1.625rem}
-  .mosaico>a.destaque--painel h3{font-size:clamp(1.1875rem,2vw,1.4375rem)}
+  /* O resumo do card fica em 3 linhas em todos, para os blocos de texto terem
+     a mesma altura e o botão não sobrar longe da última linha. O texto que
+     passa disso não some: aparece inteiro em "continuar leitura", que também
+     libera o resumo do limite de linhas.                                   */
+  .destaque-txt>.destaque-chamada{
+    min-height:calc(3 * 1.55em);
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;
+    overflow:hidden;
+  }
+  .destaque.aberto .destaque-txt>.destaque-chamada{
+    display:block;overflow:visible;
+  }
+  .mosaico>.destaque.destaque--painel .destaque-txt{padding:1.375rem 1.5rem 1.625rem}
+  /* Título em duas linhas fixas (o min-height segura a altura quando cabe em
+     uma só): com o resumo em 3 linhas, o bloco de texto fica igual em todos
+     os cards e não sobra vão nenhum antes do botão.                        */
+  .mosaico>.destaque.destaque--painel h3{
+    font-size:1.1875rem;line-height:1.3;
+    min-height:2.6em;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+    overflow:hidden;
+  }
   .destaque-chamada{
     color:rgba(255,255,255,.88);font-size:.9375rem;line-height:1.55;max-width:62ch;
   }
   .destaque-chamada b{color:#fff;font-weight:700}
+
+  /* --- CONTINUAR LEITURA: o card mostra o resumo e abre o texto completo ---
+     A raiz do card é <article>, e não <a>, porque um botão não pode ficar
+     dentro de um link. A arte segue clicando para a publicação de origem,
+     pela âncora .destaque-capa, que herda o lugar da foto na coluna flex. */
+  .destaque-capa{display:block;flex:0 0 auto}
+  .destaque-completo{display:flex;flex-direction:column;gap:.625rem}
+  .destaque-completo[hidden]{display:none}
+  .destaque-lista{list-style:none;display:flex;flex-direction:column;gap:.375rem}
+  .destaque-lista li{
+    position:relative;padding-left:1.375rem;max-width:62ch;
+    color:rgba(255,255,255,.88);font-size:.9375rem;line-height:1.55;
+  }
+  .destaque-lista li::before{
+    content:"✓";position:absolute;left:0;top:0;
+    font-weight:800;color:#fff;
+  }
+  .destaque-fonte{
+    align-self:flex-start;margin-top:.125rem;
+    font-family:var(--font-display);font-size:.8125rem;font-weight:700;
+    color:#fff;text-decoration:underline;text-underline-offset:3px;
+  }
+  .destaque-fonte:hover{color:rgba(255,255,255,.8)}
+  .btn-continuar{
+    align-self:flex-start;margin-top:.375rem;
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:transparent;border:2px solid rgba(255,255,255,.45);
+    border-radius:999px;padding:.5rem 1.125rem;
+    font-family:var(--font-display);font-size:.75rem;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;color:#fff;
+    cursor:pointer;touch-action:manipulation;
+    transition:background .2s ease-out,border-color .2s ease-out;
+  }
+  .btn-continuar:hover{background:rgba(255,255,255,.14);border-color:#fff}
+  .btn-continuar svg{
+    width:.6875rem;height:.6875rem;fill:currentColor;flex:none;
+    transition:transform .25s ease-out;
+  }
+  .btn-continuar[aria-expanded="true"] svg{transform:rotate(180deg)}
 
   /* --- GRADE PRINCIPAL: conteúdo + coluna lateral --- */
   .grade-portal{
@@ -442,9 +509,16 @@
   .audio-card iframe{width:100%;border:0;border-radius:12px;display:block}
   .audio-card audio{width:100%;margin-top:.25rem;border-radius:999px}
   .audio-nativo{
+    position:relative;isolation:isolate;overflow:hidden;
     background:var(--card);border:1px solid var(--border);
     border-left:4px solid var(--verde-medio);border-radius:12px;
     padding:1.5rem;box-shadow:var(--shadow-sm);
+  }
+  /* marca d'água do bloco: fica atrás do texto, sem baixar a legibilidade */
+  .audio-nativo::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:url('img/noticias/novidades-em-breve.webp') center/cover no-repeat;
+    opacity:.12;
   }
 
   /* --- REDES SOCIAIS --- */
@@ -551,12 +625,16 @@
 
   /* --- ESPAÇOS AINDA NÃO PREENCHIDOS (some quando o conteúdo entra) --- */
   .video-quadro.vazio{cursor:default;
-    background:repeating-linear-gradient(135deg,var(--verde) 0 12px,#123f25 12px 24px)}
-  .video-quadro.vazio:hover .play{transform:translate(0,0) scale(1)}
+    background:var(--verde) url('img/noticias/novidades-em-breve.webp') center/cover no-repeat}
+  .video-quadro.vazio::after{
+    background:linear-gradient(0deg,rgba(15,58,33,.14),rgba(15,58,33,.04));
+  }
+  .video-quadro.vazio:hover::after{opacity:1}
+  .video-quadro.vazio .play{display:none}
   .embed-vazio{
-    min-height:152px;padding:1.25rem;border-radius:12px;
+    min-height:152px;aspect-ratio:16/9;border-radius:12px;
     border:2px dashed var(--border-hover);
-    background:var(--muted);color:var(--muted-foreground);
+    background:var(--muted) url('img/noticias/novidades-em-breve.webp') center/cover no-repeat;
   }
 
   /* --- RESPONSIVO --- */
@@ -569,9 +647,8 @@
     .agora-pista{height:2.5rem}
     .agora-fita{animation-duration:26s}
     .pagina-topo{padding:2.5rem 0 2rem}
-    .mosaico{grid-template-columns:1fr;grid-template-rows:none}
-    .mosaico>a:first-child{grid-row:auto;min-height:18rem}
-    .mosaico>a.destaque--painel{min-height:0}
+    .mosaico{grid-template-columns:1fr}
+    .mosaico>.destaque.destaque--painel{min-height:0}
     .materia{grid-template-columns:1fr}
     .videos,.audios,.redes-portal{grid-template-columns:1fr}
     .coluna-lateral{grid-template-columns:1fr}
@@ -649,11 +726,13 @@
     <div class="agora-pista">
       <!-- a fita é duplicada no HTML para o rodízio ficar contínuo -->
       <div class="agora-fita">
+        <a href="#destaque">PSINDCE apoia o MOVPSI e a 1ª Marcha Nacional dos Psicólogos</a>
         <a href="#destaque">Jornada de até 30h é aprovada na Câmara dos Deputados</a>
         <a href="#destaque">Renovação e filiação do PSINDCE já está aberta</a>
         <a href="#atividades">PL 3086/2024 do piso salarial avança no Senado Federal</a>
         <a href="#campanhas">Eleições PSINDCE 2024: edital publicado</a>
         <a href="#podcast">Podcast Psicologia em Pauta — saúde mental de quem cuida</a>
+        <a href="#destaque">PSINDCE apoia o MOVPSI e a 1ª Marcha Nacional dos Psicólogos</a>
         <a href="#destaque">Jornada de até 30h é aprovada na Câmara dos Deputados</a>
         <a href="#destaque">Renovação e filiação do PSINDCE já está aberta</a>
         <a href="#atividades">PL 3086/2024 do piso salarial avança no Senado Federal</a>
@@ -682,14 +761,17 @@
     <div class="rotulo js-reveal"><span>Em destaque</span></div>
 
     <div class="mosaico">
-      <a class="destaque destaque--painel js-reveal"
-         href="https://www.sympla.com.br/evento-online/renovacao-e-filiacao-do-psindce/3470212"
-         target="_blank" rel="noopener">
-        <div class="destaque-foto">
-          <img loading="lazy" width="1080" height="1074"
-               src="img/noticias/destaque1/renovacao-filiacao-psindce.webp"
-               alt="Renovação e filiação do PSINDCE — fortaleça o Sindicato, fortaleça a Psicologia; renovar e se filiar é investir na categoria e na nossa luta coletiva">
-        </div>
+      <article class="destaque destaque--painel js-reveal">
+        <a class="destaque-capa"
+           href="https://www.sympla.com.br/evento-online/renovacao-e-filiacao-do-psindce/3470212"
+           target="_blank" rel="noopener"
+           aria-label="Renovação e filiação do PSINDCE — abrir a página de inscrição">
+          <div class="destaque-foto">
+            <img loading="lazy" width="1448" height="1086"
+                 src="img/noticias/destaque1/renovacao-filiacao-psindce-4x3.webp"
+                 alt="Renovação e filiação do PSINDCE — fortaleça o Sindicato, fortaleça a Psicologia; renovar e se filiar é investir na categoria e na nossa luta coletiva">
+          </div>
+        </a>
         <div class="destaque-txt">
           <div class="destaque-tags">
             <span class="editoria">Filiação</span>
@@ -698,43 +780,125 @@
           <h3>Renovação e filiação do PSINDCE</h3>
           <p class="destaque-chamada">
           Fortalecer o PSINDCE é fortalecer a luta em defesa da Psicologia e dos direitos
-          da categoria. Ao renovar sua filiação ou se tornar sindicalizado(a), você contribui
-          para a construção de um sindicato mais forte, representativo e preparado para
-          enfrentar os desafios da profissão em nosso estado.</p>
-          <p class="destaque-chamada">
-          A participação de cada psicóloga e psicólogo é fundamental para ampliar as conquistas
-          e fortalecer a organização coletiva. <b>Faça sua renovação ou filie-se ao PSINDCE</b>
-          e siga conosco na defesa da valorização profissional e dos direitos da categoria.</p>
+          da categoria.</p>
+          <div class="destaque-completo" id="destaque-filiacao" hidden>
+            <p class="destaque-chamada">
+            Ao renovar sua filiação ou se tornar sindicalizado(a), você contribui para a
+            construção de um sindicato mais forte, representativo e preparado para enfrentar
+            os desafios da profissão em nosso estado.</p>
+            <p class="destaque-chamada">
+            A participação de cada psicóloga e psicólogo é fundamental para ampliar as
+            conquistas e fortalecer a organização coletiva. <b>Faça sua renovação ou filie-se
+            ao PSINDCE</b> e siga conosco na defesa da valorização profissional e dos
+            direitos da categoria.</p>
+            <a class="destaque-fonte"
+               href="https://www.sympla.com.br/evento-online/renovacao-e-filiacao-do-psindce/3470212"
+               target="_blank" rel="noopener">Renovar ou me filiar</a>
+          </div>
+          <button class="btn-continuar" type="button"
+                  aria-expanded="false" aria-controls="destaque-filiacao">
+            <span class="btn-continuar-txt">Continuar leitura</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16 5 9h14z"/></svg>
+          </button>
         </div>
-      </a>
+      </article>
 
-      <a class="destaque destaque--painel js-reveal" style="--foto:1672/941"
-         href="https://www.instagram.com/reel/DYQVZrktj1u/" target="_blank" rel="noopener">
-        <div class="destaque-foto">
-          <img loading="lazy" width="1672" height="941"
-               src="img/noticias/destaque2/jornada-30-horas-camara.webp"
-               alt="Psicologia 30 horas, a luta continua — vitória no Congresso: PL 1214/2019 é aprovado na Câmara">
-        </div>
+      <article class="destaque destaque--painel js-reveal">
+        <a class="destaque-capa"
+           href="https://www.instagram.com/reel/DYQVZrktj1u/" target="_blank" rel="noopener"
+           aria-label="Jornada de até 30h é aprovada na Câmara — abrir publicação no Instagram">
+          <div class="destaque-foto">
+            <img loading="lazy" width="1200" height="900"
+                 src="img/noticias/destaque2/jornada-30-horas-camara-4x3.webp"
+                 alt="Psicologia 30 horas, a luta continua — vitória no Congresso: PL 1214/2019 é aprovado na Câmara">
+          </div>
+        </a>
         <div class="destaque-txt">
           <div class="destaque-tags">
             <span class="editoria">Piso e jornada</span>
             <span class="data" style="align-self:center">Ago 2026</span>
           </div>
-          <h3>Jornada de até 30h é aprovada na Câmara dos Deputados</h3>
+          <h3>Jornada de até 30h é aprovada na Câmara</h3>
           <p class="destaque-chamada">
-          Avanço histórico para a Psicologia: resultado da atuação do Sistema Conselhos
-          de Psicologia e da mobilização da categoria. O projeto segue agora para o
-          Senado Federal — acompanhe e fortaleça essa conquista.</p>
+          A Psicologia conquistou um avanço histórico: a jornada de até 30 horas foi
+          aprovada na Câmara.</p>
+          <div class="destaque-completo" id="destaque-jornada" hidden>
+            <p class="destaque-chamada">
+            A aprovação é resultado de atuação permanente do Sistema Conselhos de Psicologia
+            e da forte mobilização da categoria.</p>
+            <p class="destaque-chamada">
+            Essa é uma pauta que fala sobre valorização profissional, condições dignas de
+            trabalho e qualidade do cuidado oferecido à população.</p>
+            <p class="destaque-chamada">
+            Essa conquista não acontece por acaso. Ela é fruto de articulação política,
+            incidência institucional e, principalmente, da mobilização coletiva de
+            psicólogas e psicólogos em todo o País.</p>
+            <p class="destaque-chamada">
+            <b>Mas a luta continua.</b> O projeto agora segue para o Senado Federal — e
+            seguimos mobilizadas(os) até a aprovação definitiva. Acompanhe, participe e
+            fortaleça essa conquista!</p>
+            <a class="destaque-fonte" href="https://www.instagram.com/reel/DYQVZrktj1u/"
+               target="_blank" rel="noopener">Ver publicação no Instagram</a>
+          </div>
+          <button class="btn-continuar" type="button"
+                  aria-expanded="false" aria-controls="destaque-jornada">
+            <span class="btn-continuar-txt">Continuar leitura</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16 5 9h14z"/></svg>
+          </button>
         </div>
-      </a>
+      </article>
 
-      <a class="destaque js-reveal" href="#campanhas">
-        <img loading="lazy" src="https://psindce.org.br/ws/media-library/77d48adf8f3d43b2941378f2105fc221/edital-publicado.jpg" alt="">
+      <article class="destaque destaque--painel js-reveal">
+        <a class="destaque-capa"
+           href="https://www.instagram.com/p/DbA4PETO3mU/" target="_blank" rel="noopener"
+           aria-label="Nota de apoio ao MOVPSI — abrir publicação no Instagram">
+          <div class="destaque-foto">
+            <img loading="lazy" width="1448" height="1086"
+                 src="img/noticias/destaque3/nota-apoio-movpsi-marcha-nacional-4x3.webp"
+                 alt="Nota de apoio: o Sindicato dos Psicólogos do Ceará apoia o MOVPSI — Movimento Valoriza Psicologia Brasil — e a 1ª Marcha Nacional dos Psicólogos, em 19 de agosto, em Brasília/DF, pelas pautas da regulamentação da psicoterapia, do piso salarial nacional e da jornada de 30 horas">
+          </div>
+        </a>
         <div class="destaque-txt">
-          <div class="destaque-tags"><span class="editoria verde">Eleições</span></div>
-          <h3>Eleições PSINDCE 2024: edital publicado</h3>
+          <div class="destaque-tags">
+            <span class="editoria">Mobilização</span>
+            <span class="data" style="align-self:center">Ago 2026</span>
+          </div>
+          <h3>PSINDCE apoia o MOVPSI e a 1ª Marcha Nacional</h3>
+          <p class="destaque-chamada">
+          <b>A união que fortalece a categoria!</b> PSINDCE e MOVPSI caminham juntos pela
+          Psicologia brasileira.</p>
+          <div class="destaque-completo" id="destaque-movpsi" hidden>
+            <p class="destaque-chamada">
+            O MOVPSI — Movimento Valoriza Psicologia Brasil reúne profissionais de todo o
+            País, e o PSINDCE caminha junto nessa mobilização.</p>
+            <p class="destaque-chamada">
+            Acreditamos que a união entre sindicatos, movimentos sociais e profissionais é
+            o caminho para fortalecer nossa categoria e ampliar a proteção da sociedade por
+            meio de uma atuação ética, técnica e qualificada.</p>
+            <p class="destaque-chamada">
+            Nosso apoio à mobilização nacional segue em defesa de pautas fundamentais:</p>
+            <ul class="destaque-lista">
+              <li>Regulamentação da psicoterapia como prática privativa de psicólogos e
+              médicos psiquiatras;</li>
+              <li>Instituição do piso salarial nacional para psicólogos;</li>
+              <li>Aprovação da jornada de 30 horas no Senado Federal.</li>
+            </ul>
+            <p class="destaque-chamada">
+            <b>No dia 19 de agosto, estaremos em Brasília</b> para a 1ª Marcha Nacional dos
+            Psicólogos. Este movimento histórico somará forças em prol da valorização da
+            nossa profissão.</p>
+            <p class="destaque-chamada">
+            Juntos, fortalecemos a categoria. Juntos, protegemos a sociedade.</p>
+            <a class="destaque-fonte" href="https://www.instagram.com/p/DbA4PETO3mU/"
+               target="_blank" rel="noopener">Ver publicação no Instagram</a>
+          </div>
+          <button class="btn-continuar" type="button"
+                  aria-expanded="false" aria-controls="destaque-movpsi">
+            <span class="btn-continuar-txt">Continuar leitura</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16 5 9h14z"/></svg>
+          </button>
         </div>
-      </a>
+      </article>
     </div>
   </div>
 </section>
@@ -1039,6 +1203,7 @@
         <div class="aside-bloco js-reveal">
           <h3>Últimas publicações</h3>
           <div class="ultimas">
+            <a href="#destaque"><span>PSINDCE apoia o MOVPSI e a 1ª Marcha Nacional dos Psicólogos</span></a>
             <a href="#destaque"><span>Jornada de até 30h é aprovada na Câmara dos Deputados</span></a>
             <a href="#destaque"><span>Renovação e filiação do PSINDCE</span></a>
             <a href="#atividades"><span>PL 3086/2024 avança no Senado Federal</span></a>
@@ -1195,6 +1360,28 @@
       ['.audios',   '.audio-card',    0.10]
     ]);
 
+    /* --- DESTAQUES: "continuar leitura" abre o texto completo no card ----
+       O card mostra só o resumo; o restante fica em .destaque-completo com
+       [hidden] e entra no lugar ao clicar. Sem JS, o bloco continua oculto
+       e a arte segue levando para a publicação de origem.                   */
+    Array.prototype.forEach.call(document.querySelectorAll('.btn-continuar'), function(botao){
+      var completo = document.getElementById(botao.getAttribute('aria-controls'));
+      var rotulo = botao.querySelector('.btn-continuar-txt');
+      if (!completo) return;
+
+      var card = botao.closest ? botao.closest('.destaque') : null;
+
+      botao.addEventListener('click', function(){
+        var aberto = botao.getAttribute('aria-expanded') === 'true';
+        botao.setAttribute('aria-expanded', aberto ? 'false' : 'true');
+        completo.hidden = aberto;
+        rotulo.textContent = aberto ? 'Continuar leitura' : 'Mostrar menos';
+        /* .aberto tira o limite de 3 linhas do resumo enquanto o card está
+           aberto, para o texto não ficar cortado no meio da leitura.       */
+        if (card) card.classList[aberto ? 'remove' : 'add']('aberto');
+      });
+    });
+
     /* --- VÍDEOS: fachada leve --------------------------------------------
        Enquanto o botão tem data-video preenchido, mostra a miniatura do
        YouTube; o iframe (pesado) só entra depois do clique. Sem ID, exibe
@@ -1210,6 +1397,7 @@
         quadro.insertBefore(capa, quadro.firstChild);
       } else {
         quadro.classList.add('vazio');
+        quadro.setAttribute('aria-label', 'Vídeo em breve');
       }
 
       quadro.addEventListener('click', function(){

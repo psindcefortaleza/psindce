@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#821A25">
-<title>Notícias — Sindicato dos Psicólogos do Ceará</title>
+<title>Notícias e campanhas — PSINDCE, Psicólogos do Ceará</title>
 <meta name="description" content="Notícias, campanhas, vídeos e podcast do Sindicato dos Psicólogos do Ceará — PSINDCE.">
 <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sindicato dos Psicólogos do Ceará — PSINDCE">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Notícias — Sindicato dos Psicólogos do Ceará">
+<meta property="og:title" content="Notícias e campanhas — PSINDCE, Psicólogos do Ceará">
 <meta property="og:description" content="Notícias, campanhas, vídeos e podcast do Sindicato dos Psicólogos do Ceará — PSINDCE.">
 <meta property="og:url" content="https://sitemoderno.pages.dev/noticias.html">
 <meta property="og:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
@@ -23,7 +23,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="PSINDCE — Sindicato dos Psicólogos do Ceará">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Notícias — Sindicato dos Psicólogos do Ceará">
+<meta name="twitter:title" content="Notícias e campanhas — PSINDCE, Psicólogos do Ceará">
 <meta name="twitter:description" content="Notícias, campanhas, vídeos e podcast do Sindicato dos Psicólogos do Ceará — PSINDCE.">
 <meta name="twitter:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
 <script type="application/ld+json">
@@ -266,6 +266,8 @@
     letter-spacing:.1em;text-transform:uppercase;color:var(--muted-foreground);
   }
 
+  h2.rotulo{line-height:1;letter-spacing:0}
+
   /* --- MOSAICO DE DESTAQUES --- */
   /* Grade de cards iguais: todas as colunas têm a mesma largura e todos os
      cards de uma mesma linha esticam para a mesma altura (align-items:stretch,
@@ -497,7 +499,7 @@
   }
   .video-quadro:hover .play{transform:scale(1.1);background:var(--accent-hover)}
   .play svg{width:1.5rem;height:1.5rem;fill:#fff;margin-left:3px}
-  .video-item h4{
+  .video-item h3{
     font-family:var(--font-display);font-size:1rem;font-weight:700;
     color:var(--verde);margin-top:.875rem;line-height:1.35;
   }
@@ -510,7 +512,8 @@
     border-left:4px solid var(--accent);border-radius:12px;
     padding:1.5rem;box-shadow:var(--shadow-sm);
   }
-  .audio-card h4{
+  .audio-card h3,
+  .audio-nativo h3{
     font-family:var(--font-display);font-size:1rem;font-weight:700;
     color:var(--verde);line-height:1.35;margin:.625rem 0 .5rem;
   }
@@ -678,6 +681,8 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
 
 <header>
   <div class="header-inner">
@@ -752,7 +757,7 @@
   </div>
 </div>
 
-<main>
+<main id="conteudo" tabindex="-1">
 
 <!-- ============ TOPO DA PÁGINA ============ -->
 <section class="pagina-topo" id="topo">
@@ -767,7 +772,7 @@
 <!-- ============ MOSAICO DE DESTAQUES ============ -->
 <section id="destaque" style="padding-top:2.5rem;padding-bottom:3.5rem">
   <div class="wrap-wide">
-    <div class="rotulo js-reveal"><span>Em destaque</span></div>
+    <h2 class="rotulo js-reveal"><span>Em destaque</span></h2>
 
     <div class="mosaico">
       <article class="destaque destaque--painel js-reveal">
@@ -947,7 +952,7 @@
 
           <div class="chamadas">
             <article class="chamada-item">
-              <a class="miniatura" href="#atividades">
+              <a class="miniatura" href="#atividades" aria-hidden="true" tabindex="-1">
                 <img class="sem-foto" loading="lazy" width="1672" height="941"
                      src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
@@ -959,7 +964,7 @@
             </article>
 
             <article class="chamada-item">
-              <a class="miniatura" href="#atividades">
+              <a class="miniatura" href="#atividades" aria-hidden="true" tabindex="-1">
                 <img class="sem-foto" loading="lazy" width="1672" height="941"
                      src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
@@ -971,7 +976,7 @@
             </article>
 
             <article class="chamada-item">
-              <a class="miniatura" href="#campanhas">
+              <a class="miniatura" href="#campanhas" aria-hidden="true" tabindex="-1">
                 <img class="sem-foto" loading="lazy" width="1672" height="941"
                      src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
@@ -1010,7 +1015,7 @@
 
           <div class="chamadas">
             <article class="chamada-item">
-              <a class="miniatura" href="mailto:eleicoespsindce2024@gmail.com">
+              <a class="miniatura" href="mailto:eleicoespsindce2024@gmail.com" aria-hidden="true" tabindex="-1">
                 <img class="sem-foto" loading="lazy" width="1672" height="941"
                      src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
@@ -1022,7 +1027,7 @@
             </article>
 
             <article class="chamada-item">
-              <a class="miniatura" href="#campanhas">
+              <a class="miniatura" href="#campanhas" aria-hidden="true" tabindex="-1">
                 <img class="sem-foto" loading="lazy" width="1672" height="941"
                      src="img/noticias/novidades-em-breve.webp" alt="">
               </a>
@@ -1056,7 +1061,7 @@
                   <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </span>
               </button>
-              <h4>O que muda com a jornada de 30 horas</h4>
+              <h3>O que muda com a jornada de 30 horas</h3>
               <p>Explicação em 4 minutos sobre o PL 3086/2024 e seus efeitos na rotina de trabalho.</p>
             </article>
 
@@ -1066,7 +1071,7 @@
                   <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </span>
               </button>
-              <h4>Assembleia geral — registro</h4>
+              <h3>Assembleia geral — registro</h3>
               <p>Momentos da última assembleia da categoria.</p>
             </article>
 
@@ -1076,7 +1081,7 @@
                   <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </span>
               </button>
-              <h4>Por que se sindicalizar?</h4>
+              <h3>Por que se sindicalizar?</h3>
               <p>Direitos, representação e negociação coletiva em linguagem direta.</p>
             </article>
           </div>
@@ -1097,7 +1102,7 @@
             -->
             <div class="audio-card">
               <span class="editoria">Episódio 01</span>
-              <h4>Saúde mental de quem cuida da saúde mental</h4>
+              <h3>Saúde mental de quem cuida da saúde mental</h3>
               <p>Conversa sobre adoecimento profissional, carga de trabalho e rede de apoio.</p>
               <iframe title="Episódio 01 do podcast do PSINDCE no Spotify"
                       src="about:blank"
@@ -1108,7 +1113,7 @@
 
             <div class="audio-card">
               <span class="editoria">Episódio 02</span>
-              <h4>Piso salarial: o que já foi conquistado</h4>
+              <h3>Piso salarial: o que já foi conquistado</h3>
               <p>Linha do tempo da tramitação e o que ainda depende de mobilização.</p>
               <iframe title="Episódio 02 do podcast do PSINDCE no Spotify"
                       src="about:blank"
@@ -1119,18 +1124,24 @@
 
             <!--
               ÁUDIO PRÓPRIO (boletim, nota, gravação de assembleia)
-              Suba o arquivo .mp3 na pasta audio/ e ajuste o src abaixo.
+              PARA PUBLICAR: suba o .mp3 em audio/ e troque o <p> abaixo por
+
+                <audio controls preload="none" src="audio/boletim.mp3">
+                  Seu navegador não reproduz áudio.
+                  <a href="audio/boletim.mp3">Baixe o arquivo</a>.
+                </audio>
+
+              O player só entra quando o arquivo existir de verdade: um <audio>
+              apontando para um mp3 ausente vira um controle morto na página.
             -->
             <div class="audio-nativo" style="grid-column:1/-1">
               <span class="editoria verde">Boletim em áudio</span>
-              <h4 style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--verde);margin:.625rem 0 .5rem">
-                Informativo da semana — Diretoria Colegiada</h4>
+              <h3>
+                Informativo da semana — Diretoria Colegiada</h3>
               <p style="font-size:.875rem;color:var(--muted-foreground);margin-bottom:1rem">
-                Resumo em 3 minutos das pautas em andamento. Também disponível em texto no
-                <a href="https://wa.me/5585991207733?text=Ol%C3%A1%2C%20gostaria%20de%20receber%20o%20informativo%20em%20texto." target="_blank" rel="noopener">Fale conosco</a>.</p>
-              <audio controls preload="none" src="audio/boletim.mp3">
-                Seu navegador não reproduz áudio. <a href="audio/boletim.mp3">Baixe o arquivo</a>.
-              </audio>
+                Resumo em 3 minutos das pautas em andamento. O boletim em áudio volta em breve;
+                enquanto isso, peça a versão em texto pelo
+                <a href="index.html#contato" data-zap data-zap-msg="Olá, gostaria de receber o informativo em texto.">Fale conosco</a>.</p>
             </div>
           </div>
         </div>
@@ -1166,22 +1177,22 @@
                    data-grade-base="img/grade/"
                    data-posts="post_DbA4PETO3mU.html,post_DaUEz7auOeH.html,post_DaAeAyouG2Q.html,post_DY7gzgYub0y.html,post_DW7JvAmjnrp.html,post_DYCnG3YlbF2.html">
                 <a class="insta-item" href="https://www.instagram.com/p/DbA4PETO3mU/" target="_blank" rel="noopener">
-                  <img loading="lazy" src="img/grade/post1.jpg" alt="Publicação do @psindce_ no Instagram">
+                  <img loading="lazy" src="img/grade/post1.webp" alt="Publicação do @psindce_ no Instagram">
                 </a>
                 <a class="insta-item" href="https://www.instagram.com/p/DaUEz7auOeH/" target="_blank" rel="noopener">
-                  <img loading="lazy" src="img/grade/post2.jpg" alt="Publicação do @psindce_ no Instagram">
+                  <img loading="lazy" src="img/grade/post2.webp" alt="Publicação do @psindce_ no Instagram">
                 </a>
                 <a class="insta-item" href="https://www.instagram.com/p/DaAeAyouG2Q/" target="_blank" rel="noopener">
-                  <img loading="lazy" src="img/grade/post3.jpg" alt="Publicação do @psindce_ no Instagram">
+                  <img loading="lazy" src="img/grade/post3.webp" alt="Publicação do @psindce_ no Instagram">
                 </a>
                 <a class="insta-item" href="https://www.instagram.com/p/DY7gzgYub0y/" target="_blank" rel="noopener">
-                  <img loading="lazy" src="img/grade/post4.jpg" alt="Publicação do @psindce_ no Instagram">
+                  <img loading="lazy" src="img/grade/post4.webp" alt="Publicação do @psindce_ no Instagram">
                 </a>
                 <a class="insta-item" href="https://www.instagram.com/p/DW7JvAmjnrp/" target="_blank" rel="noopener">
-                  <img loading="lazy" src="img/grade/post5.jpg" alt="Publicação do @psindce_ no Instagram">
+                  <img loading="lazy" src="img/grade/post5.webp" alt="Publicação do @psindce_ no Instagram">
                 </a>
                 <a class="insta-item" href="https://www.instagram.com/p/DYCnG3YlbF2/" target="_blank" rel="noopener">
-                  <img loading="lazy" src="img/grade/post6.jpg" alt="Publicação do @psindce_ no Instagram">
+                  <img loading="lazy" src="img/grade/post6.webp" alt="Publicação do @psindce_ no Instagram">
                 </a>
               </div>
             </div>
@@ -1191,7 +1202,7 @@
               <div class="rede-titulo">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
                 <h3>facebook.com/psindce</h3>
-                <a href="https://facebook.com.br/psindce" target="_blank" rel="noopener">Curtir</a>
+                <a href="https://www.facebook.com/psindce" target="_blank" rel="noopener">Curtir</a>
               </div>
 
               <!--
@@ -1203,11 +1214,7 @@
                 página), medindo a largura real de .fb-caixa, em vez de vir
                 fixo em 500px aqui no HTML.
               -->
-              <div class="fb-caixa" id="fbCaixa" data-fb-href="https://www.facebook.com/psindce">
-                <iframe title="Publicações do PSINDCE no Facebook"
-                        scrolling="no" loading="lazy"
-                        allow="clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-              </div>
+              <div class="fb-caixa" id="fbCaixa" data-fb-href="https://www.facebook.com/psindce"></div>
             </div>
 
           </div>
@@ -1264,12 +1271,12 @@
         <div class="aside-bloco verde js-reveal">
           <h3>Fale com o sindicato</h3>
           <p>Dúvidas, documentos, denúncias e apoio à categoria.</p>
-          <a class="btn btn-outline" href="https://wa.me/5585991207733?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20PSINDCE." target="_blank" rel="noopener">Fale conosco</a>
+          <a class="btn btn-outline" href="index.html#contato" data-zap data-zap-msg="Olá, gostaria de falar com o PSINDCE.">Fale conosco</a>
           <div class="aside-redes" style="margin-top:1.25rem">
             <a href="https://instagram.com/psindce_" target="_blank" rel="noopener" aria-label="Instagram do PSINDCE">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
             </a>
-            <a href="https://facebook.com.br/psindce" target="_blank" rel="noopener" aria-label="Facebook do PSINDCE">
+            <a href="https://www.facebook.com/psindce" target="_blank" rel="noopener" aria-label="Facebook do PSINDCE">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
             </a>
             <a href="tel:+558532710277" aria-label="Telefone do PSINDCE">
@@ -1292,7 +1299,7 @@
       <p>Fale com a secretaria para tirar dúvidas, solicitar documentos ou acompanhar
       as próximas assembleias.</p>
       <div class="btns" style="justify-content:center">
-        <a class="btn btn-primary" href="https://wa.me/5585991207733?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20PSINDCE." target="_blank" rel="noopener">Fale conosco</a>
+        <a class="btn btn-primary" href="index.html#contato" data-zap data-zap-msg="Olá, gostaria de falar com o PSINDCE.">Fale conosco</a>
         <a class="btn btn-outline" href="sindicalize-se.html">Sindicalize-se</a>
       </div>
     </div>
@@ -1332,11 +1339,20 @@
         <p><a href="tel:+558532710277">(85) 3271-0277</a></p>
         <p><a href="mailto:psindce@gmail.com">psindce@gmail.com</a></p>
         <ul style="margin-top:1rem">
-          <li><a href="https://facebook.com.br/psindce" target="_blank" rel="noopener">facebook.com.br/psindce</a></li>
+          <li><a href="https://www.facebook.com/psindce" target="_blank" rel="noopener">facebook.com/psindce</a></li>
           <li><a href="https://instagram.com/psindce_" target="_blank" rel="noopener">instagram.com/psindce_</a></li>
         </ul>
       </div>
     </div>
+
+      <div class="footer-legal">
+        <p>Sindicato dos Psicólogos do Ceará — PSINDCE · CNPJ 01.128.005/0001-67</p>
+        <ul>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="cookies.html">Política de Cookies</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+        </ul>
+      </div>
   </div>
   <div class="footer-bottom">psindce.org.br</div>
 </footer>
@@ -1346,6 +1362,29 @@
   <span class="btn-topo-txt">Voltar ao topo</span>
 </button>
 
+
+<!-- BANNER DE CONSENTIMENTO (LGPD) — nasce oculto; js/consentimento.js
+     só o mostra quando ainda não há decisão guardada. -->
+<div class="consent" id="consentBanner" role="dialog" aria-modal="false"
+     aria-labelledby="consentTitulo" hidden>
+  <div class="consent-inner">
+    <div>
+      <h2 id="consentTitulo">Conteúdo de terceiros neste site</h2>
+      <p>O PSINDCE não usa cookies próprios nem ferramentas de rastreamento. Mas algumas
+      páginas trazem conteúdo hospedado por terceiros — mapa do Google, publicações do
+      Facebook e do Instagram, vídeos e podcast — que, ao carregar, podem registrar dados
+      do seu navegador. Enquanto você não decidir, <strong>nada disso é carregado</strong>.
+      Saiba mais na <a href="cookies.html">Política de Cookies</a> e na
+      <a href="privacidade.html">Política de Privacidade</a>.</p>
+    </div>
+    <div class="consent-acoes">
+      <button type="button" class="btn btn-primary" id="consentAceitar">Aceitar</button>
+      <button type="button" class="btn btn-recusar" id="consentRecusar">Recusar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/consentimento.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="js/site.js"></script>
 <script>
@@ -1407,25 +1446,47 @@
     Array.prototype.forEach.call(document.querySelectorAll('.video-quadro'), function(quadro){
       var id = (quadro.getAttribute('data-video') || '').trim();
 
-      if (id) {
+      if (!id) {
+        quadro.classList.add('vazio');
+        quadro.setAttribute('aria-label', 'Vídeo em breve');
+        return;
+      }
+
+      /* A miniatura vem de i.ytimg.com — já é uma requisição ao Google.
+         Por isso ela também espera o consentimento; sem ele o quadro fica
+         no bloco verde da marca e o rótulo explica o porquê. */
+      var consentiu = PSINDCE.consentimento && PSINDCE.consentimento.aceitou();
+      function poeMiniatura(){
+        if (quadro.querySelector('img')) return;
         var capa = document.createElement('img');
         capa.loading = 'lazy';
         capa.alt = '';
         capa.src = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
         quadro.insertBefore(capa, quadro.firstChild);
-      } else {
+      }
+      if (consentiu) poeMiniatura();
+      else {
         quadro.classList.add('vazio');
-        quadro.setAttribute('aria-label', 'Vídeo em breve');
+        quadro.setAttribute('aria-label', 'Reproduzir vídeo (carrega conteúdo do YouTube)');
+        if (PSINDCE.consentimento) {
+          PSINDCE.consentimento.aoAceitar(function(){
+            quadro.classList.remove('vazio');
+            quadro.setAttribute('aria-label', 'Reproduzir vídeo');
+            poeMiniatura();
+          });
+        }
       }
 
       quadro.addEventListener('click', function(){
-        if (!id || quadro.classList.contains('tocando')) return;
+        if (quadro.classList.contains('tocando')) return;
+        poeMiniatura();
         var frame = document.createElement('iframe');
         frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
         frame.title = 'Vídeo do PSINDCE';
         frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
         frame.allowFullscreen = true;
         quadro.appendChild(frame);
+        quadro.classList.remove('vazio');
         quadro.classList.add('tocando');
       });
     });
@@ -1446,19 +1507,37 @@
       return f.parentNode && f.getAttribute('data-src').indexOf('COLE_O_ID_AQUI') === -1;
     });
 
+    /* Dois gatilhos precisam bater para o embed do Spotify carregar: a
+       rolagem chegar perto dele E existir consentimento. A ordem entre os
+       dois não importa — o que vier por último dispara o carregamento. */
     if (embeds.length) {
+      var perto = [];
+
+      function tentarCarregar(f){
+        if (f.src && f.src !== 'about:blank') return;
+        if (perto.indexOf(f) === -1) return;
+        if (!(PSINDCE.consentimento && PSINDCE.consentimento.aceitou())) return;
+        f.src = f.getAttribute('data-src');
+      }
+
+      function marcarPerto(f){ 
+        if (perto.indexOf(f) === -1) perto.push(f);
+        tentarCarregar(f);
+      }
+
       if (!('IntersectionObserver' in window)) {
-        embeds.forEach(function(f){ f.src = f.getAttribute('data-src'); });
+        embeds.forEach(marcarPerto);
       } else {
         var obsEmbed = new IntersectionObserver(function(entradas){
           entradas.forEach(function(e){
-            if (e.isIntersecting) {
-              e.target.src = e.target.getAttribute('data-src');
-              obsEmbed.unobserve(e.target);
-            }
+            if (e.isIntersecting) { marcarPerto(e.target); obsEmbed.unobserve(e.target); }
           });
         }, {rootMargin:'300px'});
         embeds.forEach(function(f){ obsEmbed.observe(f); });
+      }
+
+      if (PSINDCE.consentimento) {
+        PSINDCE.consentimento.aoAceitar(function(){ embeds.forEach(tentarCarregar); });
       }
     }
   })();
@@ -1556,14 +1635,14 @@
      Aqui a largura real de .fb-caixa é medida e usada para montar a src.
      ============================================================ */
   (function(){
-    var caixa   = document.getElementById('fbCaixa');
-    var iframe  = caixa && caixa.querySelector('iframe');
-    if (!caixa || !iframe) return;
+    var caixa = document.getElementById('fbCaixa');
+    if (!caixa || !PSINDCE.consentimento) return;
 
     var href = encodeURIComponent(caixa.getAttribute('data-fb-href') || 'https://www.facebook.com/psindce');
     var LARGURA_MIN = 180;   // mínimo aceito pelo plugin do Facebook
     var LARGURA_MAX = 500;   // acima disso o plugin não ganha mais detalhe
     var larguraAtual = null;
+    var iframe = null;
 
     function montarSrc(largura){
       return 'https://www.facebook.com/plugins/page.php?href=' + href +
@@ -1571,17 +1650,41 @@
              '&small_header=true&hide_cover=false&show_facepile=false';
     }
 
-    function ajustar(){
-      var largura = Math.round(caixa.clientWidth);
+    function larguraAlvo(){
+      var l = Math.round(caixa.clientWidth);
+      return l ? Math.max(LARGURA_MIN, Math.min(LARGURA_MAX, l)) : 0;
+    }
+
+    /* Cria o iframe só na hora de liberar. Antes disso o elemento nem
+       existe no DOM — nenhuma requisição sai para o facebook.com. */
+    function montar(){
+      var largura = larguraAlvo();
       if (!largura) return;
-      largura = Math.max(LARGURA_MIN, Math.min(LARGURA_MAX, largura));
+      caixa.textContent = '';
+      iframe = document.createElement('iframe');
+      iframe.title = 'Publicações do PSINDCE no Facebook';
+      iframe.setAttribute('scrolling', 'no');
+      iframe.setAttribute('loading', 'lazy');
+      iframe.setAttribute('allow', 'clipboard-write; encrypted-media; picture-in-picture; web-share');
+      iframe.src = montarSrc(largura);
+      caixa.appendChild(iframe);
+      larguraAtual = largura;
+      PSINDCE.consentimento.marcarCarregado(caixa);
+    }
+
+    function ajustar(){
+      if (!iframe) return;
+      var largura = larguraAlvo();
+      if (!largura) return;
       // evita recarregar o iframe por variações mínimas (ex.: barra de rolagem)
       if (larguraAtual !== null && Math.abs(largura - larguraAtual) < 12) return;
       larguraAtual = largura;
       iframe.src = montarSrc(largura);
     }
 
-    ajustar();
+    caixa.setAttribute('data-embed-titulo', 'Publicações do PSINDCE no Facebook');
+    caixa.setAttribute('data-embed-servico', 'Facebook');
+    PSINDCE.consentimento.gerenciar(caixa, montar);
 
     var reajustar;
     window.addEventListener('resize', function(){

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#821A25">
-<title>Página inicial — Sindicato dos Psicólogos do Ceará</title>
+<title>PSINDCE — Sindicato dos Psicólogos do Estado do Ceará</title>
 <meta name="description" content="Sindicato dos Psicólogos do Ceará — PSINDCE. Defesa e representação legal da categoria profissional dos psicólogos e psicólogas do estado do Ceará.">
 <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sindicato dos Psicólogos do Ceará — PSINDCE">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Página inicial — Sindicato dos Psicólogos do Ceará">
+<meta property="og:title" content="PSINDCE — Sindicato dos Psicólogos do Estado do Ceará">
 <meta property="og:description" content="Sindicato dos Psicólogos do Ceará — PSINDCE. Defesa e representação legal e legítima da categoria profissional dos psicólogos e psicólogas do estado do Ceará.">
 <meta property="og:url" content="https://sitemoderno.pages.dev/">
 <meta property="og:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
@@ -23,7 +23,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="PSINDCE — Sindicato dos Psicólogos do Ceará">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Página inicial — Sindicato dos Psicólogos do Ceará">
+<meta name="twitter:title" content="PSINDCE — Sindicato dos Psicólogos do Estado do Ceará">
 <meta name="twitter:description" content="Sindicato dos Psicólogos do Ceará — PSINDCE. Defesa e representação legal e legítima da categoria profissional dos psicólogos e psicólogas do estado do Ceará.">
 <meta name="twitter:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
 <script type="application/ld+json">
@@ -391,11 +391,47 @@
   .caixa p+p{margin-top:.875rem}
 
   .form-aviso{
-    font-size:.8125rem;line-height:1.5;color:var(--muted-foreground);
-    max-width:100%;margin:0 0 1.25rem;text-align:left;
+    font-size:.8125rem;line-height:1.55;color:var(--muted-foreground);
+    max-width:100%;margin:0 0 1.125rem;text-align:left;
+    background:var(--muted);border-radius:10px;padding:1.125rem 1.25rem;
   }
 
+  .form-aviso p{max-width:none}
+
+  .form-aviso p+p{margin-top:.75rem}
+
+  .form-aviso strong{color:var(--verde)}
+
   .form-aviso a{font-weight:700;text-decoration:underline}
+
+  /* Consentimento do art. 11: precisa ser destacado, e não mais um
+     parágrafo cinza. Daí a moldura, o fundo e o rótulo em tamanho de
+     leitura — não em letra miúda. */
+  .campo-consent{
+    display:flex;gap:.75rem;align-items:flex-start;text-align:left;
+    background:var(--accent-soft);border:1px solid var(--border);
+    border-left:4px solid var(--accent);border-radius:10px;
+    padding:1rem 1.125rem;margin-bottom:1.5rem;
+  }
+
+  .campo-consent input[type=checkbox]{
+    flex:none;width:20px;height:20px;min-height:0;margin-top:.15rem;
+    accent-color:var(--accent);cursor:pointer;
+  }
+
+  .campo-consent label{
+    font-family:var(--font-body);font-size:.875rem;font-weight:400;
+    line-height:1.55;letter-spacing:0;text-transform:none;
+    color:var(--foreground);margin:0;cursor:pointer;
+  }
+
+  .campo-consent label strong{color:var(--accent);font-weight:700}
+
+  /* campo que reprovou na validação ganha borda vermelha, não só a
+     mensagem de status — quem usa leitor de tela recebe pelo aria-invalid */
+  input[aria-invalid="true"],textarea[aria-invalid="true"]{
+    border-color:var(--accent);
+  }
 </style>
 <noscript>
   <style>
@@ -409,6 +445,8 @@
 </noscript>
 </head>
 <body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
 
 <header>
   <div class="header-inner">
@@ -459,7 +497,7 @@
   </div>
 </header>
 
-<main>
+<main id="conteudo" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero" id="topo">
@@ -554,7 +592,7 @@
 
         <div class="quiz-acoes">
           <a class="btn btn-primary" href="sindicalize-se.html">Quero me filiar</a>
-          <a class="btn btn-outline" id="quizWhats" href="https://wa.me/5585991207733" target="_blank" rel="noopener">Falar com o sindicato</a>
+          <a class="btn btn-outline" id="quizWhats" href="#contato" data-zap>Falar com o sindicato</a>
         </div>
         <button type="button" class="quiz-refazer" id="quizRefazer">Refazer o teste</button>
       </div>
@@ -596,7 +634,7 @@
         <h3>Estatuto na íntegra</h3>
         <p>Acione o Fale conosco para solicitar o Estatuto, a regulamentação do processo eleitoral e os formulários relacionados.</p>
         <div class="btns" style="margin-top:1.5rem">
-          <a class="btn btn-outline" href="https://wa.me/5585991207733?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20o%20Estatuto%20e%20os%20formul%C3%A1rios%20do%20PSINDCE." target="_blank" rel="noopener">Fale conosco</a>
+          <a class="btn btn-outline" href="#contato" data-zap data-zap-msg="Olá, gostaria de solicitar o Estatuto e os formulários do PSINDCE.">Fale conosco</a>
         </div>
       </aside>
     </div>
@@ -629,7 +667,7 @@
           <path d="M28 27c3 0 5 2 6 5 1 3 4 5 6 5v4c-8 0-14-6-14-14z"/>
         </svg>
         <h3>Telefone</h3>
-        <p><a href="tel:+5585991207733">(85) 99120-7733</a><br>Coordenação de Comunicação</p>
+        <p><a href="#contato" data-zap-tel><span data-zap-num>Fale conosco</span></a><br>Coordenação de Comunicação</p>
       </div>
 
       <div class="contato-item js-reveal">
@@ -645,7 +683,7 @@
       </div>
     </div>
 
-    <a class="btn btn-primary" href="https://wa.me/5585991207733?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20PSINDCE." target="_blank" rel="noopener">Fale conosco</a>
+    <a class="btn btn-primary" href="#contato" data-zap data-zap-msg="Olá, gostaria de falar com o PSINDCE.">Fale conosco</a>
   </div>
 </section>
 
@@ -662,14 +700,14 @@
         <p class="sede-endereco">Av. Edilson Brasil Soares, 830<br>Sala 6 — Sapiranga<br>Fortaleza/CE — CEP 60833-020</p>
       </div>
 
-      <div class="mapa js-reveal">
-        <iframe
-          src="https://www.google.com/maps?cid=8660385889145513156&hl=pt-BR&output=embed"
-          title="Localização do PSINDCE no Google Maps"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen></iframe>
-      </div>
+      <!-- O mapa é um embed do Google: só entra no DOM depois de consentimento
+           (banner) ou do botão "Carregar Google Maps" do próprio cartão.
+           Ver js/consentimento.js. -->
+      <div class="mapa js-reveal" data-embed
+           data-embed-titulo="Mapa da sede do PSINDCE"
+           data-embed-servico="Google Maps"
+           data-embed-src="https://www.google.com/maps?cid=8660385889145513156&amp;hl=pt-BR&amp;output=embed"
+           data-embed-attrs='{"title":"Localização do PSINDCE no Google Maps","loading":"lazy","referrerpolicy":"no-referrer-when-downgrade","allowfullscreen":true}'></div>
     </div>
   </div>
 </section>
@@ -694,12 +732,38 @@
           <label for="mensagem">Mensagem</label>
           <textarea id="mensagem" name="mensagem" required></textarea>
         </div>
-        <p class="form-aviso">
-          Ao clicar em enviar, você será redirecionado ao <strong>WhatsApp</strong> e as
-          informações preenchidas (nome, e-mail e mensagem) serão tratadas por esse aplicativo,
-          exclusivamente para responder ao seu contato, conforme a
-          <abbr title="Lei Geral de Proteção de Dados">LGPD</abbr>.
-        </p>
+        <!-- AVISO LGPD + CONSENTIMENTO
+             Quem escreve para um sindicato de psicólogos revela, no ato,
+             interesse em filiação sindical — dado sensível pelo art. 5º, II.
+             Por isso o tratamento se apoia no art. 11, I (consentimento
+             específico e destacado) e não numa base do art. 7º: daí a caixa
+             de marcação obrigatória, e não só um parágrafo informativo. -->
+        <div class="form-aviso">
+          <p><strong>Como seus dados são tratados.</strong> O controlador é o
+          <strong>Sindicato dos Psicólogos do Ceará — PSINDCE</strong>, CNPJ 01.128.005/0001-67.
+          Ao enviar, os dados preenchidos (nome, e-mail e mensagem) seguem para o
+          <strong>WhatsApp</strong>, aplicativo da Meta com servidores fora do Brasil
+          (<a href="privacidade.html#transferencia">transferência internacional</a>,
+          art. 33 da <abbr title="Lei Geral de Proteção de Dados nº 13.709/2018">LGPD</abbr>).</p>
+
+          <p><strong>Finalidade:</strong> exclusivamente responder ao seu contato.
+          <strong>Base legal:</strong> seu consentimento (art. 7º, I e art. 11, I).
+          <strong>Retenção:</strong> até 12 meses após o encerramento do atendimento.
+          Não usamos seus dados para nenhuma outra finalidade, e não os compartilhamos
+          com terceiros além do provedor do aplicativo.</p>
+
+          <p>Você pode retirar o consentimento e pedir acesso, correção ou eliminação
+          dos seus dados a qualquer momento pelo nosso encarregado:
+          <a href="privacidade.html#encarregado">canal do titular</a>. Detalhes na
+          <a href="privacidade.html">Política de Privacidade</a>.</p>
+        </div>
+
+        <div class="campo-consent">
+          <input type="checkbox" id="lgpdOk" name="lgpdOk" required>
+          <label for="lgpdOk">Li o aviso acima e <strong>concordo</strong> que o PSINDCE trate
+          os dados informados, pelo WhatsApp, para responder a este contato.</label>
+        </div>
+
         <div class="form-botoes">
           <button type="button" id="btnWhatsApp" class="btn btn-whatsapp">Enviar por WhatsApp</button>
         </div>
@@ -773,11 +837,20 @@
         <p><a href="tel:+558532710277">(85) 3271-0277</a></p>
         <p><a href="mailto:psindce@gmail.com">psindce@gmail.com</a></p>
         <ul style="margin-top:1rem">
-          <li><a href="https://facebook.com.br/psindce" target="_blank" rel="noopener">facebook.com.br/psindce</a></li>
+          <li><a href="https://www.facebook.com/psindce" target="_blank" rel="noopener">facebook.com/psindce</a></li>
           <li><a href="https://instagram.com/psindce_" target="_blank" rel="noopener">instagram.com/psindce_</a></li>
         </ul>
       </div>
     </div>
+
+      <div class="footer-legal">
+        <p>Sindicato dos Psicólogos do Ceará — PSINDCE · CNPJ 01.128.005/0001-67</p>
+        <ul>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="cookies.html">Política de Cookies</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+        </ul>
+      </div>
   </div>
   <div class="footer-bottom">psindce.org.br</div>
 </footer>
@@ -787,6 +860,29 @@
   <span class="btn-topo-txt">Voltar ao topo</span>
 </button>
 
+
+<!-- BANNER DE CONSENTIMENTO (LGPD) — nasce oculto; js/consentimento.js
+     só o mostra quando ainda não há decisão guardada. -->
+<div class="consent" id="consentBanner" role="dialog" aria-modal="false"
+     aria-labelledby="consentTitulo" hidden>
+  <div class="consent-inner">
+    <div>
+      <h2 id="consentTitulo">Conteúdo de terceiros neste site</h2>
+      <p>O PSINDCE não usa cookies próprios nem ferramentas de rastreamento. Mas algumas
+      páginas trazem conteúdo hospedado por terceiros — mapa do Google, publicações do
+      Facebook e do Instagram, vídeos e podcast — que, ao carregar, podem registrar dados
+      do seu navegador. Enquanto você não decidir, <strong>nada disso é carregado</strong>.
+      Saiba mais na <a href="cookies.html">Política de Cookies</a> e na
+      <a href="privacidade.html">Política de Privacidade</a>.</p>
+    </div>
+    <div class="consent-acoes">
+      <button type="button" class="btn btn-primary" id="consentAceitar">Aceitar</button>
+      <button type="button" class="btn btn-recusar" id="consentRecusar">Recusar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/consentimento.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="js/site.js"></script>
 <script>
@@ -829,8 +925,9 @@
       e.preventDefault();
     });
 
-    // Número oficial do sindicato — (85) 99120-7733
-    var whatsappNumero = '5585991207733';
+    /* O número não fica escrito aqui: PSINDCE.zap() (em js/site.js) o
+       remonta a partir de pedaços, para o HTML servido não conter a
+       sequência que os robôs de spam procuram. */
 
     // A mensagem de status entra com fade + leve deslocamento
     function mostraStatus(texto){
@@ -843,13 +940,47 @@
       s.classList.add('visivel');
     }
 
+    /* O botão é type="button" e o submit nativo está bloqueado, então nem
+       required nem type="email" chegam a disparar: a validação toda mora
+       aqui. LIMITE existe porque a URL do wa.me é finita — mensagem longa
+       demais chega truncada do outro lado, sem aviso nenhum. */
+    var LIMITE = 1200;
+    function emailValido(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+    function foca(id){
+      var el = document.getElementById(id);
+      if (el) { el.focus(); el.setAttribute('aria-invalid','true'); }
+    }
+    ['nome','email','mensagem','lgpdOk'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.addEventListener('input', function(){ el.removeAttribute('aria-invalid'); });
+    });
+
     document.getElementById('btnWhatsApp').addEventListener('click', function(){
       var nome = document.getElementById('nome').value.trim();
       var email = document.getElementById('email').value.trim();
       var msg = document.getElementById('mensagem').value.trim();
+      var ok = document.getElementById('lgpdOk').checked;
 
       if (!nome || !email || !msg) {
         mostraStatus('Preencha nome, e-mail e mensagem antes de enviar pelo WhatsApp.');
+        foca(!nome ? 'nome' : (!email ? 'email' : 'mensagem'));
+        return;
+      }
+      if (!emailValido(email)) {
+        mostraStatus('Confira o e-mail: parece estar incompleto.');
+        foca('email');
+        return;
+      }
+      if (msg.length > LIMITE) {
+        mostraStatus('A mensagem tem ' + msg.length + ' caracteres. Resuma para até '
+                     + LIMITE + ' — o WhatsApp corta o texto acima disso.');
+        foca('mensagem');
+        return;
+      }
+      if (!ok) {
+        mostraStatus('Para enviar, marque a autorização de tratamento dos dados.');
+        foca('lgpdOk');
         return;
       }
 
@@ -857,8 +988,7 @@
         + '. E-mail: ' + email
         + '.\n\nMensagem: ' + msg;
 
-      var url = 'https://wa.me/' + whatsappNumero + '?text=' + encodeURIComponent(texto);
-      window.open(url, '_blank');
+      window.open(PSINDCE.zap(texto), '_blank', 'noopener');
 
       mostraStatus('Abrindo o WhatsApp para envio…');
     });
@@ -969,7 +1099,6 @@
     var elPergunta = document.getElementById('quizPergunta');
     if (!elPergunta) return;
 
-    var WHATSAPP = '5585991207733';   // Coordenação de Comunicação
 
     var perguntas = [
       {
@@ -1132,8 +1261,7 @@
       var setor = setores[respostas.setor] || 'Psicologia';
       var texto = 'Olá! Fiz o teste no site e meu perfil é: ' + perfil.selo
                 + ' atuando em ' + setor + '. Gostaria de saber mais sobre a filiação ao PSINDCE.';
-      document.getElementById('quizWhats').href =
-        'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto);
+      document.getElementById('quizWhats').href = PSINDCE.zap(texto);
 
       elCaixa.hidden = true;
       elResultado.classList.add('is-on');

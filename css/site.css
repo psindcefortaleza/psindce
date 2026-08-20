@@ -466,17 +466,20 @@ textarea{min-height:9.5rem;resize:vertical;line-height:1.7}
 
 .form-botoes{display:flex;gap:.75rem;flex-wrap:wrap}
 
+/* O verde de marca do WhatsApp (#25D366) dá 1,98:1 com texto branco —
+   reprova em WCAG AA, e este é o botão principal de conversão do site.
+   #0B7A3B é o mesmo tom de verde, escurecido até 5,44:1. */
 .btn-whatsapp{
     position:relative;
-    background:#25D366;color:#fff;border:none;cursor:pointer;
+    background:#0B7A3B;color:#fff;border:none;cursor:pointer;
     display:inline-flex;align-items:center;gap:.5rem;
   }
 
-.btn-whatsapp:hover{background:#1ebe5a}
+.btn-whatsapp:hover{background:#08602E}
 
 .btn-whatsapp::after{
     content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-    border:2px solid #25D366;
+    border:2px solid #0B7A3B;
     animation:pulso-whats 2.2s cubic-bezier(.22,.61,.36,1) infinite;
   }
 
@@ -555,4 +558,172 @@ footer a:hover{color:#fff;translate:3px 0}
 @media(max-width:640px){
     .btn-topo{right:1rem;bottom:1rem;width:46px;height:46px;padding:0}
     .btn-topo-txt{display:none}
+  }
+
+/* ======================================================================
+   SKIP LINK — primeiro elemento focável de cada página
+   Fica fora da tela até receber foco pelo teclado; então desce por cima
+   do header (que é sticky, z-index 60) para ficar de fato visível.
+   ====================================================================== */
+/* O deslocamento é por transform, e não por top: em position:absolute
+   um top:-100% se mede contra a ALTURA DA PÁGINA (mais de 11.000px em
+   noticias.html), e a transição de 180ms mal saía do lugar. Em transform
+   a porcentagem se mede contra o próprio elemento — sempre certo. */
+.skip-link{
+    position:fixed;left:1rem;top:0;z-index:100;
+    padding:.75rem 1.25rem;border-radius:0 0 10px 10px;
+    background:var(--accent);color:var(--accent-foreground);
+    font-family:var(--font-display);font-size:.875rem;font-weight:700;
+    letter-spacing:.02em;text-decoration:none;
+    transform:translateY(-110%);
+    transition:transform .18s ease-out;
+  }
+
+.skip-link:focus{transform:translateY(0);color:var(--accent-foreground)}
+
+/* ======================================================================
+   BANNER DE CONSENTIMENTO (LGPD)
+   Só aparece quando ainda não há decisão guardada. Nasce com [hidden]:
+   sem JS ele nunca aparece — e sem JS nenhum embed de terceiro carrega,
+   então não há o que consentir.
+   ====================================================================== */
+.consent{
+    position:fixed;left:0;right:0;bottom:0;z-index:90;
+    background:var(--card);border-top:3px solid var(--accent);
+    box-shadow:0 -8px 28px rgba(26,26,26,.16);
+    padding:1.5rem 0;
+  }
+
+.consent[hidden]{display:none}
+
+.consent-inner{
+    max-width:var(--max-wide);margin:0 auto;padding:0 1.5rem;
+    display:grid;grid-template-columns:1fr auto;gap:1.5rem 2.5rem;align-items:center;
+  }
+
+.consent h2{
+    font-size:1.0625rem;line-height:1.3;margin-bottom:.5rem;
+  }
+
+.consent p{
+    font-size:.875rem;line-height:1.6;color:var(--muted-foreground);max-width:62ch;
+  }
+
+.consent p a{font-weight:700;text-decoration:underline}
+
+.consent-acoes{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+
+.consent-acoes .btn{white-space:nowrap;padding:.75rem 1.5rem;font-size:.8125rem}
+
+/* "Recusar" precisa ter o mesmo peso visual de "Aceitar": um botão
+   escondido como link não é escolha livre, é escolha induzida. */
+.btn-recusar{
+    background:var(--background);color:var(--verde);
+    border:2px solid var(--border-hover);
+  }
+
+.btn-recusar:hover{border-color:var(--verde);color:var(--verde)}
+
+@media(max-width:900px){
+    .consent-inner{grid-template-columns:1fr;gap:1.25rem}
+    .consent-acoes .btn{flex:1 1 auto;justify-content:center}
+  }
+
+/* ======================================================================
+   EMBED BLOQUEADO — placeholder no lugar do iframe de terceiro
+   Enquanto não houver consentimento, o iframe nem existe no DOM: no lugar
+   dele fica este cartão, com um botão que carrega só aquele embed.
+   ====================================================================== */
+.embed-bloqueado{
+    display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+    gap:.875rem;min-height:14rem;height:100%;
+    background:var(--muted);border:1px dashed var(--border-hover);border-radius:14px;
+    padding:1.75rem;text-align:left;
+  }
+
+.embed-bloqueado h3{font-size:1rem;color:var(--verde)}
+
+.embed-bloqueado p{
+    font-size:.8125rem;line-height:1.55;color:var(--muted-foreground);max-width:44ch;
+  }
+
+.embed-bloqueado p a{text-decoration:underline}
+
+.embed-bloqueado .btn{font-size:.8125rem;padding:.625rem 1.25rem;min-height:42px}
+
+/* ======================================================================
+   PÁGINAS LEGAIS (privacidade, cookies, termos)
+   ====================================================================== */
+.legal{max-width:46rem;margin:0 auto}
+
+.legal .atualizado{
+    font-family:var(--font-display);font-size:.75rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted-foreground);
+    margin-bottom:2.5rem;
+  }
+
+.legal h2{
+    font-size:clamp(1.25rem,2.6vw,1.5rem);margin:3rem 0 1rem;
+    padding-bottom:.625rem;border-bottom:2px solid var(--accent);
+  }
+
+.legal h2:first-of-type{margin-top:0}
+
+.legal h3{margin:2rem 0 .75rem;color:var(--accent)}
+
+.legal p,.legal li{color:var(--foreground);max-width:none}
+
+.legal p+p{margin-top:1rem}
+
+.legal ul,.legal ol{margin:1rem 0 1rem 1.25rem;display:grid;gap:.625rem}
+
+.legal li{line-height:1.65}
+
+.legal a{text-decoration:underline}
+
+.legal .destaque{
+    background:var(--accent-soft);border-left:4px solid var(--accent);
+    border-radius:0 12px 12px 0;padding:1.25rem 1.5rem;margin:1.75rem 0;
+  }
+
+.legal .destaque p{font-size:.9375rem}
+
+.legal table{
+    width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9375rem;
+  }
+
+.legal th,.legal td{
+    border:1px solid var(--border);padding:.75rem .875rem;
+    text-align:left;vertical-align:top;
+  }
+
+.legal th{
+    background:var(--muted);font-family:var(--font-display);
+    font-size:.8125rem;font-weight:700;color:var(--verde);
+  }
+
+/* tabelas de dados não podem estourar a largura no celular */
+.legal .tabela-rolavel{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* ======================================================================
+   RODAPÉ — faixa legal (CNPJ + políticas)
+   ====================================================================== */
+.footer-legal{
+    border-top:1px solid rgba(248,246,243,.16);
+    padding:1.75rem 0 2rem;margin-top:.5rem;
+    display:flex;flex-wrap:wrap;gap:.75rem 2rem;
+    align-items:center;justify-content:space-between;
+    font-size:.8125rem;
+  }
+
+.footer-legal p{margin:0;max-width:none}
+
+.footer-legal ul{
+    list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:0;
+  }
+
+.footer-legal li a{padding:.25rem 0}
+
+@media(max-width:640px){
+    .footer-legal{flex-direction:column;align-items:flex-start;gap:1rem}
   }

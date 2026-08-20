@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#821A25">
+<title>Política de Privacidade — PSINDCE</title>
+<meta name="description" content="Como o Sindicato dos Psicólogos do Ceará trata dados pessoais: finalidade, base legal, canal do titular e seus direitos sob a LGPD.">
+<link rel="icon" href="img/favicon/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sindicato dos Psicólogos do Ceará — PSINDCE">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Política de Privacidade — PSINDCE">
+<meta property="og:description" content="Como o Sindicato dos Psicólogos do Ceará trata dados pessoais: finalidade, base legal, canal do titular e seus direitos sob a LGPD.">
+<meta property="og:url" content="https://sitemoderno.pages.dev/privacidade.html">
+<meta property="og:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PSINDCE — Sindicato dos Psicólogos do Ceará">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Política de Privacidade — PSINDCE">
+<meta name="twitter:description" content="Como o Sindicato dos Psicólogos do Ceará trata dados pessoais: finalidade, base legal, canal do titular e seus direitos sob a LGPD.">
+<meta name="twitter:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(248,246,243,.93);backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--border);
+    transition:box-shadow .3s ease-out,background-color .3s ease-out;
+  }
+
+  .logo-mark{
+    flex:none;display:block;width:70px;height:44px;
+    transition:width .3s ease-out,height .3s ease-out;
+    background:url("img/logo.webp") center/contain no-repeat;
+  }
+
+  .legal-hero{padding:5rem 0 2.5rem}
+
+  .legal-hero h1{font-size:clamp(1.875rem,4.4vw,2.75rem)}
+
+  @media(max-width:900px){
+    nav{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:var(--background);border-bottom:1px solid var(--border);padding:1rem 1.5rem;
+    }
+    nav.open{display:block}
+    .pill-list{flex-direction:column;align-items:flex-start;gap:.25rem}
+    .pill{padding:.75rem 0;min-height:44px}
+    .menu-btn{display:block}
+    .footer-grid{grid-template-columns:1fr}
+    section{padding:4rem 0}
+    .legal-hero{padding:3.5rem 0 2rem}
+  }
+
+  @media(max-width:640px){
+    .tel-topo{display:none}
+    .logo-mark{width:58px;height:36px}
+    .marca-txt b{font-size:.8125rem}
+    .marca-txt i{font-size:.6875rem}
+    .wrap,.wrap-wide{padding:0 1.25rem}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{
+      transition-duration:.01ms!important;animation-duration:.01ms!important;
+      animation-iteration-count:1!important;
+    }
+    body::after{animation:none!important;opacity:.64}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header>
+  <div class="header-inner">
+    <a class="marca" href="index.html">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="marca-txt"><b>Sindicato dos Psicólogos</b><i>do Ceará</i></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav">
+      <ul class="pill-list">
+        <li><a class="pill" href="index.html#topo">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Página inicial</span>
+            <span class="pill-label-hover" aria-hidden="true">Página inicial</span>
+          </span>
+        </a></li>
+        <li><a class="pill" href="sobre.html">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Sobre</span>
+            <span class="pill-label-hover" aria-hidden="true">Sobre</span>
+          </span>
+        </a></li>
+        <li><a class="pill" href="noticias.html">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Notícias</span>
+            <span class="pill-label-hover" aria-hidden="true">Notícias</span>
+          </span>
+        </a></li>
+        <li><a class="pill" href="sindicalize-se.html">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Sindicalize-se</span>
+            <span class="pill-label-hover" aria-hidden="true">Sindicalize-se</span>
+          </span>
+        </a></li>
+      </ul>
+    </nav>
+    <a class="tel-topo" href="tel:+558532710277">
+      <span class="hover-circle" aria-hidden="true"></span>
+      <span class="label-stack">
+        <span class="pill-label">(85) 3271-0277</span>
+        <span class="pill-label-hover" aria-hidden="true">(85) 3271-0277</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main id="conteudo" tabindex="-1">
+
+<section class="legal-hero">
+  <div class="wrap">
+    <div class="rotulo esq"><span>Proteção de dados</span></div>
+    <h1>Política de Privacidade</h1>
+    <p class="lead">Como o PSINDCE trata os dados pessoais de quem procura o
+    sindicato — e o que você pode exigir de nós a qualquer momento.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="legal">
+      <p class="atualizado">Última atualização: 20 de agosto de 2026 · Versão 1</p>
+
+      <div class="destaque">
+        <p><strong>O essencial em cinco linhas.</strong> Não vendemos, não alugamos e não
+        cedemos seus dados. Não usamos cookies próprios nem ferramentas de publicidade ou
+        analytics. Coletamos apenas o que você escreve por vontade própria no formulário de
+        contato. Tratamos o vínculo com a Psicologia e com o sindicato como
+        <strong>dado sensível</strong>, com o cuidado que a lei exige. E você pode pedir
+        acesso, correção ou eliminação a qualquer hora, sem justificar.</p>
+      </div>
+
+      <h2 id="controlador">1. Quem é o controlador</h2>
+      <p><strong>Sindicato dos Psicólogos do Ceará — PSINDCE</strong><br>
+      CNPJ 01.128.005/0001-67<br>
+      Av. Edilson Brasil Soares, 830 — Sala 6 — Sapiranga — Fortaleza/CE — CEP 60833-020<br>
+      Telefone: <a href="tel:+558532710277">(85) 3271-0277</a> ·
+      E-mail: <a href="mailto:psindce@gmail.com">psindce@gmail.com</a></p>
+      <p>O PSINDCE é o <em>controlador</em> dos dados pessoais tratados neste site, nos termos
+      do art. 5º, VI da Lei nº 13.709/2018 (LGPD) — ou seja, é quem decide o que é coletado,
+      para quê e por quanto tempo.</p>
+
+      <h2 id="encarregado">2. Canal do titular — encarregado (DPO)</h2>
+      <p>O encarregado pelo tratamento de dados pessoais do PSINDCE, nos termos do art. 41 da
+      LGPD, é <strong>Claudemir Campos</strong>, da Coordenação Geral.</p>
+      <div class="destaque">
+        <p><strong>Para exercer qualquer direito desta política, escreva para
+        <a href="mailto:f.claudemicampos@gmail.com">f.claudemicampos@gmail.com</a></strong>,
+        com o assunto "LGPD". Respondemos em até 15 dias. Se preferir, use o telefone da sede
+        ou compareça ao endereço acima — não é obrigatório usar o e-mail.</p>
+      </div>
+
+      <h2 id="dados">3. Que dados coletamos</h2>
+      <div class="tabela-rolavel">
+        <table>
+          <thead>
+            <tr><th>Onde</th><th>O que é coletado</th><th>Por que</th><th>Base legal</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Formulário "Fale conosco" da página inicial</td>
+              <td>Nome, e-mail e o texto da mensagem que você escrever</td>
+              <td>Responder ao seu contato</td>
+              <td>Consentimento — art. 7º, I e art. 11, I</td>
+            </tr>
+            <tr>
+              <td>Contato direto por WhatsApp, telefone ou e-mail</td>
+              <td>O que você mesmo informar na conversa</td>
+              <td>Atendimento, orientação e encaminhamento da sua demanda</td>
+              <td>Consentimento e, quando houver processo, exercício regular de direitos —
+                  art. 7º, VI e art. 11, II, "d"</td>
+            </tr>
+            <tr>
+              <td>Filiação pela plataforma Sympla</td>
+              <td>Dados cadastrais exigidos pela plataforma e pelo Estatuto</td>
+              <td>Processar sua filiação ao sindicato</td>
+              <td>Consentimento e execução de procedimento preliminar de contrato —
+                  art. 7º, V e art. 11, I</td>
+            </tr>
+            <tr>
+              <td>Navegação no site</td>
+              <td><strong>Nada.</strong> Não há cookie próprio, login, analytics
+                  ou pixel de rastreamento</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>O provedor de hospedagem (Cloudflare) mantém registros técnicos de acesso — endereço
+      IP e horário — por prazo curto, para segurança e prevenção a ataques. É tratamento do
+      próprio provedor, com base no legítimo interesse em manter o serviço no ar, e o PSINDCE
+      não tem acesso individualizado a esses registros.</p>
+
+      <h2 id="sensivel">4. Dado sensível: o vínculo sindical</h2>
+      <p>A LGPD classifica como <strong>dado pessoal sensível</strong> o dado sobre filiação a
+      sindicato (art. 5º, II). Isso tem uma consequência prática que levamos a sério:</p>
+      <p>Quando alguém escreve para o Sindicato dos Psicólogos do Ceará pedindo informação
+      sobre filiação, benefícios ou assistência jurídica, esse simples ato já revela um
+      interesse de associação sindical. Por isso o tratamento desses contatos <strong>não se
+      apoia em legítimo interesse</strong>, mas no seu consentimento específico e destacado
+      (art. 11, I) — que é o motivo de haver uma caixa de marcação obrigatória no formulário,
+      e não apenas um aviso.</p>
+      <p>Na prática, isso significa que:</p>
+      <ul>
+        <li>Não publicamos, em nenhum lugar do site, nomes, listas, quantitativos
+        identificáveis ou qualquer informação que permita saber quem é associado ao PSINDCE.</li>
+        <li>Não confirmamos a terceiros — inclusive empregadores — se determinada pessoa é ou
+        não filiada, salvo por ordem judicial ou determinação legal expressa.</li>
+        <li>Não usamos a base de contatos para nada além de responder a quem escreveu.</li>
+        <li>Não fazemos disparo de marketing, mala direta ou lista de transmissão a partir de
+        quem apenas entrou em contato pelo site.</li>
+      </ul>
+      <p>A única exceção são os <strong>membros da Diretoria Colegiada e do Conselho Fiscal</strong>,
+      cujos nomes, fotos, cargos e registros no CRP aparecem na página
+      <a href="sobre.html#equipe">Sobre</a>. A eleição da diretoria de um sindicato é ato
+      público, previsto no Estatuto e com edital, e essa publicação atende ao dever de
+      transparência da entidade perante a categoria (art. 11, II, "a" e "b"). Qualquer pessoa
+      da diretoria pode, ao deixar o cargo, pedir a retirada da sua foto pelo canal do
+      encarregado.</p>
+
+      <h2 id="whatsapp">5. O formulário e o WhatsApp</h2>
+      <p>O site não tem servidor próprio: o formulário "Fale conosco" <strong>não envia nada
+      para lugar nenhum sozinho</strong>. Ele monta uma mensagem com o que você digitou e abre
+      o WhatsApp para que <em>você</em> decida enviá-la. Até você tocar em "enviar" dentro do
+      WhatsApp, os dados existem apenas no seu próprio navegador.</p>
+      <p>A partir do envio, a conversa passa a ser tratada também pelo WhatsApp, aplicativo da
+      Meta Platforms, segundo as políticas da própria Meta — sobre as quais o PSINDCE não tem
+      controle. Se você preferir não usar o WhatsApp, escreva para
+      <a href="mailto:psindce@gmail.com">psindce@gmail.com</a>, ligue para a sede ou vá até o
+      endereço da seção 1. Nenhum canal é obrigatório.</p>
+
+      <h2 id="compartilhamento">6. Com quem compartilhamos</h2>
+      <p>Com ninguém, para fins comerciais. Os únicos terceiros que tocam em dados a partir
+      deste site são operadores necessários ao funcionamento:</p>
+      <ul>
+        <li><strong>Cloudflare</strong> — hospedagem do site e proteção contra ataques.</li>
+        <li><strong>Meta (WhatsApp)</strong> — apenas se você escolher esse canal.</li>
+        <li><strong>Sympla</strong> — apenas se você fizer a filiação pela plataforma.</li>
+        <li><strong>Google, Meta e Spotify</strong> — apenas nos conteúdos incorporados
+        (mapa, publicações, vídeos, podcast), e somente depois do seu consentimento. Ver a
+        <a href="cookies.html">Política de Cookies</a>.</li>
+      </ul>
+      <p>Fora disso, só compartilhamos dados por determinação judicial ou obrigação legal —
+      e, quando a lei permitir, avisamos você antes.</p>
+
+      <h2 id="transferencia">7. Transferência internacional</h2>
+      <p>WhatsApp, Google, Meta, Spotify e Cloudflare processam dados em servidores fora do
+      Brasil. Ao usar esses canais e conteúdos, há <strong>transferência internacional de
+      dados</strong> (arts. 33 a 36 da LGPD), amparada no seu consentimento específico —
+      dado ao marcar a autorização do formulário ou ao aceitar o carregamento do conteúdo
+      externo. Você pode evitar completamente essa transferência usando o telefone, o e-mail
+      ou o atendimento presencial, e recusando o banner de conteúdos de terceiros.</p>
+
+      <h2 id="retencao">8. Por quanto tempo guardamos</h2>
+      <ul>
+        <li><strong>Mensagens de contato:</strong> até 12 meses após o encerramento do
+        atendimento, e depois eliminadas.</li>
+        <li><strong>Dados de filiação:</strong> enquanto durar o vínculo associativo e,
+        depois dele, pelos prazos exigidos pela legislação trabalhista, tributária e pelo
+        Estatuto.</li>
+        <li><strong>Documentos de processos jurídicos:</strong> pelo prazo legal de guarda
+        do respectivo processo.</li>
+      </ul>
+      <p>Passados os prazos, os dados são eliminados ou anonimizados.</p>
+
+      <h2 id="direitos">9. Seus direitos</h2>
+      <p>O art. 18 da LGPD garante a você, a qualquer momento e sem custo:</p>
+      <ul>
+        <li>confirmação de que tratamos ou não seus dados;</li>
+        <li>acesso aos dados que temos sobre você;</li>
+        <li>correção de dado incompleto, inexato ou desatualizado;</li>
+        <li>anonimização, bloqueio ou eliminação de dado desnecessário ou excessivo;</li>
+        <li>portabilidade a outro fornecedor, mediante requisição expressa;</li>
+        <li>eliminação dos dados tratados com base no seu consentimento;</li>
+        <li>informação sobre com quem compartilhamos seus dados;</li>
+        <li>informação sobre a possibilidade de não consentir, e o que decorre disso;</li>
+        <li><strong>revogação do consentimento</strong>, a qualquer tempo.</li>
+      </ul>
+      <p>Recusar o consentimento ou revogá-lo depois <strong>não prejudica em nada</strong> seu
+      atendimento pelos canais tradicionais nem seus direitos como associado. Para exercer
+      qualquer um deles, use o <a href="#encarregado">canal do encarregado</a>. Se a resposta
+      não resolver, você pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+      <h2 id="seguranca">10. Segurança</h2>
+      <p>O site é servido exclusivamente por HTTPS, com HSTS e política de segurança de
+      conteúdo (CSP) que restringe de onde a página pode carregar recursos. Não há área
+      logada, banco de dados nem formulário que grave informação no servidor — o que reduz
+      drasticamente a superfície de risco. O acesso às caixas de e-mail e ao WhatsApp
+      institucionais é restrito à Diretoria Colegiada.</p>
+      <p>Ainda assim, nenhum meio é infalível. Se ocorrer incidente de segurança com risco
+      relevante aos titulares, comunicaremos os afetados e a ANPD nos termos do art. 48.</p>
+
+      <h2 id="menores">11. Crianças e adolescentes</h2>
+      <p>O site é dirigido a profissionais de Psicologia e não se destina a menores de 18
+      anos. Não coletamos, de forma consciente, dados de crianças ou adolescentes. Se isso
+      tiver ocorrido, avise o encarregado para eliminação imediata.</p>
+
+      <h2 id="mudancas">12. Mudanças nesta política</h2>
+      <p>Quando esta política mudar, a data no topo é atualizada. Se a mudança afetar
+      finalidade ou base legal de algum tratamento, o banner de consentimento é reapresentado
+      para que você decida de novo. Versões anteriores ficam disponíveis mediante pedido ao
+      encarregado.</p>
+
+      <div class="destaque">
+        <p><strong>Dúvida sobre qualquer ponto?</strong> Escreva para
+        <a href="mailto:f.claudemicampos@gmail.com">f.claudemicampos@gmail.com</a> ou fale
+        com a gente pelos <a href="index.html#contato">canais de contato</a>. Você não precisa
+        justificar por que está perguntando.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-marca">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="marca-txt"><b>Sindicato dos Psicólogos</b><i>do Ceará</i></span>
+        </div>
+        <p>Entidade civil de representação sindical de base estadual, sem fins lucrativos e autônoma, constituída para a defesa e a representação legal da categoria profissional dos psicólogos e psicólogas, assalariados e autônomos, do estado do Ceará.</p>
+      </div>
+
+      <div>
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="index.html#topo">Página inicial</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="index.html#onde">Onde estamos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+          <li><a href="sobre.html#historia">História</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="sindicalize-se.html">Sindicalize-se</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contato</h3>
+        <p>Av. Edilson Brasil Soares, 830 — Sala 06 — Sapiranga</p>
+        <p><a href="tel:+558532710277">(85) 3271-0277</a></p>
+        <p><a href="mailto:psindce@gmail.com">psindce@gmail.com</a></p>
+        <ul style="margin-top:1rem">
+          <li><a href="https://www.facebook.com/psindce" target="_blank" rel="noopener">facebook.com/psindce</a></li>
+          <li><a href="https://instagram.com/psindce_" target="_blank" rel="noopener">instagram.com/psindce_</a></li>
+        </ul>
+      </div>
+    </div>
+
+      <div class="footer-legal">
+        <p>Sindicato dos Psicólogos do Ceará — PSINDCE · CNPJ 01.128.005/0001-67</p>
+        <ul>
+          <li><a href="privacidade.html" aria-current="page">Política de Privacidade</a></li>
+          <li><a href="cookies.html">Política de Cookies</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+        </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">psindce.org.br</div>
+</footer>
+<!-- VOLTAR AO TOPO -->
+<button type="button" class="btn-topo" id="btnTopo" aria-label="Voltar ao topo da página">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  <span class="btn-topo-txt">Voltar ao topo</span>
+</button>
+
+<!-- BANNER DE CONSENTIMENTO (LGPD) — nasce oculto; js/consentimento.js
+     só o mostra quando ainda não há decisão guardada. -->
+<div class="consent" id="consentBanner" role="dialog" aria-modal="false"
+     aria-labelledby="consentTitulo" hidden>
+  <div class="consent-inner">
+    <div>
+      <h2 id="consentTitulo">Conteúdo de terceiros neste site</h2>
+      <p>O PSINDCE não usa cookies próprios nem ferramentas de rastreamento. Mas algumas
+      páginas trazem conteúdo hospedado por terceiros — mapa do Google, publicações do
+      Facebook e do Instagram, vídeos e podcast — que, ao carregar, podem registrar dados
+      do seu navegador. Enquanto você não decidir, <strong>nada disso é carregado</strong>.
+      Saiba mais na <a href="cookies.html">Política de Cookies</a> e na
+      <a href="privacidade.html">Política de Privacidade</a>.</p>
+    </div>
+    <div class="consent-acoes">
+      <button type="button" class="btn btn-primary" id="consentAceitar">Aceitar</button>
+      <button type="button" class="btn btn-recusar" id="consentRecusar">Recusar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/consentimento.js"></script>
+<script src="js/site.js"></script>
+
+</body>
+</html>

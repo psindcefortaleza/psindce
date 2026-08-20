@@ -37,6 +37,7 @@ window.PSINDCE = window.PSINDCE || {};
   /* --- MENU MOBILE --- */
   var btn = document.getElementById('menuBtn');
   var nav = document.getElementById('nav');
+  if (!btn || !nav) return;          // páginas sem header (ex.: 404)
   btn.addEventListener('click', function(){
     var aberto = nav.classList.toggle('open');
     btn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
@@ -46,6 +47,16 @@ window.PSINDCE = window.PSINDCE || {};
       nav.classList.remove('open');
       btn.setAttribute('aria-expanded','false');
     }
+  });
+
+  /* Esc fecha o menu e devolve o foco ao botão — sem isso, quem abre o
+     menu pelo teclado fica preso tendo que tabular até o fim da lista. */
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape' && e.keyCode !== 27) return;
+    if (!nav.classList.contains('open')) return;
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    btn.focus();
   });
 })();
 
@@ -209,4 +220,49 @@ PSINDCE.iniciarRevelacao = function(grupos){
       topo.focus({preventScroll:true});
     }
   });
+})();
+
+
+/* ======================================================================
+   CONTATOS DE WHATSAPP MONTADOS EM TEMPO DE EXECUÇÃO
+   ======================================================================
+   O número não aparece em texto puro em lugar nenhum do HTML: é remontado
+   aqui a partir de pedaços. Isso não segura um raspador dedicado, mas tira
+   o site do alcance dos robôs que varrem páginas atrás de "wa.me/55..." —
+   que é de onde vem o grosso do spam em número de atendimento.
+
+   COMO USAR NO HTML
+     link:            <a data-zap data-zap-msg="Olá, gostaria de...">Texto</a>
+     número visível:  <span data-zap-num></span>
+     link de ligação: <a data-zap-tel>(85) …</a>
+
+   Sem JS, os links caem no formulário de contato da página inicial e o
+   número visível vira "fale conosco" — nada fica quebrado nem vazio.
+   ====================================================================== */
+(function(){
+  var P = ['55', '85', '9', '9120', '7733'];      // pedaços do número
+  var numero = P.join('');
+  var formatado = '(' + P[1] + ') ' + P[2] + P[3] + '-' + P[4];
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-zap]'), function(a){
+    var msg = a.getAttribute('data-zap-msg') || '';
+    a.href = 'https://wa.me/' + numero + (msg ? '?text=' + encodeURIComponent(msg) : '');
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-zap-tel]'), function(a){
+    a.href = 'tel:+' + numero;
+    if (!a.textContent.trim()) a.textContent = formatado;
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-zap-num]'), function(el){
+    el.textContent = formatado;
+  });
+
+  /* Para os scripts inline das páginas (formulário de contato, quiz de
+     perfil) montarem seus próprios links sem repetir o número. */
+  PSINDCE.zap = function(msg){
+    return 'https://wa.me/' + numero + (msg ? '?text=' + encodeURIComponent(msg) : '');
+  };
 })();

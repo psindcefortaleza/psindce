@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#821A25">
-<title>Sobre — Sindicato dos Psicólogos do Ceará</title>
+<title>Sobre o PSINDCE — Sindicato dos Psicólogos do Ceará</title>
 <meta name="description" content="Conheça a missão, as filiações, a equipe e a história do PSINDCE — Sindicato dos Psicólogos do Estado do Ceará.">
 <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sindicato dos Psicólogos do Ceará — PSINDCE">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Sobre — Sindicato dos Psicólogos do Ceará">
+<meta property="og:title" content="Sobre o PSINDCE — Sindicato dos Psicólogos do Ceará">
 <meta property="og:description" content="Conheça a missão, as filiações, a equipe e a história do PSINDCE — Sindicato dos Psicólogos do Estado do Ceará.">
 <meta property="og:url" content="https://sitemoderno.pages.dev/sobre.html">
 <meta property="og:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
@@ -23,7 +23,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="PSINDCE — Sindicato dos Psicólogos do Ceará">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sobre — Sindicato dos Psicólogos do Ceará">
+<meta name="twitter:title" content="Sobre o PSINDCE — Sindicato dos Psicólogos do Ceará">
 <meta name="twitter:description" content="Conheça a missão, as filiações, a equipe e a história do PSINDCE — Sindicato dos Psicólogos do Estado do Ceará.">
 <meta name="twitter:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
 <script type="application/ld+json">
@@ -342,6 +342,8 @@
 </noscript>
 </head>
 <body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
 
 <header>
   <div class="header-inner">
@@ -392,7 +394,7 @@
   </div>
 </header>
 
-<main>
+<main id="conteudo" tabindex="-1">
 
 <section class="sobre-hero" id="topo">
   <div class="wrap topo-conteudo">
@@ -591,11 +593,20 @@
         <p><a href="tel:+558532710277">(85) 3271-0277</a></p>
         <p><a href="mailto:psindce@gmail.com">psindce@gmail.com</a></p>
         <ul style="margin-top:1rem">
-          <li><a href="https://facebook.com.br/psindce" target="_blank" rel="noopener">facebook.com.br/psindce</a></li>
+          <li><a href="https://www.facebook.com/psindce" target="_blank" rel="noopener">facebook.com/psindce</a></li>
           <li><a href="https://instagram.com/psindce_" target="_blank" rel="noopener">instagram.com/psindce_</a></li>
         </ul>
       </div>
     </div>
+
+      <div class="footer-legal">
+        <p>Sindicato dos Psicólogos do Ceará — PSINDCE · CNPJ 01.128.005/0001-67</p>
+        <ul>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="cookies.html">Política de Cookies</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+        </ul>
+      </div>
   </div>
   <div class="footer-bottom">psindce.org.br</div>
 </footer>
@@ -605,6 +616,29 @@
   <span class="btn-topo-txt">Voltar ao topo</span>
 </button>
 
+
+<!-- BANNER DE CONSENTIMENTO (LGPD) — nasce oculto; js/consentimento.js
+     só o mostra quando ainda não há decisão guardada. -->
+<div class="consent" id="consentBanner" role="dialog" aria-modal="false"
+     aria-labelledby="consentTitulo" hidden>
+  <div class="consent-inner">
+    <div>
+      <h2 id="consentTitulo">Conteúdo de terceiros neste site</h2>
+      <p>O PSINDCE não usa cookies próprios nem ferramentas de rastreamento. Mas algumas
+      páginas trazem conteúdo hospedado por terceiros — mapa do Google, publicações do
+      Facebook e do Instagram, vídeos e podcast — que, ao carregar, podem registrar dados
+      do seu navegador. Enquanto você não decidir, <strong>nada disso é carregado</strong>.
+      Saiba mais na <a href="cookies.html">Política de Cookies</a> e na
+      <a href="privacidade.html">Política de Privacidade</a>.</p>
+    </div>
+    <div class="consent-acoes">
+      <button type="button" class="btn btn-primary" id="consentAceitar">Aceitar</button>
+      <button type="button" class="btn btn-recusar" id="consentRecusar">Recusar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/consentimento.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="js/site.js"></script>
 <script>

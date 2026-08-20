@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#821A25">
-<title>Sindicalize-se — Sindicato dos Psicólogos do Ceará</title>
+<title>Sindicalize-se ao PSINDCE — Psicólogos e Psicólogas do CE</title>
 <meta name="description" content="Sindicalize-se ao PSINDCE e garanta assistência jurídica, negociação coletiva e convênios exclusivos para psicólogos e psicólogas do Ceará.">
 <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sindicato dos Psicólogos do Ceará — PSINDCE">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Sindicalize-se — Sindicato dos Psicólogos do Ceará">
+<meta property="og:title" content="Sindicalize-se ao PSINDCE — Psicólogos e Psicólogas do CE">
 <meta property="og:description" content="Sindicalize-se ao PSINDCE e garanta assistência jurídica, negociação coletiva e convênios exclusivos para psicólogos e psicólogas do Ceará.">
 <meta property="og:url" content="https://sitemoderno.pages.dev/sindicalize-se.html">
 <meta property="og:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
@@ -23,7 +23,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="PSINDCE — Sindicato dos Psicólogos do Ceará">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sindicalize-se — Sindicato dos Psicólogos do Ceará">
+<meta name="twitter:title" content="Sindicalize-se ao PSINDCE — Psicólogos e Psicólogas do CE">
 <meta name="twitter:description" content="Sindicalize-se ao PSINDCE e garanta assistência jurídica, negociação coletiva e convênios exclusivos para psicólogos e psicólogas do Ceará.">
 <meta name="twitter:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
 <script type="application/ld+json">
@@ -173,6 +173,17 @@
     .btn-whatsapp::after{display:none}
   }
 
+  .aviso-sympla{
+    max-width:40rem;margin-top:1.5rem;
+    font-size:.8125rem;line-height:1.6;color:var(--muted-foreground);
+    background:var(--muted);border-left:4px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:1rem 1.25rem;
+  }
+
+  .aviso-sympla strong{color:var(--verde)}
+
+  .aviso-sympla a{font-weight:700;text-decoration:underline}
+
   .sind-hero{
     padding:5.5rem 0 3rem;text-align:left;border-bottom:1px solid var(--border);
   }
@@ -263,6 +274,8 @@
 </noscript>
 </head>
 <body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
 
 <header>
   <div class="header-inner">
@@ -313,7 +326,7 @@
   </div>
 </header>
 
-<main>
+<main id="conteudo" tabindex="-1">
 
 <section class="sind-hero" id="topo">
   <div class="wrap topo-conteudo">
@@ -322,8 +335,22 @@
     <p class="lead">Junte-se a nós e garanta seus direitos trabalhistas.</p>
     <p style="margin-top:1.125rem;max-width:40rem">E passe a garantir plenos direitos e deveres de sindicalizado, incluindo o acesso a todos os serviços e convênios disponíveis. Os valores para a sindicalização são decididos em assembleia orçamentária, realizada anualmente.</p>
     <div class="btns">
-      <a class="btn btn-primary" href="https://www.sympla.com.br/evento-online/renovacao-e-filiacao-do-psindce/3470212?referrer=sitemoderno.pages.dev&amp;referrer=sitemoderno.pages.dev" target="_blank" rel="noopener">Preencher formulário de sindicalização</a>
+      <a class="btn btn-primary" href="https://www.sympla.com.br/evento-online/renovacao-e-filiacao-do-psindce/3470212" target="_blank" rel="noopener">Preencher formulário de sindicalização</a>
     </div>
+    <!-- A filiação a um sindicato é dado sensível (LGPD art. 5º, II) e o
+         cadastro roda numa plataforma de terceiro. Quem clica precisa saber
+         disso ANTES de clicar — não depois, na página do Sympla. -->
+    <p class="aviso-sympla">
+      O cadastro é feito na plataforma <strong>Sympla</strong>, que atua como operadora dos
+      seus dados. A informação de que você é filiado(a) a um sindicato é
+      <strong>dado pessoal sensível</strong> (art. 5º, II da
+      <abbr title="Lei Geral de Proteção de Dados nº 13.709/2018">LGPD</abbr>) e o PSINDCE a
+      trata com sigilo: não divulgamos nomes de associados nem confirmamos filiação a
+      terceiros, inclusive empregadores. Veja a
+      <a href="privacidade.html#sensivel">Política de Privacidade</a>. Se preferir não usar a
+      plataforma, solicite o formulário em papel pelo
+      <a href="index.html#contato" data-zap data-zap-msg="Olá, gostaria de solicitar o formulário de filiação em papel do PSINDCE.">Fale conosco</a>.
+    </p>
   </div>
 </section>
 
@@ -422,11 +449,20 @@
         <p><a href="tel:+558532710277">(85) 3271-0277</a></p>
         <p><a href="mailto:psindce@gmail.com">psindce@gmail.com</a></p>
         <ul style="margin-top:1rem">
-          <li><a href="https://facebook.com.br/psindce" target="_blank" rel="noopener">facebook.com.br/psindce</a></li>
+          <li><a href="https://www.facebook.com/psindce" target="_blank" rel="noopener">facebook.com/psindce</a></li>
           <li><a href="https://instagram.com/psindce_" target="_blank" rel="noopener">instagram.com/psindce_</a></li>
         </ul>
       </div>
     </div>
+
+      <div class="footer-legal">
+        <p>Sindicato dos Psicólogos do Ceará — PSINDCE · CNPJ 01.128.005/0001-67</p>
+        <ul>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="cookies.html">Política de Cookies</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+        </ul>
+      </div>
   </div>
   <div class="footer-bottom">psindce.org.br</div>
 </footer>
@@ -436,6 +472,29 @@
   <span class="btn-topo-txt">Voltar ao topo</span>
 </button>
 
+
+<!-- BANNER DE CONSENTIMENTO (LGPD) — nasce oculto; js/consentimento.js
+     só o mostra quando ainda não há decisão guardada. -->
+<div class="consent" id="consentBanner" role="dialog" aria-modal="false"
+     aria-labelledby="consentTitulo" hidden>
+  <div class="consent-inner">
+    <div>
+      <h2 id="consentTitulo">Conteúdo de terceiros neste site</h2>
+      <p>O PSINDCE não usa cookies próprios nem ferramentas de rastreamento. Mas algumas
+      páginas trazem conteúdo hospedado por terceiros — mapa do Google, publicações do
+      Facebook e do Instagram, vídeos e podcast — que, ao carregar, podem registrar dados
+      do seu navegador. Enquanto você não decidir, <strong>nada disso é carregado</strong>.
+      Saiba mais na <a href="cookies.html">Política de Cookies</a> e na
+      <a href="privacidade.html">Política de Privacidade</a>.</p>
+    </div>
+    <div class="consent-acoes">
+      <button type="button" class="btn btn-primary" id="consentAceitar">Aceitar</button>
+      <button type="button" class="btn btn-recusar" id="consentRecusar">Recusar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/consentimento.js"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="js/site.js"></script>
 <script>

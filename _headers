@@ -1,0 +1,104 @@
+# ============================================================
+#  PSINDCE — cabeçalhos servidos pelo Cloudflare Pages
+#
+#  As regras abaixo NÃO se sobrepõem: nenhum caminho casa com
+#  duas regras que definam o mesmo cabeçalho. Isso é de propósito
+#  — evita depender da ordem de precedência do Pages, que muda
+#  entre versões. /* traz só segurança; o cache vem por caminho.
+# ============================================================
+
+
+# ------------------------------------------------------------
+#  SEGURANÇA — todo o site
+# ------------------------------------------------------------
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https://i.ytimg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; frame-src https://www.google.com https://maps.google.com https://www.youtube-nocookie.com https://open.spotify.com https://www.facebook.com; connect-src 'self'; media-src 'self'; manifest-src 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cross-Origin-Opener-Policy: same-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+
+# ------------------------------------------------------------
+#  CACHE — fichas da grade do Instagram
+#  Fragmentos lidos por fetch, não páginas. Fora do índice.
+#  Vem ANTES de /img/* porque é o caminho mais específico.
+# ------------------------------------------------------------
+/img/grade/*.html
+  Cache-Control: public, max-age=86400
+  X-Robots-Tag: noindex
+
+
+# ------------------------------------------------------------
+#  CACHE — artes e ícones
+#  Um ano + immutable: o nome do arquivo só muda quando a arte
+#  muda, então o navegador nunca precisa revalidar.
+# ------------------------------------------------------------
+/img/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/img/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/img/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/img/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/img/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+/img/favicon/site.webmanifest
+  Cache-Control: public, max-age=604800
+
+/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+
+
+# ------------------------------------------------------------
+#  CACHE — CSS e JS
+#  Sem hash no nome (css/site.css, js/site.js), então NÃO levam
+#  immutable: um dia de cache, com revalidação obrigatória.
+#  Se um dia os arquivos ganharem hash, suba para immutable.
+# ------------------------------------------------------------
+/css/*
+  Cache-Control: public, max-age=86400, must-revalidate
+/js/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+
+# ------------------------------------------------------------
+#  CACHE — documentos de indexação
+# ------------------------------------------------------------
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+/robots.txt
+  Cache-Control: public, max-age=3600
+/llms.txt
+  Cache-Control: public, max-age=3600
+
+
+# ------------------------------------------------------------
+#  CACHE — páginas
+#  Enumeradas uma a uma (e não como /*.html) para não casarem
+#  também com /img/grade/*.html. Ao criar uma página nova,
+#  acrescente-a aqui.
+#  max-age=0 + must-revalidate: uma correção publicada aparece
+#  na hora, sem esperar cache de navegador expirar.
+# ------------------------------------------------------------
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/sobre.html
+  Cache-Control: public, max-age=0, must-revalidate
+/noticias.html
+  Cache-Control: public, max-age=0, must-revalidate
+/sindicalize-se.html
+  Cache-Control: public, max-age=0, must-revalidate
+/privacidade.html
+  Cache-Control: public, max-age=0, must-revalidate
+/cookies.html
+  Cache-Control: public, max-age=0, must-revalidate
+/termos.html
+  Cache-Control: public, max-age=0, must-revalidate
+/404.html
+  Cache-Control: public, max-age=0, must-revalidate

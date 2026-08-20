@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#821A25">
+<title>Sobre o PSINDCE — Sindicato dos Psicólogos do Ceará</title>
+<meta name="description" content="Conheça a missão, as filiações, a equipe e a história do PSINDCE — Sindicato dos Psicólogos do Estado do Ceará.">
+<link rel="icon" href="img/favicon/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sindicato dos Psicólogos do Ceará — PSINDCE">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Sobre o PSINDCE — Sindicato dos Psicólogos do Ceará">
+<meta property="og:description" content="Conheça a missão, as filiações, a equipe e a história do PSINDCE — Sindicato dos Psicólogos do Estado do Ceará.">
+<meta property="og:url" content="https://sitemoderno.pages.dev/sobre.html">
+<meta property="og:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PSINDCE — Sindicato dos Psicólogos do Ceará">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sobre o PSINDCE — Sindicato dos Psicólogos do Ceará">
+<meta name="twitter:description" content="Conheça a missão, as filiações, a equipe e a história do PSINDCE — Sindicato dos Psicólogos do Estado do Ceará.">
+<meta name="twitter:image" content="https://sitemoderno.pages.dev/img/og/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Sindicato dos Psicólogos do Ceará",
+  "alternateName": "PSINDCE",
+  "url": "https://sitemoderno.pages.dev/",
+  "logo": "https://sitemoderno.pages.dev/img/og/og-image.png",
+  "image": "https://sitemoderno.pages.dev/img/og/og-image.png",
+  "description": "O Sindicato dos Psicólogos do Ceará (PSINDCE) é uma entidade civil constituída para a defesa e a representação legal e legítima da categoria profissional dos psicólogos e psicólogas, assalariados e autônomos, do estado do Ceará.",
+  "telephone": "+55-85-3271-0277",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Edilson Brasil Soares, 830 — Sala 6 — Sapiranga",
+    "addressLocality": "Fortaleza",
+    "addressRegion": "CE",
+    "postalCode": "60833-020",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://www.facebook.com/psindce",
+    "https://www.instagram.com/psindce_/",
+    "https://x.com/psindce"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+
+  .js-reveal.reveal-esq.in-view{animation-name:revelar-esq}
+
+  .js-reveal.reveal-dir{transform:translateX(28px)}
+
+  .js-reveal.reveal-dir.in-view{animation-name:revelar-dir}
+
+  @keyframes revelar-dir{
+    from{opacity:0;transform:translateX(28px)}
+    to{opacity:1;transform:none}
+  }
+
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(248,246,243,.93);backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--border);
+    transition:box-shadow .3s ease-out,background-color .3s ease-out;
+  }
+
+  .logo-mark{
+    flex:none;display:block;width:70px;height:44px;
+    background:url("img/logo.webp") center/contain no-repeat;
+  }
+
+  .hero-foto{
+    position:absolute;inset:0;z-index:-2;
+    width:100%;height:100%;object-fit:cover;object-position:86% center;
+    filter:grayscale(.22) sepia(.10) contrast(.97) brightness(1.03);
+    /* "respiração" contínua da fotografia — zoom + deslocamento sutis */
+    animation:hero-respira 28s ease-in-out infinite;
+  }
+
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(95deg,
+      rgba(248,246,243,.96) 0%,
+      rgba(248,246,243,.91) 32%,
+      rgba(248,246,243,.74) 58%,
+      rgba(248,246,243,.40) 80%,
+      rgba(248,246,243,.24) 100%);
+  }
+
+  .topo-conteudo>*{
+    opacity:0;
+    animation:sobe-fade .8s cubic-bezier(.22,.61,.36,1) both;
+  }
+
+  .topo-conteudo>.rotulo{animation-delay:.15s}
+
+  .topo-conteudo>h1{animation-delay:.3s}
+
+  .topo-conteudo>.lead{animation-delay:.45s}
+
+  .topo-conteudo>p{animation-delay:.55s}
+
+  .topo-conteudo>.btns{animation-delay:.7s}
+
+  @media(max-width:900px){
+    nav{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:var(--background);border-bottom:1px solid var(--border);padding:1rem 1.5rem;
+    }
+    nav.open{display:block}
+    /* itens do menu entram em cascata ao abrir */
+    nav.open li{animation:menu-cascata .34s cubic-bezier(.22,.61,.36,1) both}
+    nav.open li:nth-child(1){animation-delay:.03s}
+    nav.open li:nth-child(2){animation-delay:.09s}
+    nav.open li:nth-child(3){animation-delay:.15s}
+    nav.open li:nth-child(4){animation-delay:.21s}
+    nav.open li:nth-child(5){animation-delay:.27s}
+    nav.open li:nth-child(6){animation-delay:.33s}
+    @keyframes menu-cascata{
+      from{opacity:0;transform:translateY(-8px)}
+      to{opacity:1;transform:none}
+    }
+    .pill-list{flex-direction:column;align-items:flex-start;gap:.25rem}
+    .pill{padding:.75rem 0;min-height:44px}
+    .menu-btn{display:block}
+    .estatuto-grid,.sede-grid,.contato-grid,.cards,.footer-grid{grid-template-columns:1fr}
+    .estatuto-nota{position:static}
+    section{padding:4rem 0}
+    .hero{padding:5.5rem 0 4rem}
+    .hero-foto{object-position:72% center}
+    .mapa iframe{height:20rem}
+  }
+
+  @media(max-width:640px){
+    .tel-topo{display:none}
+    .logo-mark{width:58px;height:36px}
+    .marca-txt b{font-size:.8125rem}
+    .marca-txt i{font-size:.6875rem}
+
+    .wrap,.wrap-wide{padding:0 1.25rem}
+    .hero-conteudo{max-width:none}
+    .hero::before{background:linear-gradient(178deg,rgba(248,246,243,.95) 0%,rgba(248,246,243,.87) 55%,rgba(248,246,243,.94) 100%)}
+    .artigo{grid-template-columns:1fr;gap:.375rem}
+    .artigo-num{text-align:left;font-size:1.5rem}
+    .btn{width:100%}
+    .card-body{padding:1.5rem}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{
+      transition-duration:.01ms!important;
+      animation-duration:.01ms!important;
+      animation-iteration-count:1!important;
+    }
+    /* nada de movimento: tudo já visível, sem deslocamento */
+    .js-reveal,.hero-conteudo>*,.topo-conteudo>*{opacity:1!important;transform:none!important;animation:none!important}
+    .rotulo.js-reveal::before,.rotulo.js-reveal::after{transform:none!important}
+    .hero-foto{animation:none!important;transform:scale(1.04)}
+    body::after{animation:none!important;opacity:.64}
+    .btn-whatsapp::after{display:none}
+  }
+
+  .sobre-hero{
+    padding:5.5rem 0 3rem;text-align:left;border-bottom:1px solid var(--border);
+  }
+
+  .sobre-hero .rotulo{margin-bottom:1.25rem}
+
+  .sobre-hero h1{max-width:40rem}
+
+  .sobre-hero .lead{max-width:40rem;margin-top:1.25rem}
+
+  .filiacoes-lista{
+    display:flex;flex-wrap:wrap;gap:.75rem;margin:1.75rem 0 2rem;
+  }
+
+  .filiacoes-lista li{
+    list-style:none;background:var(--card);border:1px solid var(--border);
+    border-radius:999px;padding:.5rem 1.125rem;font-size:.875rem;font-weight:700;
+    color:var(--verde);font-family:var(--font-display);letter-spacing:.01em;
+    transition:translate .2s ease-out,border-color .2s ease-out;
+  }
+
+  .filiacoes-lista li:hover{border-color:var(--accent);translate:0 -2px}
+
+  .equipe-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.25rem;
+  }
+
+  .membro{
+    background:var(--card);border:1px solid var(--border);border-top:4px solid var(--accent);
+    border-radius:14px;padding:2rem 1.75rem;text-align:center;
+    box-shadow:var(--shadow-sm);
+    transition:translate .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s ease-out,border-color .28s ease-out;
+  }
+
+  .membro:hover{
+    box-shadow:var(--shadow-lg);border-color:var(--border-hover);
+    translate:0 -6px;
+  }
+
+  .membro-avatar{
+    width:4rem;height:4rem;margin:0 auto 1.125rem;border-radius:50%;
+    background:var(--accent-soft);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-display);font-weight:800;font-size:1.25rem;
+    overflow:hidden;
+  }
+
+  .membro-avatar img{
+    width:100%;height:100%;object-fit:cover;
+  }
+
+  .membro-cargo{
+    font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;
+  }
+
+  .membro h3{margin-bottom:.375rem}
+
+  .membro-crp{font-size:.875rem;color:var(--muted-foreground)}
+
+  .membro.membro-foto{
+    min-height:22rem;padding:0 1.75rem 1.75rem;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    background-image:
+      linear-gradient(to bottom, rgba(15,10,8,0) 38%, rgba(15,10,8,.6) 72%, rgba(15,10,8,.92) 100%),
+      var(--foto);
+    background-size:cover,cover;
+    background-position:center,center;
+    background-repeat:no-repeat,no-repeat;
+  }
+
+  .membro.membro-foto .membro-cargo{color:#F0C9A8}
+
+  .membro.membro-foto h3{color:#fff}
+
+  .membro.membro-foto .membro-crp{color:rgba(255,255,255,.85)}
+
+  .fiscal-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2.5rem;
+    max-width:40rem;margin-left:auto;margin-right:auto;
+  }
+
+  #historia h2 em{font-style:normal;color:var(--accent)}
+
+  .linha-tempo{
+    position:relative;padding:3.25rem 0 0;max-width:46rem;margin:0 auto;
+  }
+
+  .linha-tempo::before{
+    content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;
+    background:linear-gradient(var(--border),var(--border) 96%,transparent);
+    transform:translateX(-50%);z-index:0;
+    transform-origin:top center;transition:scale 1.6s ease-out;
+  }
+
+  .linha-tempo.js-linha::before{scale:1 0}
+
+  .linha-tempo.js-linha.in-view::before{scale:1 1}
+
+  .linha-tempo.js-reveal{opacity:1;transform:none}
+
+  .linha-tempo.js-reveal.in-view{animation:none}
+
+  .marco{
+    position:relative;z-index:1;text-align:center;margin:3.5rem 0 2.25rem;
+  }
+
+  .marco span{
+    /* a pílula cobre a linha vertical — casa com o fundo da seção (muted) */
+    display:inline-block;background:var(--muted);padding:.375rem 1.5rem;
+    font-family:var(--font-display);font-size:.75rem;font-weight:800;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+    border:2px solid var(--accent);border-radius:999px;
+  }
+
+  .marco:first-child{margin-top:0}
+
+  .balao{
+    position:relative;z-index:1;max-width:88%;width:fit-content;
+    background:var(--card);border:1px solid var(--border);
+    border-radius:20px;padding:1.5rem 1.75rem;margin:1.5rem 0;
+    box-shadow:var(--shadow-sm);
+    transition:translate .28s cubic-bezier(.22,.61,.36,1),box-shadow .28s ease-out,border-color .28s ease-out;
+  }
+
+  .balao:hover{box-shadow:var(--shadow-lg);border-color:var(--border-hover);translate:0 -4px}
+
+  .balao p{color:var(--foreground);font-size:.9688rem;line-height:1.75}
+
+  .balao--esq{
+    margin-right:auto;border-left:4px solid var(--accent);
+    border-top-left-radius:6px;
+  }
+
+  .balao--dir{
+    margin-left:auto;border-right:4px solid var(--verde-medio);
+    border-top-right-radius:6px;text-align:right;
+  }
+
+  .balao--dir p{text-align:left}
+
+  @media(max-width:720px){
+    .linha-tempo::before{left:1.25rem}
+    .balao,.balao--esq,.balao--dir{
+      max-width:calc(100% - 2.75rem);margin-left:2.75rem!important;margin-right:0!important;
+      text-align:left;
+    }
+    .balao--dir p{text-align:left}
+    .marco{text-align:left;padding-left:2.75rem}
+  }
+
+  @media(max-width:900px){
+    .equipe-grid{grid-template-columns:repeat(2,1fr)}
+  }
+
+  @media(max-width:640px){
+    .equipe-grid,.fiscal-grid{grid-template-columns:1fr}
+  }
+</style>
+<noscript>
+  <style>
+    /* sem JS não há observador de rolagem: tudo permanece visível */
+    .js-reveal{opacity:1;transform:none}
+    .rotulo.js-reveal::before,.rotulo.js-reveal::after{transform:none}
+    .form-status{opacity:1;transform:none}
+  </style>
+</noscript>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+
+<header>
+  <div class="header-inner">
+    <a class="marca" href="index.html">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="marca-txt"><b>Sindicato dos Psicólogos</b><i>do Ceará</i></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav">
+      <ul class="pill-list">
+        <li><a class="pill" href="index.html#topo">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Página inicial</span>
+            <span class="pill-label-hover" aria-hidden="true">Página inicial</span>
+          </span>
+        </a></li>
+        <li><a class="pill is-active" href="sobre.html" aria-current="page">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Sobre</span>
+            <span class="pill-label-hover" aria-hidden="true">Sobre</span>
+          </span>
+        </a></li>
+        <li><a class="pill" href="noticias.html">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Notícias</span>
+            <span class="pill-label-hover" aria-hidden="true">Notícias</span>
+          </span>
+        </a></li>
+        <li><a class="pill" href="sindicalize-se.html">
+          <span class="hover-circle" aria-hidden="true"></span>
+          <span class="label-stack">
+            <span class="pill-label">Sindicalize-se</span>
+            <span class="pill-label-hover" aria-hidden="true">Sindicalize-se</span>
+          </span>
+        </a></li>
+      </ul>
+    </nav>
+    <a class="tel-topo" href="tel:+558532710277">
+      <span class="hover-circle" aria-hidden="true"></span>
+      <span class="label-stack">
+        <span class="pill-label">(85) 3271-0277</span>
+        <span class="pill-label-hover" aria-hidden="true">(85) 3271-0277</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main id="conteudo" tabindex="-1">
+
+<section class="sobre-hero" id="topo">
+  <div class="wrap topo-conteudo">
+    <div class="rotulo"><span>Quem somos</span></div>
+    <h1>Sobre o <em>PSINDCE</em></h1>
+    <p class="lead">Conheça a missão, as filiações, a equipe e a trajetória de quem representa a categoria dos psicólogos e psicólogas do Ceará.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rotulo esq js-reveal"><span>Nossa missão</span></div>
+    <h2 class="js-reveal" style="margin-bottom:1.5rem">Por melhores condições de trabalho e de exercício da profissão</h2>
+    <p class="js-reveal">O Sindicato dos Psicólogos do Estado do Ceará - PSINDCE - é uma organização de base estadual que representa os interesses da categoria e da sociedade por serviços de qualidade à população. O Sindicato procura lutar por melhores salários, remuneração condizente com sua formação e por condições adequadas de trabalho em amplo sentido: da jornada às condições que permitam um exercício técnico e ético da profissão.</p>
+    <p class="js-reveal" style="margin-top:1.125rem">Porém, não se restringe a uma luta corporativista, pois entende que a luta sindical deve abraçar melhores condições de trabalho para toda a classe trabalhadora.</p>
+  </div>
+</section>
+
+<section class="muted">
+  <div class="wrap">
+    <div class="rotulo esq js-reveal"><span>Nossas filiações</span></div>
+    <h2 class="js-reveal" style="margin-bottom:1.5rem">Articulados com entidades nacionais e estaduais</h2>
+    <p class="js-reveal">Para este fim, o PSINDCE está filiado à:</p>
+    <ul class="filiacoes-lista">
+      <li class="js-reveal">Confederação Nacional dos Trabalhadores em Seguridade Social (CNTSS)</li>
+      <li class="js-reveal">Federação Estadual dos Trabalhadores em Seguridade Social (FETSS)</li>
+      <li class="js-reveal">Federação Nacional dos Psicólogos (FENAPSI)</li>
+      <li class="js-reveal">Central Única dos Trabalhadores (CUT-CE)</li>
+    </ul>
+    <p class="js-reveal">O PSINDCE entende que a luta sindical clássica de corte corporativo tem de estar articulada aos interesses mais amplos da sociedade, como a busca pela democracia universal e participativa, a conquista de direitos que garantam a justiça social amparados por amplas políticas públicas de Estado e a luta contra todas as formas de preconceito, discriminação e violência que ofendam a dignidade humana.</p>
+  </div>
+</section>
+
+<section id="equipe">
+  <div class="wrap-wide">
+    <div class="rotulo esq js-reveal"><span>Nossa equipe</span></div>
+    <h2 class="js-reveal">Diretoria Colegiada</h2>
+
+    <div class="equipe-grid">
+      <div class="membro membro-foto js-reveal" style="--foto:url('img/integrantes/claudemir_campos.webp')" role="img" aria-label="Claudemir Campos">
+        <div class="membro-cargo">Coordenação Geral</div>
+        <h3>Claudemir Campos</h3>
+        <p class="membro-crp">CRP 11/14061</p>
+      </div>
+      <div class="membro membro-foto js-reveal" style="--foto:url('img/integrantes/fernando_de_oliveira.webp')" role="img" aria-label="Fernando de Oliveira">
+        <div class="membro-cargo">Coordenação de Comunicação</div>
+        <h3>Fernando de Oliveira</h3>
+        <p class="membro-crp">CRP 11/11607</p>
+      </div>
+      <div class="membro membro-foto js-reveal" style="--foto:url('img/integrantes/rozelir_lima.webp')" role="img" aria-label="Rozelir Lima">
+        <div class="membro-cargo">Coordenação Administrativa</div>
+        <h3>Rozelir Lima</h3>
+        <p class="membro-crp">CRP 11/18978</p>
+      </div>
+      <div class="membro membro-foto js-reveal" style="--foto:url('img/integrantes/jorge_luiz.webp')" role="img" aria-label="Jorge Luiz">
+        <div class="membro-cargo">Coordenação de Políticas</div>
+        <h3>Jorge Luiz</h3>
+        <p class="membro-crp">CRP 11/08046</p>
+      </div>
+      <div class="membro membro-foto js-reveal" style="--foto:url('img/integrantes/antonio_walesson.webp')" role="img" aria-label="Antonio Walesson">
+        <div class="membro-cargo">Coordenação de Formação</div>
+        <h3>Antonio Walesson</h3>
+        <p class="membro-crp">CRP 11/13625</p>
+      </div>
+      <div class="membro membro-foto js-reveal" style="--foto:url('img/integrantes/helena_oliveira.webp')" role="img" aria-label="Helena Oliveira">
+        <div class="membro-cargo">Suplente da Coordenação Geral</div>
+        <h3>Helena Oliveira</h3>
+        <p class="membro-crp">CRP 11/14909</p>
+      </div>
+    </div>
+
+    <h2 class="js-reveal" style="margin-top:4rem">Conselho Fiscal</h2>
+    <div class="fiscal-grid">
+      <div class="membro membro-foto js-reveal" style="--foto:url('img/integrantes/ivan_nogueira.webp')" role="img" aria-label="Ivan Nogueira">
+        <h3>Ivan Nogueira</h3>
+        <p class="membro-crp">CRP 11/15086</p>
+      </div>
+      <div class="membro membro-foto js-reveal" style="--foto:url('img/integrantes/fulvio_robert.webp')" role="img" aria-label="Fúlvio Robert">
+        <h3>Fúlvio Robert</h3>
+        <p class="membro-crp">CRP 11/03494</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTÓRIA -->
+<section id="historia" class="muted">
+  <div class="wrap">
+    <div class="rotulo js-reveal"><span>Nossa trajetória</span></div>
+    <h2 class="center">História do <em>PSINDCE</em></h2>
+    <p class="lead center" style="margin:1rem auto 0">Da mobilização que começou em 1993 até os dias atuais: conheça a trajetória do Sindicato dos Psicólogos do Ceará, contada em ordem cronológica.</p>
+
+    <div class="linha-tempo js-linha js-reveal">
+
+      <div class="marco js-reveal"><span>Como tudo começou...</span></div>
+
+      <div class="balao balao--esq js-reveal reveal-esq">
+        <p>Tudo começou quando, em 1993, a Federação Nacional dos Psicólogos (FENAPSI) encaminhou uma atividade de mobilização em diversos estados aonde não existiam sindicatos de psicólogos, buscando levar representantes para a Plenária Nacional que acontecia naquele ano em São Paulo. Nesta época, existiam os sindicatos de Alagoas, Espírito Santo, Minas Gerais, São Paulo, Rio de Janeiro, Rio Grande do Sul e Santa Catarina.</p>
+      </div>
+
+      <div class="balao balao--dir js-reveal reveal-dir">
+        <p>Então, a psicóloga Meire Viana foi convidada à contribuir neste evento, representando o Ceará. Ao retornar, trouxe na bagagem a missão de iniciar um processo de mobilização dos psicólogos e psicólogas no Ceará rumo ao debate sobre a organização sindical.</p>
+      </div>
+
+      <div class="balao balao--esq js-reveal reveal-esq">
+        <p>Do ponto de vista político sindical, o principal debate ocorria sobre a viabilidade de migração da organização sindical através de Ramos de Atividade, e assim tornava-se importante difundir a reflexão por todos os cantos do Brasil, com vistas a tomada de decisões bem embasadas. Através do movimento político no Sistema Conselhos, em 1992 havia sido definido o Ramo da Saúde para o enquadramento da Psicologia.</p>
+      </div>
+
+      <div class="balao balao--dir js-reveal reveal-dir">
+        <p>Efetuando um resgate histórico, o grupo que se formou como Comissão Pró-Sindicato (Meire Viana, Maria Osmar Costa, Fátima Vidal e João Vicente), localizaram dados sobre a existência por algum período de uma Associação de Psicólogos do Estado do Ceará. Esta associação não mais estava atuante àquela ocasião, mas foram identificados alguns colegas que fizeram parte da mesma, como a psicóloga Terezinha Elias, que passou então a compor conosco como apoio rumo à fundação do Sindicato no Ceará.</p>
+      </div>
+
+      <div class="balao balao--esq js-reveal reveal-esq">
+        <p>Em 1995, aconteceu em São Paulo o IV Congresso Nacional da FENAPSI, estando o Ceará presente com duas representantes (Meire Viana e Fátima Vidal). Havia uma demanda da delegação do Nordeste para que a composição da direção executiva da FENAPSI contemplasse uma vaga para um representante desta região. Foi então indicado o nome da psicóloga Meire Viana e também o da psicóloga Fátima Vidal para uma das vagas da Diretoria Nordeste.</p>
+      </div>
+
+      <div class="balao balao--dir js-reveal reveal-dir">
+        <p>Ampliando o debate sobre a organização sindical nos estados, liderada pela FENAPSI, avaliou-se a importância de inicialmente se consolidar a organização sindical da categoria dos Psicólogos, para num segundo momento avaliar como encaminhar o movimento através dos Ramos de Atividade.</p>
+      </div>
+
+      <div class="marco js-reveal"><span>Fundação do PSINDCE</span></div>
+
+      <div class="balao balao--esq js-reveal reveal-esq">
+        <p>Assim, com o apoio da FENAPSI do ponto de vista político-estrutural e do CRP-11-2º Plenário, apoiando do ponto de vista da divulgação das ações sindicais, em 4 de dezembro de 1995, em Assembléia Estadual, foi fundado o PSINDCE - Sindicato dos Psicólogos do Estado do Ceará, com uma gestão provisória composta por: Meire Viana, Fátima Vidal, Maria Osmar Costa (Amada), João Vicente Menescal, Lirian Mascarenhas, Eduardo Almeida, Gislene Macedo, Maria das Dores Lima e Marinina Gruska. Logo na sua fundação, o PSINDCE definiu sua filiação à FENAPSI.</p>
+      </div>
+
+      <div class="balao balao--dir js-reveal reveal-dir">
+        <p>O ano de 1996 foi de estruturação e nesta ocasião foi editado o primeiro Boletim PSINDCE, trazendo informações, orientações sindicais e também abrindo o debate sobre assuntos importantes para a categoria, entre eles o piso salarial.</p>
+      </div>
+
+      <div class="balao balao--esq js-reveal reveal-esq">
+        <p>Em 1997, aconteceu o primeiro processo eleitoral do PSINDCE, sendo eleita a Gestão "ENCONTROS" contendo membros para todos os cargos e promovendo também a filiação do PSINDCE à Central Única dos Trabalhadores (CUT).</p>
+      </div>
+
+      <div class="marco js-reveal"><span>...enquanto isso, o PSINDCE esteve em várias sedes...</span></div>
+
+      <div class="balao balao--dir js-reveal reveal-dir">
+        <p>A primeira sede do PSINDCE foi na Av. Santos Dumont, contando com o apoio da FENAPSI na manutenção e do CRP11 (IIº Plenário) com apoio material. Ao longo da história o PSINDCE passou por diversos outros endereços, mas em alguns períodos em que a questão financeira se fez imperiosa, foi importante manter o endereço oficial em Coworking(s) inclusive recentemente, como ocorreu após a reforma trabalhista de 2017.</p>
+      </div>
+
+      <div class="marco js-reveal"><span>... e a história continua...</span></div>
+
+      <div class="balao balao--esq js-reveal reveal-esq">
+        <p>Passados vários anos desde sua fundação, as gestões do PSINDCE se sucederam entre conquistas e dificuldades, mas sempre procurando abranger um maior número de profissionais. É importante que se diga que nem sempre foi fácil manter o sindicato em pé, mas, graças à perseverança de alguns, hoje vivemos um momento de maior participação e crescimento.</p>
+      </div>
+
+      <div class="balao balao--dir js-reveal reveal-dir">
+        <p>A gestão atual vem se encontrando para abrir novos canais de comunicação e ampliar os debates com a sociedade acerca da importância da(o) psicóloga(o). Acreditamos que, mesmo não sendo uma tarefa fácil, não custa nada tentar.</p>
+      </div>
+
+      <div class="balao balao--esq js-reveal reveal-esq">
+        <p>Para fortalecer e melhorar nossa luta, foi realizado um planejamento estratégico no final de 2012, coordenado pelo diretor Rodrigo Meireles. Com esse planejamento, foi possível rever e redefinir nossas metas, além de repensar nossas estratégias de ação, analisando as dificuldades e reforçando as virtudes. Assim, o PSINDCE entrou em 2013 renovado, com disposição nova, a ponto de participar melhor dos debates e manifestações políticas, junto com a nossa categoria e em sintonia com outras entidades sindicais.</p>
+      </div>
+
+      <div class="balao balao--dir js-reveal reveal-dir">
+        <p>Iniciamos uma inédita política de convênios, com o lançamento do Cartão do Associado PSINDCE, e também foi possível inaugurar uma fase de comunicação mais intensa, com um novo site e novos canais de comunicação. Além disso, conseguimos voltar a ter uma sede no Centro da cidade de Fortaleza para dar mais acesso a todas(os) as(os) que precisam do sindicato.</p>
+      </div>
+
+      <div class="balao balao--esq js-reveal reveal-esq">
+        <p>No último ano, acompanhamos momentos de grande tensão entre os trabalhadores da Prefeitura Municipal de Fortaleza por conta da mudança de gestão. O PSINDCE esteve a frente de várias discussões e manifestações, procurando mediar os problemas gerados entre as gestões municipais e os trabalhadores. Os processos ainda continuam e agora queremos ampliar nosso diálogo em outros lugares, principalmente no interior do estado. Esta ampliação permanece ainda um desafio, mas contamos com o apoio de todas(os) as(os) profissionais para que isso aconteça.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-marca">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="marca-txt"><b>Sindicato dos Psicólogos</b><i>do Ceará</i></span>
+        </div>
+        <p>Entidade civil de representação sindical de base estadual, sem fins lucrativos e autônoma, constituída para a defesa e a representação legal da categoria profissional dos psicólogos e psicólogas, assalariados e autônomos, do estado do Ceará.</p>
+      </div>
+
+      <div>
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="index.html#topo">Página inicial</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="index.html#onde">Onde estamos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+          <li><a href="sobre.html#historia">História</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="sindicalize-se.html">Sindicalize-se</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contato</h3>
+        <p>Av. Edilson Brasil Soares, 830 — Sala 06 — Sapiranga</p>
+        <p><a href="tel:+558532710277">(85) 3271-0277</a></p>
+        <p><a href="mailto:psindce@gmail.com">psindce@gmail.com</a></p>
+        <ul style="margin-top:1rem">
+          <li><a href="https://www.facebook.com/psindce" target="_blank" rel="noopener">facebook.com/psindce</a></li>
+          <li><a href="https://instagram.com/psindce_" target="_blank" rel="noopener">instagram.com/psindce_</a></li>
+        </ul>
+      </div>
+    </div>
+
+      <div class="footer-legal">
+        <p>Sindicato dos Psicólogos do Ceará — PSINDCE · CNPJ 01.128.005/0001-67</p>
+        <ul>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="cookies.html">Política de Cookies</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+        </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">psindce.org.br</div>
+</footer>
+<!-- VOLTAR AO TOPO -->
+<button type="button" class="btn-topo" id="btnTopo" aria-label="Voltar ao topo da página">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  <span class="btn-topo-txt">Voltar ao topo</span>
+</button>
+
+
+<!-- BANNER DE CONSENTIMENTO (LGPD) — nasce oculto; js/consentimento.js
+     só o mostra quando ainda não há decisão guardada. -->
+<div class="consent" id="consentBanner" role="dialog" aria-modal="false"
+     aria-labelledby="consentTitulo" hidden>
+  <div class="consent-inner">
+    <div>
+      <h2 id="consentTitulo">Conteúdo de terceiros neste site</h2>
+      <p>O PSINDCE não usa cookies próprios nem ferramentas de rastreamento. Mas algumas
+      páginas trazem conteúdo hospedado por terceiros — mapa do Google, publicações do
+      Facebook e do Instagram, vídeos e podcast — que, ao carregar, podem registrar dados
+      do seu navegador. Enquanto você não decidir, <strong>nada disso é carregado</strong>.
+      Saiba mais na <a href="cookies.html">Política de Cookies</a> e na
+      <a href="privacidade.html">Política de Privacidade</a>.</p>
+    </div>
+    <div class="consent-acoes">
+      <button type="button" class="btn btn-primary" id="consentAceitar">Aceitar</button>
+      <button type="button" class="btn btn-recusar" id="consentRecusar">Recusar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/consentimento.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="js/site.js"></script>
+<script>
+  PSINDCE.iniciarRevelacao([
+    ['.equipe-grid',     '.membro',            0.10],
+    ['.fiscal-grid',     '.membro',            0.10],
+    ['.filiacoes-lista', 'li',                 0.07]
+  ]);
+</script>
+</body>
+</html>

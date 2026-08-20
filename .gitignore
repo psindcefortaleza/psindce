@@ -1,0 +1,2 @@
+# backups locais gerados antes de edições (o histórico do git é o backup durável)
+*.bak

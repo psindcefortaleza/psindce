@@ -1,0 +1,29 @@
+# PSINDCE — Sindicato dos Psicólogos do Ceará
+
+> O Sindicato dos Psicólogos do Ceará (PSINDCE) é uma entidade civil
+> constituída para a defesa e a representação legal e legítima da
+> categoria profissional dos psicólogos e psicólogas, assalariados e
+> autônomos, do estado do Ceará.
+
+## Páginas
+
+- [Página inicial](https://sitemoderno.pages.dev/): apresentação do sindicato, missão e formas de contato.
+- [Sobre](https://sitemoderno.pages.dev/sobre.html): história, filiações e equipe/diretoria do PSINDCE.
+- [Sindicalize-se](https://sitemoderno.pages.dev/sindicalize-se.html): como se filiar e benefícios (assistência jurídica, negociação coletiva, convênios).
+- [Notícias](https://sitemoderno.pages.dev/noticias.html): notícias, campanhas, vídeos e podcast do sindicato.
+
+## Documentos legais
+
+- [Política de Privacidade](https://sitemoderno.pages.dev/privacidade.html): tratamento de dados pessoais, base legal, canal do encarregado e direitos do titular.
+- [Política de Cookies](https://sitemoderno.pages.dev/cookies.html): o site não usa cookies próprios nem analytics; conteúdo de terceiros só carrega com consentimento.
+- [Termos de Uso](https://sitemoderno.pages.dev/termos.html): condições de uso, propriedade intelectual e responsabilidades.
+
+## Contato
+
+- CNPJ: 01.128.005/0001-67
+- Endereço: Av. Edilson Brasil Soares, 830 — Sala 6 — Sapiranga — Fortaleza/CE, CEP 60833-020
+- Telefone: (85) 3271-0277
+- WhatsApp: pelo formulário "Fale conosco" da página inicial
+- Instagram: https://www.instagram.com/psindce_/
+- Facebook: https://www.facebook.com/psindce
+- X: https://x.com/psindce

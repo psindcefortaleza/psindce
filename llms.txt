@@ -7,16 +7,16 @@
 
 ## Páginas
 
-- [Página inicial](https://sitemoderno.pages.dev/): apresentação do sindicato, missão e formas de contato.
-- [Sobre](https://sitemoderno.pages.dev/sobre.html): história, filiações e equipe/diretoria do PSINDCE.
-- [Sindicalize-se](https://sitemoderno.pages.dev/sindicalize-se.html): como se filiar e benefícios (assistência jurídica, negociação coletiva, convênios).
-- [Notícias](https://sitemoderno.pages.dev/noticias.html): notícias, campanhas, vídeos e podcast do sindicato.
+- [Página inicial](https://psindce.org.br/): apresentação do sindicato, missão e formas de contato.
+- [Sobre](https://psindce.org.br/sobre.html): história, filiações e equipe/diretoria do PSINDCE.
+- [Sindicalize-se](https://psindce.org.br/sindicalize-se.html): como se filiar e benefícios (assistência jurídica, negociação coletiva, convênios).
+- [Notícias](https://psindce.org.br/noticias.html): notícias, campanhas, vídeos e podcast do sindicato.
 
 ## Documentos legais
 
-- [Política de Privacidade](https://sitemoderno.pages.dev/privacidade.html): tratamento de dados pessoais, base legal, canal do encarregado e direitos do titular.
-- [Política de Cookies](https://sitemoderno.pages.dev/cookies.html): o site não usa cookies próprios nem analytics; conteúdo de terceiros só carrega com consentimento.
-- [Termos de Uso](https://sitemoderno.pages.dev/termos.html): condições de uso, propriedade intelectual e responsabilidades.
+- [Política de Privacidade](https://psindce.org.br/privacidade.html): tratamento de dados pessoais, base legal, canal do encarregado e direitos do titular.
+- [Política de Cookies](https://psindce.org.br/cookies.html): o site não usa cookies próprios nem analytics; conteúdo de terceiros só carrega com consentimento.
+- [Termos de Uso](https://psindce.org.br/termos.html): condições de uso, propriedade intelectual e responsabilidades.
 
 ## Contato
 

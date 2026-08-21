@@ -59,10 +59,6 @@
 <link rel="stylesheet" href="css/site.css">
 <style>
 
-  .js-reveal.reveal-esq.in-view{
-    animation-name:revelar-esq;
-  }
-
   header{
     position:sticky;top:0;z-index:60;
     background:rgba(248,246,243,.93);backdrop-filter:saturate(180%) blur(10px);
@@ -431,6 +427,12 @@
 
   /* --- MATÉRIA PRINCIPAL DO BLOCO --- */
   .materia{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:start}
+
+  /* Um e-mail ou URL sem espaços define a largura mínima da coluna e estoura
+     a grade no celular. Deixar quebrar dentro da palavra evita isso. */
+  .materia-corpo h3,.materia-corpo p,
+  .chamada-item h4,.chamada-item .data,
+  .audio-card h3,.audio-card p{overflow-wrap:anywhere}
   .materia-foto{
     border-radius:12px;overflow:hidden;background:var(--muted);
     aspect-ratio:4/3;display:block;
@@ -450,7 +452,7 @@
   .chamadas{display:grid;gap:1.125rem;margin-top:1.75rem;
     border-top:1px solid var(--border);padding-top:1.75rem}
   .chamada-item{
-    display:grid;grid-template-columns:6.5rem 1fr;gap:1.125rem;align-items:center;
+    display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:1.125rem;align-items:center;
   }
   .chamada-item .miniatura{
     border-radius:8px;overflow:hidden;background:var(--muted);aspect-ratio:1;
@@ -507,7 +509,7 @@
   .video-item p{font-size:.875rem;color:var(--muted-foreground);margin-top:.25rem}
 
   /* --- ÁUDIO E PODCAST --- */
-  .audios{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+  .audios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
   .audio-card{
     background:var(--card);border:1px solid var(--border);
     border-left:4px solid var(--accent);border-radius:12px;
@@ -645,14 +647,17 @@
   .video-quadro.vazio:hover::after{opacity:1}
   .video-quadro.vazio .play{display:none}
   .embed-vazio{
-    min-height:152px;aspect-ratio:16/9;border-radius:12px;
+    /* Sem aspect-ratio: combinada com min-height:152px ela exigia 270px de
+       largura mínima e estourava a coluna no celular. O iframe do Spotify
+       que este bloco substitui também é largura total por 152px de altura. */
+    height:152px;border-radius:12px;
     border:2px dashed var(--border-hover);
     background:var(--muted) url('img/noticias/novidades-em-breve.webp') center/cover no-repeat;
   }
 
   /* --- RESPONSIVO --- */
   @media (max-width:1024px){
-    .grade-portal{grid-template-columns:1fr;gap:3.5rem}
+    .grade-portal{grid-template-columns:minmax(0,1fr);gap:3.5rem}
     .coluna-lateral{position:static;grid-template-columns:repeat(2,1fr)}
   }
   @media (max-width:900px){
@@ -662,13 +667,13 @@
     .pagina-topo{padding:2.5rem 0 2rem}
     .mosaico{grid-template-columns:1fr}
     .mosaico>.destaque.destaque--painel{min-height:0}
-    .materia{grid-template-columns:1fr}
-    .videos,.audios,.redes-portal{grid-template-columns:1fr}
-    .coluna-lateral{grid-template-columns:1fr}
+    .materia{grid-template-columns:minmax(0,1fr)}
+    .videos,.audios,.redes-portal{grid-template-columns:minmax(0,1fr)}
+    .coluna-lateral{grid-template-columns:minmax(0,1fr)}
     .bloco-topo h2{font-size:1.1875rem}
   }
   @media (max-width:520px){
-    .chamada-item{grid-template-columns:4.75rem 1fr;gap:.875rem}
+    .chamada-item{grid-template-columns:4.75rem minmax(0,1fr);gap:.875rem}
     .insta-grid{gap:.5rem}
     .encerra{padding:1.75rem}
   }
@@ -694,7 +699,7 @@
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">☰</button>
     <nav id="nav">
       <ul class="pill-list">
-        <li><a class="pill" href="index.html">
+        <li><a class="pill" href="index.html#topo">
           <span class="hover-circle" aria-hidden="true"></span>
           <span class="label-stack">
             <span class="pill-label">Página inicial</span>
@@ -1336,12 +1341,13 @@
 
       <div>
         <h3>Contato</h3>
-        <p>Av. Edilson Brasil Soares, 830 — Sala 06 — Sapiranga</p>
+        <p>Av. Edilson Brasil Soares, 830 — Sala 6 — Sapiranga<br>Fortaleza/CE — CEP 60833-020</p>
         <p><a href="tel:+558532710277">(85) 3271-0277</a></p>
         <p><a href="mailto:psindce@gmail.com">psindce@gmail.com</a></p>
         <ul style="margin-top:1rem">
           <li><a href="https://www.facebook.com/psindce" target="_blank" rel="noopener">facebook.com/psindce</a></li>
           <li><a href="https://instagram.com/psindce_" target="_blank" rel="noopener">instagram.com/psindce_</a></li>
+          <li><a href="https://x.com/psindce" target="_blank" rel="noopener">x.com/psindce</a></li>
         </ul>
       </div>
     </div>

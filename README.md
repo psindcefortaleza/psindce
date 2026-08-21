@@ -4,7 +4,7 @@ Site estático do **Sindicato dos Psicólogos do Ceará (PSINDCE)**.
 HTML, CSS e JavaScript puros — sem framework, sem build, sem backend.
 
 - **Produção:** Cloudflare Pages
-- **Domínio:** `psindce.org.br` (em migração da KingHost)
+- **Domínio:** `psindce.org.br` (domínio personalizado ativo)
 - **CNPJ:** 01.128.005/0001-67
 
 ---
@@ -48,7 +48,9 @@ Ao **criar uma página nova**, lembre de:
 1. acrescentá-la ao `sitemap.xml`;
 2. acrescentar a regra de cache dela no `_headers` (as páginas são
    enumeradas uma a uma, e não por `/*.html` — veja o comentário no arquivo);
-3. incluir o link no rodapé, se for de navegação.
+3. incluir o link no rodapé, se for de navegação;
+4. preencher `<link rel="canonical">` e `og:url` com a mesma URL absoluta
+   em `psindce.org.br`.
 
 ---
 
@@ -111,6 +113,20 @@ A verificação por DNS vale para o domínio inteiro, cobre `www` e
 subdomínios de uma vez, e **sobrevive à virada de hospedagem** — a meta tag
 teria de ser mantida em toda página nova.
 
+### URL canônica em cada página
+
+Toda página indexável traz `<link rel="canonical">` logo abaixo da
+`<meta name="description">`, com a URL absoluta em `psindce.org.br` — a
+mesma que está em `og:url` e no `sitemap.xml`. Isso evita que o Google
+trate `/termos.html`, `/termos.html?fbclid=…` e o endereço antigo do
+Pages como três páginas diferentes.
+
+`404.html` **não** leva canonical: ela é `noindex` e não representa um
+endereço próprio.
+
+Ao criar uma página nova, o canonical entra junto com o `og:url`, com o
+mesmo valor, e a página é acrescentada ao `sitemap.xml` e ao `_headers`.
+
 ### Consentimento antes de conteúdo de terceiros
 
 Mapa do Google, plugin do Facebook, YouTube e Spotify **não carregam
@@ -140,10 +156,6 @@ Para usar num link novo:
 
 ## Pendências conhecidas
 
-- **`<link rel="canonical">`** ainda não existe em nenhuma página.
-- **URLs absolutas** (`og:url`, `og:image`, JSON-LD, `sitemap.xml`,
-  `robots.txt`, `llms.txt`) ainda apontam para `sitemoderno.pages.dev`.
-  Trocar por `psindce.org.br` na virada do domínio.
 - **Placeholders em `noticias.html`:** os dois embeds do Spotify estão com
   `COLE_O_ID_AQUI` e os três vídeos com `data-video=""`.
 - **`capa.webp`** tem 295 KB e é a maior imagem do site (LCP da home).

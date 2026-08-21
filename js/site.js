@@ -79,14 +79,22 @@ PSINDCE.iniciarRevelacao = function(grupos){
   if (reduzido || !('IntersectionObserver' in window)) {
     Array.prototype.forEach.call(alvos, function(el){ el.classList.add('in-view'); });
   } else {
+    /* O limiar de 12% pede que 12% da ÁREA do elemento esteja visível — o que
+       um elemento mais alto que a janela nunca alcança. A linha do tempo de
+       sobre.html passa de 8000px no celular: com o limiar sozinho ela nunca
+       era revelada e a régua vertical ficava invisível. Para esses casos
+       basta encostar na viewport, e o limiar 0 garante que o observador
+       chegue a ser chamado. */
+    var LIMIAR = 0.12;
     var observador = new IntersectionObserver(function(entradas){
       entradas.forEach(function(entrada){
-        if (entrada.isIntersecting) {
-          entrada.target.classList.add('in-view');
-          observador.unobserve(entrada.target);
-        }
+        if (!entrada.isIntersecting) return;
+        var maiorQueAJanela = entrada.boundingClientRect.height > window.innerHeight;
+        if (!maiorQueAJanela && entrada.intersectionRatio < LIMIAR) return;
+        entrada.target.classList.add('in-view');
+        observador.unobserve(entrada.target);
       });
-    }, {rootMargin:'0px 0px -10% 0px', threshold:0.12});
+    }, {rootMargin:'0px 0px -10% 0px', threshold:[0, LIMIAR]});
     Array.prototype.forEach.call(alvos, function(el){ observador.observe(el); });
   }
 };
